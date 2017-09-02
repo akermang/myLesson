@@ -1,7 +1,7 @@
 var lessons = [
     {
         date_created: new Date().getTime(),
-        student_ids: ["01","02"],
+        student_ids: ["01","02","03"],
         subject: "sonata",
         music_sheet_url: "http://www.piano-play-it.com/images/moonlight-sonata-pic.gif",
         video_url: 'https://www.youtube.com/embed/SiufFlbr7p8',  
