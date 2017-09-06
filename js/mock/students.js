@@ -28,5 +28,3 @@ var students = [
         username: "yyosy"
     }
 ]
-
-var loggedInUser = students[2];

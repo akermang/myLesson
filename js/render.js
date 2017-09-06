@@ -1,6 +1,5 @@
 function renderLessons(lessons, selector){
     var container = document.querySelector(selector);
-    console.log(container);
     if(!container) return;
     
     lessons.forEach(function(lesson) {
@@ -35,3 +34,12 @@ function createSrcElement(tagName, src, className){
     iframe.src = src;
     return iframe;    
 }
+
+var welcome = document.querySelector(".welcome-msg");
+if(welcome){
+    welcome.innerHTML = `Hello ${loggedInUser.first_name} ${loggedInUser.last_name}`      
+}
+function loadHome(){
+    var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
+    renderLessons(studentLessons, ".lessons-container");
+}    

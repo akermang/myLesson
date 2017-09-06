@@ -6,15 +6,15 @@ var lessons = [
         music_sheet_url: "http://www.piano-play-it.com/images/moonlight-sonata-pic.gif",
         video_url: 'https://www.youtube.com/embed/SiufFlbr7p8',  
         info: "good luck",
-        tutorial_url: 'https://www.youtube.com/embed/SiufFlbr7p8'
+        tutorial_url: 'https://www.youtube.com/embed/MPWwIFd3gZ8'
     },
     {
         date_created: new Date().getTime(),
         student_ids: ["03","04"],
         subject: "song",
-        music_sheet_url: "http://www.piano-play-it.com/images/moonlight-sonata-pic.gif",
-        video_url: 'https://www.youtube.com/embed/SiufFlbr7p8',  
+        music_sheet_url: "https://i.pinimg.com/originals/1f/b1/8f/1fb18f0c38c05732fa1aa239db903d00.jpg",
+        video_url: 'https://www.youtube-nocookie.com/embed/4TDDtqBNIOY',  
         info: "work hard and get succsefull",
-        tutorial_url: 'https://www.youtube.com/embed/SiufFlbr7p8'
+        tutorial_url: 'https://www.youtube-nocookie.com/embed/pRIqWQx--IY'
     }
 ]

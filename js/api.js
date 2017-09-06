@@ -1,0 +1,3 @@
+function getLessons() {
+    return lessons;
+}

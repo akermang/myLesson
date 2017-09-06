@@ -68,3 +68,37 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+body{
+  background: #6363E4;
+}
+
+.date{
+
+}
+
+.bottom{
+  display: flex;
+  margin-bottom: 30px;
+  
+}
+
+.music-sheet{
+  height:500px;
+}
+
+.tutorial{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.video{
+  margin: 0 10px ;
+
+}
+
+.info{
+  background: #fff;
+  padding: 20px;
+  min-width: 170px;
+}

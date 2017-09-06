@@ -1,3 +1,6 @@
+var loggedInUser = localStorage.getItem("loggedInUser");
+loggedInUser = JSON.parse(loggedInUser);
+
 function getLessonsByStudentId(lessons, studentId){
     var studentLessons = [];
     lessons.forEach(function(lesson) {
@@ -9,4 +12,15 @@ function getLessonsByStudentId(lessons, studentId){
         })
     });
     return studentLessons;
+}
+
+function getStudentById(id) {
+    var student = students.filter(function(_student){
+        return _student.id === id;
+    });     
+    if(student.length > 0) {
+        return student[0]
+    }else{
+        return null;
+    }    
 }
