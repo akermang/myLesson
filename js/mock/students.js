@@ -1,4 +1,4 @@
-var students = [
+var studentsMockData = [
     {
         id: "01",
         first_name: "Gal",

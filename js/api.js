@@ -6,3 +6,13 @@ function getLessons(){
     }
     return JSON.parse(storedLessons);
 };
+
+
+function getStudends(){
+    var storedStudents = localStorage.getItem("students_data");
+    if(storedStudents == null){
+        localStorage.setItem("students_data", JSON.stringify(studentsMockData));
+        return studentsMockData;
+    }
+    return JSON.parse(storedStudents);
+};
