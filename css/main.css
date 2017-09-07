@@ -71,13 +71,19 @@ table {
 
 body{
   background: #6363E4;
+  color:#200101;
+}
+
+.welcome-msg{
+  margin: 10px;
 }
 
 .date{
-
+  margin: 10px;
 }
 
 .bottom{
+  margin-top: 20px;
   display: flex;
   margin-bottom: 30px;
   

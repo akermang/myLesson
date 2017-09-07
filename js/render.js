@@ -37,7 +37,7 @@ function createSrcElement(tagName, src, className){
 
 var welcome = document.querySelector(".welcome-msg");
 if(welcome){
-    welcome.innerHTML = `Hello ${loggedInUser.first_name} ${loggedInUser.last_name}`      
+    welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`      
 }
 function loadHome(){
     var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
