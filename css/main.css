@@ -84,7 +84,8 @@ body{
 }
 
 .music-sheet{
-  height:500px;
+  height:151px;
+  margin-left: 10px;
 }
 
 .tutorial{
@@ -100,5 +101,18 @@ body{
 .info{
   background: #fff;
   padding: 20px;
-  min-width: 170px;
+  min-width: 301px;
+}
+
+.login-area{
+  display: flex;
+  padding: 10px;
+  height: 1.3em;
+  margin-top: 200px ;
+  justify-content: center;
+}
+
+.login-area p{
+  color: white;
+  margin-right: 20px;
 }

@@ -1,3 +1,4 @@
+var lessons = getLessons();
 var loggedInUser = localStorage.getItem("loggedInUser");
 loggedInUser = JSON.parse(loggedInUser);
 

@@ -1,4 +1,4 @@
-var lessons = [
+var lessonsMockData = [
     {
         date_created: new Date().getTime(),
         student_ids: ["01","02","03"],
