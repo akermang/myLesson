@@ -76,38 +76,52 @@ body{
 
 .welcome-msg{
   margin: 10px;
+  background-color: rgba(71, 60, 143, 0.36);
+  color: white;
+  width:170px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: .3em;
+  border-top-right-radius:20px 
 }
 
 .date{
-  margin: 10px;
+  margin: 0 auto;
+  background-color: #220a05;
+  color: white;
+  width:550px;
+  border: 1px solid white;
+  border-radius: 13px;
+  padding:  0.3em .4em;
 }
 
 .bottom{
   margin-top: 20px;
   display: flex;
   margin-bottom: 30px;
+
   
+}
+
+.bottom > * {
+  flex: 1;
+  margin: 0 10px;
 }
 
 .music-sheet{
   height:151px;
-  margin-left: 10px;
 }
 
 .tutorial{
   display: inline-block;
-  margin-left: 10px;
 }
 
 .video{
-  margin: 0 10px ;
-
 }
 
 .info{
   background: #fff;
   padding: 20px;
-  min-width: 301px;
 }
 
 .login-area{
@@ -141,4 +155,21 @@ body{
   border: 0.08em solid #9191BA;
   border-radius:  .5em 0 0 .5em;
   border-right: 0;
+}
+
+@media (max-width : 1050px){
+  .bottom {
+    flex-direction: column;
+   
+  }  
+
+  .bottom > * {
+    margin: 10px 30px;
+    height: 20em;
+  }
+
+  .date{
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
