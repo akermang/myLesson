@@ -16,5 +16,14 @@ var lessonsMockData = [
         video_url: 'https://www.youtube-nocookie.com/embed/4TDDtqBNIOY',  
         info: "work hard and get succsefull",
         tutorial_url: 'https://www.youtube-nocookie.com/embed/pRIqWQx--IY'
+    },
+    {
+        date_created: new Date().getTime(),
+        student_ids: ["03","04"],
+        subject: "live",
+        music_sheet_url: "https://thumbs.dreamstime.com/z/music-sheet-18528073.jpg",
+        video_url: 'https://www.youtube-nocookie.com/embed/4TDDtqBNIOY',  
+        info: "Good sound atention,don't forget to tune your guitar.",
+        tutorial_url: 'https://www.youtube-nocookie.com/embed/pRIqWQx--IY'
     }
 ]
