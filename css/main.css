@@ -117,8 +117,7 @@ body{
   height: 1.3em;
   justify-content: center;
   border: 1px solid white;
-  border-radius: 7px;
-  box-shadow:-1px 0px 8px rgb(168, 132, 232);
+  border-radius: 20px;
   margin: 200px auto;
   background: #8080EE;
 
