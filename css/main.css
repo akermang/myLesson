@@ -112,10 +112,17 @@ body{
 
 .login-area{
   display: flex;
+  max-width: 400px;
   padding: 10px;
   height: 1.3em;
-  margin-top: 200px ;
   justify-content: center;
+  border: 1px solid white;
+  border-radius: 7px;
+  box-shadow:-1px 0px 8px rgb(168, 132, 232);
+  margin: 200px auto;
+  background: #8080EE;
+
+  
 }
 
 .login-area p{
@@ -124,14 +131,15 @@ body{
 }
 
 .login-area button{
-  width: 7%;
-  border: 0.08em solid blue;
+  width: 17%;
+  border: 0.08em solid #9191BA;
   border-radius: 0 .5em .5em 0;
   border-left: 0;
+  margin-right:20px; 
 }
 
 .login-area input{
-  border: 0.08em solid blue;
+  border: 0.08em solid #9191BA;
   border-radius:  .5em 0 0 .5em;
   border-right: 0;
 }
