@@ -10,15 +10,17 @@ function checkStudentLogId(){
     }else{
         alert('Student does not exists !')
     }
-    
-
 }
 
-/*input enter-key event click the login-button*/
-document.getElementById("input-student-id") 
-.addEventListener("keyup", function(event) {
-event.preventDefault();
-if (event.keyCode == 13) {
-    document.getElementById("login-button").click();
+
+//input enter-key event will click the login-button
+var input = document.getElementById("input-student-id");
+
+if(input){ 
+    input.addEventListener("keyup", function(event){
+        event.preventDefault();
+        if (event.keyCode == 13){
+            document.getElementById("login-button").click();
+        }
+    });
 }
-});
