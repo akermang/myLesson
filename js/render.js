@@ -11,7 +11,7 @@ function renderLessons(lessons, selector){
         var info = createHtmlElement("div", "info");
 
         info.innerText = lesson.info;
-        date.innerText = new Date(lesson.date_created);
+        date.innerText = "Lesson : " + new Date(lesson.date_created);
 
         container.appendChild(date);
         bottom.appendChild(musicSheet);

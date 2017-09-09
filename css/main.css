@@ -82,14 +82,14 @@ body{
   border: 1px solid white;
   border-radius: 5px;
   padding: .3em;
-  border-top-right-radius:20px 
+  border-top-right-radius: 17px;
 }
 
 .date{
   margin: 0 auto;
-  background-color: #220a05;
+  background-color: rgba(34, 10, 5, 0.49);
   color: white;
-  width:550px;
+  width: 600px;
   border: 1px solid white;
   border-radius: 13px;
   padding:  0.3em .4em;
@@ -166,11 +166,15 @@ body{
 
   .bottom > * {
     margin: 10px 30px;
-    height: 20em;
+    height: 22em;
   }
 
   .date{
     max-width: 300px;
     margin: 0 auto;
+  }
+
+  .info{
+    height: inherit;
   }
 }
