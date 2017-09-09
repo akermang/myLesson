@@ -79,11 +79,10 @@ body{
   background-color: rgba(71, 60, 143, 0.36);
   color: white;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: .3em;
   border-top-right-radius: 17px;
-  border-bottom-left-radius: 15px;
-  
+  border-bottom-left-radius: 15px;  
 }
 
 .date{
@@ -161,6 +160,12 @@ body{
 }
 
 @media (max-width : 1050px){
+  .welcome-msg{
+    text-align: center;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 24px;
+  }
+  
   .bottom {
     flex-direction: column;
    
