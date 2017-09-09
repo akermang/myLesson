@@ -94,6 +94,7 @@ body{
   border: 1px solid white;
   border-radius: 13px;
   padding:  0.3em .4em;
+  text-align: center;
 }
 
 .bottom{
@@ -166,15 +167,21 @@ body{
   }  
 
   .bottom > * {
-    margin: 10px 10px;
+    margin: 10px;
     height: 22em;
   }
 
   .date{
-    max-width: 280px;
+    width: inherit;
+    margin: 10px;
   }
 
   .info{
     height: inherit;
+  }
+
+  .login-area{
+    margin: 100px auto;
+    height: 2.3em;
   }
 }
