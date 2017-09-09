@@ -216,6 +216,6 @@ body{
 
 @media (max-width: 359px){
   #select-students{
-    margin-bottom: 0px;
+    margin-bottom: 1em;
   }
 }
