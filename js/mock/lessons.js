@@ -22,8 +22,8 @@ var lessonsMockData = [
         student_ids: ["03","04"],
         subject: "live",
         music_sheet_url: "https://thumbs.dreamstime.com/z/music-sheet-18528073.jpg",
-        video_url: 'https://www.youtube-nocookie.com/embed/4TDDtqBNIOY',  
+        video_url: 'https://www.youtube.com/embed/IQDk3XLZBGA?rel=0',  
         info: "Good sound atention,don't forget to tune your guitar.",
-        tutorial_url: 'https://www.youtube-nocookie.com/embed/pRIqWQx--IY'
+        tutorial_url: 'https://www.youtube.com/embed/4T5-voVPZQI?rel=0'
     }
 ]

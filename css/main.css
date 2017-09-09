@@ -78,11 +78,12 @@ body{
   margin: 10px;
   background-color: rgba(71, 60, 143, 0.36);
   color: white;
-  width:170px;
   border: 1px solid white;
   border-radius: 5px;
   padding: .3em;
   border-top-right-radius: 17px;
+  border-bottom-left-radius: 15px;
+  
 }
 
 .date{
@@ -165,13 +166,12 @@ body{
   }  
 
   .bottom > * {
-    margin: 10px 30px;
+    margin: 10px 10px;
     height: 22em;
   }
 
   .date{
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 280px;
   }
 
   .info{
