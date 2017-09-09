@@ -42,4 +42,52 @@ if(welcome){
 function loadHome(){
     var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
     renderLessons(studentLessons, ".lessons-container");
-}    
+}   
+
+function loadNew(){
+    
+   newLesson(loggedInUser.id, ".new-lessons-container");
+} 
+
+
+function newLesson(studentId, selector){
+   var container = document.querySelector(selector);
+   if(!container) return;
+   var date = createHtmlElement("input", "new-date");
+   var subject = createHtmlElement("input", "new-subject");
+   var bottom = createHtmlElement("div", "new-bottom");
+   var musicSheet = createHtmlElement("input",  "new-music-sheet");
+   var tutorial = createHtmlElement("input", "new-tutorial");
+   var video = createHtmlElement("input", "new-video");
+   var info = createHtmlElement("textarea", "new-info");
+   var button = createHtmlElement("button", "new-button");
+
+   subject.value = "Subject";
+   info.innerText = "write info here";
+   date.value = "Lesson : " + new Date(new Date().getTime());
+   musicSheet.value = "MusicSheet url";
+   tutorial.value = "Tutorial url";
+   video.value = "Video url";
+   button.innerText = "save lesson";
+
+   container.appendChild(date);
+   bottom.appendChild(subject);
+   bottom.appendChild(musicSheet);
+   bottom.appendChild(tutorial);
+   bottom.appendChild(video);
+   bottom.appendChild(info);
+   bottom.appendChild(button);
+   container.appendChild(bottom);
+
+   populateSelectStudents();
+}
+
+function populateSelectStudents(){
+   var select = document.getElementById("select-students");
+   if(!select) return;
+   students.forEach(function(student) {
+    var option = createHtmlElement("option", "option-student");
+    option.innerText = `${student.first_name} ${student.last_name}`;
+    select.appendChild(option);
+   });
+}

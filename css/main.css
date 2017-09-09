@@ -159,6 +159,10 @@ body{
   border-right: 0;
 }
 
+.new-lessons-container input{
+  margin: 10px;
+}
+
 @media (max-width : 1050px){
   .welcome-msg{
     text-align: center;

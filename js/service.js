@@ -1,3 +1,4 @@
+var students = getStudends();
 var lessons = getLessons();
 var loggedInUser = localStorage.getItem("loggedInUser");
 loggedInUser = JSON.parse(loggedInUser);
@@ -15,8 +16,6 @@ function getLessonsByStudentId(lessons, studentId){
     return studentLessons;
 }
 
-
-var students = getStudends();
 function getStudentById(id) {
     var student = students.filter(function(_student){
         return _student.id === id;
