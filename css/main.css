@@ -159,8 +159,27 @@ body{
   border-right: 0;
 }
 
-.new-lessons-container input{
+.new-lessons-container >  * {
   margin: 10px;
+  border-radius: 4px;
+  padding: 1em;
+  border: 1px solid  #DFEAE2;
+}
+
+#select-students{
+  margin-bottom: -14px;
+}
+
+.new-bottom > * {
+  border: 1px solid  #0A6122;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 10px;
+}
+
+.new-bottom textarea{
+  margin-bottom: 2px;
+  display: block;
 }
 
 @media (max-width : 1050px){
@@ -192,5 +211,11 @@ body{
   .login-area{
     margin: 100px auto;
     height: 2.3em;
+  }
+}
+
+@media (max-width: 359px){
+  #select-students{
+    margin-bottom: 0px;
   }
 }
