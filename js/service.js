@@ -28,11 +28,3 @@ function getStudentById(id) {
     }    
 }
 
-/*input enter-key event click the login-button*/
-document.getElementById("input-student-id") 
-.addEventListener("keyup", function(event) {
-event.preventDefault();
-if (event.keyCode == 13) {
-    document.getElementById("login-button").click();
-}
-});

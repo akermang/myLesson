@@ -8,8 +8,17 @@ function checkStudentLogId(){
         localStorage.setItem("loggedInUser", JSON.stringify(auth)); 
         window.location = "home.html";    
     }else{
-        alert('student does not exists motherfucker')
+        alert('Student does not exists !')
     }
     
 
 }
+
+/*input enter-key event click the login-button*/
+document.getElementById("input-student-id") 
+.addEventListener("keyup", function(event) {
+event.preventDefault();
+if (event.keyCode == 13) {
+    document.getElementById("login-button").click();
+}
+});
