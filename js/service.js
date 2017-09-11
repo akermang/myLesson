@@ -19,11 +19,10 @@ function getLessonsByStudentId(lessons, studentId){
 function getStudentById(id) {
     var student = students.filter(function(_student){
         return _student.id === id;
-    });     
+    });
     if(student.length > 0) {
         return student[0]
     }else{
         return null;
-    }    
+    }
 }
-

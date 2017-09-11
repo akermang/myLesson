@@ -1,13 +1,14 @@
+const ALL_LESSONS_KEY = "lessons_data";
+const ALL_STUDENTS_KEY = "students_data";
+
 function getLessons(){
-    var key = "lessons_data";
-    var storedLessons = getItem(key);
-    return storeIfNull(storedLessons, lessonsMockData, key);
+    var storedLessons = getItem(ALL_LESSONS_KEY);
+    return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
 };
 
 function getStudends(){
-    var key = "students_data";
-    var storedStudents = getItem(key);
-    return storeIfNull(storedStudents, studentsMockData, key);
+    var storedStudents = getItem(ALL_STUDENTS_KEY);
+    return storeIfNull(storedStudents, studentsMockData, ALL_STUDENTS_KEY);
 };
 
 function getItem(key) {
@@ -24,4 +25,9 @@ function storeIfNull(storedData, mockData, key) {
         return mockData;
     }
     return storedData;
+}
+
+function addLesson(lesson){
+  lessons.push(lesson);
+  storeInDb(lessons, ALL_LESSONS_KEY);
 }

@@ -1,7 +1,7 @@
 function renderLessons(lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
-    
+
     lessons.forEach(function(lesson) {
         var date = createHtmlElement("div", "date");
         var bottom = createHtmlElement("div", "bottom");
@@ -20,7 +20,7 @@ function renderLessons(lessons, selector){
         bottom.appendChild(info);
         container.appendChild(bottom);
     });
-    
+
 }
 
 function createHtmlElement(tagName, className){
@@ -32,22 +32,22 @@ function createHtmlElement(tagName, className){
 function createSrcElement(tagName, src, className){
     var iframe = createHtmlElement(tagName, className);
     iframe.src = src;
-    return iframe;    
+    return iframe;
 }
 
 var welcome = document.querySelector(".welcome-msg");
 if(welcome){
-    welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`      
+    welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
 }
 function loadHome(){
     var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
     renderLessons(studentLessons, ".lessons-container");
-}   
+}
 
 function loadNew(){
-    
+
    newLesson(loggedInUser.id, ".new-lessons-container");
-} 
+}
 
 
 function newLesson(studentId, selector){
@@ -70,6 +70,8 @@ function newLesson(studentId, selector){
    video.value = "Video url";
    button.innerText = "save lesson";
 
+   button.addEventListener('click', onAddLesson)
+
    container.appendChild(date);
    bottom.appendChild(subject);
    bottom.appendChild(musicSheet);
@@ -88,6 +90,7 @@ function populateSelectStudents(){
    students.forEach(function(student) {
     var option = createHtmlElement("option", "option-student");
     option.innerText = `${student.first_name} ${student.last_name}`;
+    option.studentId = student.id;
     select.appendChild(option);
    });
 }
