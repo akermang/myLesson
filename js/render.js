@@ -9,15 +9,21 @@ function renderLessons(lessons, selector){
         var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial");
         var video = createSrcElement("iframe", lesson.video_url, "video");
         var info = createHtmlElement("div", "info");
+        var img = createHtmlElement('img', "icon-delete");
+        
 
         info.innerText = lesson.info;
-        date.innerText = "Lesson : " + new Date(lesson.date_created);
-
+        date.innerText = new Date(lesson.date_created);
+        img.src = './assets/icon-delete.png';
+        
+        date.appendChild(img);
         container.appendChild(date);
         bottom.appendChild(musicSheet);
         bottom.appendChild(tutorial);
         bottom.appendChild(video);
         bottom.appendChild(info);
+
+        
         container.appendChild(bottom);
     });
 
