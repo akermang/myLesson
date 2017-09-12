@@ -37,5 +37,13 @@ function deleteLesson(index){
     var lessons = getLessons()
     console.log(lessons)
     lessons.splice(index, 1)
-    storeInDb(lessons, ALL_LESSONS_KEY)
+    storeInDb(lessons, ALL_LESSONS_KEY);
+    var lessonsContainer = document.getElementById("lessons-container");
+    emptyElement(lessonsContainer);
+    loadHome();
+}
+
+function emptyElement(element){
+    while (element.hasChildNodes()){
+         element.removeChild(element.lastChild) }
 }
