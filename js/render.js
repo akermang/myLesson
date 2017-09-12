@@ -14,7 +14,7 @@ function renderLessons(lessons, selector){
 
         info.innerText = lesson.info;
         date.innerText = new Date(lesson.date_created);
-        img.src = './assets/icon-delete.png';
+        img.src = './assets/icon-delete-red.png';
         
         img.addEventListener("click",deleteLesson.bind(this, i));
         
