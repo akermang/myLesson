@@ -28,6 +28,6 @@ function storeIfNull(storedData, mockData, key) {
 }
 
 function addLesson(lesson){
-  lessons.push(lesson);
+  lessons.unshift(lesson);
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
