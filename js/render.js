@@ -68,12 +68,12 @@ function newLesson(studentId, selector){
    var info = createHtmlElement("textarea", "new-info");
    var button = createHtmlElement("button", "new-button");
 
-   subject.value = "Subject";
-   info.innerText = "write info here";
+   subject.placeholder = "Subject";
+   info.placeholder = "write info here";
    date.value = new Date(new Date().getTime());
-   musicSheet.value = "MusicSheet url";
-   tutorial.value = "Tutorial url";
-   video.value = "Video url";
+   musicSheet.placeholder = "MusicSheet url";
+   tutorial.placeholder = "Tutorial url";
+   video.placeholder = "Video url";
    button.innerText = "save lesson";
 
    button.addEventListener('click', onAddLesson)
