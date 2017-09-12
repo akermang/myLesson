@@ -64,7 +64,7 @@ function newLesson(studentId, selector){
 
    subject.value = "Subject";
    info.innerText = "write info here";
-   date.value = "Lesson : " + new Date(new Date().getTime());
+   date.value = new Date(new Date().getTime());
    musicSheet.value = "MusicSheet url";
    tutorial.value = "Tutorial url";
    video.value = "Video url";
