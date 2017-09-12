@@ -2,7 +2,7 @@ function renderLessons(lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
 
-    lessons.forEach(function(lesson) {
+    lessons.forEach(function(lesson, i) {
         var date = createHtmlElement("div", "date");
         var bottom = createHtmlElement("div", "bottom");
         var musicSheet = createSrcElement("img", lesson.music_sheet_url, "music-sheet");
@@ -15,6 +15,8 @@ function renderLessons(lessons, selector){
         info.innerText = lesson.info;
         date.innerText = new Date(lesson.date_created);
         img.src = './assets/icon-delete.png';
+        
+        img.addEventListener("click",deleteLesson.bind(this, i));
         
         date.appendChild(img);
         container.appendChild(date);
@@ -100,3 +102,4 @@ function populateSelectStudents(){
     select.appendChild(option);
    });
 }
+

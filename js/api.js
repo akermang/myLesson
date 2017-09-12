@@ -31,3 +31,11 @@ function addLesson(lesson){
   lessons.unshift(lesson);
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
+
+function deleteLesson(index){
+   console.log(index)
+    var lessons = getLessons()
+    console.log(lessons)
+    lessons.splice(index, 1)
+    storeInDb(lessons, ALL_LESSONS_KEY)
+}
