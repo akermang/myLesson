@@ -5,7 +5,6 @@ function onAddLesson(e) {
 }
 
 function getAddLessonsValues() {
-  var date = document.getElementsByClassName("new-date")[0];
   var subject = document.getElementsByClassName("new-subject")[0];
   var musicSheet = document.getElementsByClassName("new-music-sheet")[0];
   var tutorial = document.getElementsByClassName("new-tutorial")[0];
@@ -15,7 +14,7 @@ function getAddLessonsValues() {
   var selectedStudents = getStudentsFromSelect(studentsSelect.options);
 
   return {
-    date: date.value,
+    date_created: new Date().getTime(),
     subject: subject.value,
     music_sheet_url: musicSheet.value,
     tutorial_url: tutorial.value,

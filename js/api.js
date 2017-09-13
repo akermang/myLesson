@@ -32,3 +32,11 @@ function addLesson(lesson){
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
+function deleteLesson(index){
+    var lessons = getLessons()
+    lessons.splice(index, 1)
+    storeInDb(lessons, ALL_LESSONS_KEY);
+    var lessonsContainer = document.getElementById("lessons-container");
+    emptyElement(lessonsContainer);
+    loadHome();
+}

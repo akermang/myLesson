@@ -27,16 +27,8 @@ function getStudentById(id) {
     }
 }
 
-function deleteLesson(index){
-    var lessons = getLessons()
-    lessons.splice(index, 1)
-    storeInDb(lessons, ALL_LESSONS_KEY);
-    var lessonsContainer = document.getElementById("lessons-container");
-    emptyElement(lessonsContainer);
-    loadHome();
-}
-
 function emptyElement(element){
     while (element.hasChildNodes()){
-         element.removeChild(element.lastChild) }
+         element.removeChild(element.lastChild) 
+    }         
 }

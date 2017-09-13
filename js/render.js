@@ -13,7 +13,7 @@ function renderLessons(lessons, selector){
         
 
         info.innerText = lesson.info;
-        date.innerText = new Date(lesson.date_created);
+        date.innerText = formatDate(lesson.date_created);
         img.src = './assets/icon-delete-red.png';
         
         img.addEventListener("click",deleteLesson.bind(this, i));
@@ -61,7 +61,6 @@ function loadNew(){
 function newLesson(studentId, selector){
    var container = document.querySelector(selector);
    if(!container) return;
-   var date = createHtmlElement("input", "new-date");
    var subject = createHtmlElement("input", "new-subject");
    var bottom = createHtmlElement("div", "new-bottom");
    var musicSheet = createHtmlElement("input",  "new-music-sheet");
@@ -72,7 +71,6 @@ function newLesson(studentId, selector){
 
    subject.placeholder = "Subject";
    info.placeholder = "write info here";
-   date.value = new Date(new Date().getTime());
    musicSheet.placeholder = "MusicSheet url";
    tutorial.placeholder = "Tutorial url";
    video.placeholder = "Video url";
@@ -80,7 +78,6 @@ function newLesson(studentId, selector){
 
    button.addEventListener('click', onAddLesson)
 
-   container.appendChild(date);
    bottom.appendChild(subject);
    bottom.appendChild(musicSheet);
    bottom.appendChild(tutorial);
