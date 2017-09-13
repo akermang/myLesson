@@ -199,8 +199,8 @@ body{
   }
   
   .date .icon-delete{
-    width: 5%;
     margin-top: .5em;
+    width: 4%;
   }
 
   .bottom {
@@ -215,7 +215,9 @@ body{
 
   .date{
     width: inherit;
+    height: 2em;
     margin: 10px;
+    padding: 1.5em;
   }
 
   .info{
@@ -228,8 +230,24 @@ body{
   }
 }
 
+@media (max-width : 725px){
+  .date .icon-delete{
+    margin-left: .5em;
+  }
+}
+
+@media (max-width : 560px){
+  .date .icon-delete{
+    width: 5%;
+  }
+}
+
 @media (max-width: 359px){
   #select-students{
     margin-bottom: 1em;
+  }
+
+  .date .icon-delete{
+    width: 6%;
   }
 }
