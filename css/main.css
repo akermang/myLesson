@@ -215,9 +215,12 @@ body{
     border-bottom-left-radius: 24px;
   }
 
+  .date .icon-delete{
+    margin-right: 0;
+  }
+
   .bottom {
     flex-direction: column;
-   
   }  
 
   .bottom > * {
@@ -242,8 +245,12 @@ body{
   }
 }
 
-@media (max-width: 359px){
+@media (max-width: 460px){
   #select-students{
     margin-bottom: 1em;
+  }
+
+  .date .icon-delete, .date .icon-update{
+    width: 1.3em;
   }
 }
