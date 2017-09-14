@@ -40,3 +40,7 @@ function deleteLesson(index){
     emptyElement(lessonsContainer);
     loadHome();
 }
+
+function updateLesson(index){
+    newLesson(loggedInUser.id, ".lesson-container" + index);
+}

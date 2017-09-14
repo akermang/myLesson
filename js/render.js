@@ -3,30 +3,39 @@ function renderLessons(lessons, selector){
     if(!container) return;
 
     lessons.forEach(function(lesson, i) {
+        var lessonContainer = createHtmlElement("div","lesson-container"+i)
         var date = createHtmlElement("div", "date");
+        var subject = createHtmlElement("span","subject");
         var bottom = createHtmlElement("div", "bottom");
         var musicSheet = createSrcElement("img", lesson.music_sheet_url, "music-sheet");
         var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial");
         var video = createSrcElement("iframe", lesson.video_url, "video");
         var info = createHtmlElement("div", "info");
-        var img = createHtmlElement('img', "icon-delete");
+        var iconDelete = createHtmlElement('img', "icon-delete");
+        var iconUpdate = createHtmlElement('img', "icon-update");
+        
         
 
         info.innerText = lesson.info;
         date.innerText = formatDate(lesson.date_created);
-        img.src = './assets/icon-delete-red.png';
+        subject.innerText = "Subject: " + lesson.subject;
+        iconDelete.src = './assets/icon-delete-red.png';
+        iconUpdate.src = './assets/icon_update.png';
+        iconUpdate.addEventListener("click", updateLesson.bind(this, i));
+        iconDelete.addEventListener("click",deleteLesson.bind(this, i));
         
-        img.addEventListener("click",deleteLesson.bind(this, i));
-        
-        date.appendChild(img);
-        container.appendChild(date);
+        date.appendChild(subject);
+        date.appendChild(iconDelete);
+        date.appendChild(iconUpdate);
+        lessonContainer.appendChild(date);
         bottom.appendChild(musicSheet);
         bottom.appendChild(tutorial);
         bottom.appendChild(video);
         bottom.appendChild(info);
 
         
-        container.appendChild(bottom);
+        lessonContainer.appendChild(bottom);
+        container.appendChild(lessonContainer);
     });
 
 }

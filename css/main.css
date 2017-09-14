@@ -97,11 +97,30 @@ body{
   text-align: center;
 }
 
+.date .subject{
+  margin: 10px;
+}
+
 .date .icon-delete{
   margin-right: 2em;
   float: right;
-  width: 2.5%;
+  width: 2em;
   border-radius: 3px;
+}
+
+.date .icon-delete:hover{
+  width: 2.2em;
+}
+
+.date .icon-update{
+  margin-right: 2em;
+  float: right;
+  width: 2em;
+  border-radius: 3px;
+}
+
+.date .icon-update:hover{
+  background: #A09C9C;
 }
   
 .bottom{
@@ -197,11 +216,6 @@ body{
     border-top-right-radius: 26px;
     border-bottom-left-radius: 24px;
   }
-  
-  .date .icon-delete{
-    margin-top: .5em;
-    width: 4%;
-  }
 
   .bottom {
     flex-direction: column;
@@ -230,24 +244,8 @@ body{
   }
 }
 
-@media (max-width : 725px){
-  .date .icon-delete{
-    margin-left: .5em;
-  }
-}
-
-@media (max-width : 560px){
-  .date .icon-delete{
-    width: 5%;
-  }
-}
-
 @media (max-width: 359px){
   #select-students{
     margin-bottom: 1em;
-  }
-
-  .date .icon-delete{
-    width: 6%;
   }
 }
