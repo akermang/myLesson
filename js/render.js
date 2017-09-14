@@ -79,7 +79,7 @@ function newLesson(studentId, selector){
    var button = createHtmlElement("button", "new-button");
 
    subject.placeholder = "Subject";
-   info.innerText = lesson.info;;
+   info.placeholder = "info";
    musicSheet.placeholder = "MusicSheet url";
    tutorial.placeholder = "Tutorial url";
    video.placeholder = "Video url";

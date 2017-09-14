@@ -90,6 +90,7 @@ body{
   background-color: rgba(34, 10, 5, 0.49);
   color: white;
   width: 99%;
+  height: 1.5em;
   border: 1px solid white;
   border-top-left-radius: 55px;
   border-top-right-radius:55px;
