@@ -42,5 +42,7 @@ function deleteLesson(index){
 }
 
 function updateLesson(index){
-    newLesson(loggedInUser.id, ".lesson-container" + index);
+    lessons = getLessons();
+    lesson = lessons[index];
+    createUpdateAreaForLesson(".lesson-container" + index,lesson);
 }

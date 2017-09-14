@@ -98,7 +98,9 @@ body{
 }
 
 .date .subject{
-  margin: 10px;
+  margin: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .date .icon-delete{
@@ -109,14 +111,14 @@ body{
 }
 
 .date .icon-update{
-  margin-right: 2em;
+  margin-right: 1em;
   float: right;
   width: 2em;
   border-radius: 3px;
 }
 
 .date .icon-update:hover , .icon-delete:hover{
-  background: #A09C9C;
+  background: #B49EF1;
 }
   
 .bottom{
