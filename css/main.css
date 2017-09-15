@@ -93,12 +93,25 @@ body{
   background: rgba(58, 58, 58, 0.73);
 }
 
-.lessons-container > div.editing{
-  
+.lessons-container > div.editing .content{
+  opacity: 0.5;
+}
+
+.editing-element-wrapper{
+  position: relative;
 }
 
 .editing-element{
   display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
 }
 
 .lessons-container > div.editing .editing-element{
@@ -168,6 +181,7 @@ body{
 .info{
   background: #fff;
   padding: 20px;
+  height: 71%;
 }
 
 .login-area{

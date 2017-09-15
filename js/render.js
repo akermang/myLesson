@@ -5,12 +5,12 @@ function renderLessons(lessons, selector){
     lessons.forEach(function(lesson, i) {
         var lessonContainer = createHtmlElement("div","lesson-container"+i)
         var date = createHtmlElement("div", "date");
-        var subject = createHtmlElement("span","subject");
+        var subject = createHtmlElement("span","subject content");
         var bottom = createHtmlElement("div", "bottom");
-        var musicSheet = createSrcElement("img", lesson.music_sheet_url, "music-sheet");
-        var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial");
-        var video = createSrcElement("iframe", lesson.video_url, "video");
-        var info = createHtmlElement("div", "info");
+        var musicSheet = createSrcElement("img", lesson.music_sheet_url, "music-sheet content");
+        var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial content");
+        var video = createSrcElement("iframe", lesson.video_url, "video content");
+        var info = createHtmlElement("div", "info content");
         var iconDelete = createHtmlElement('img', "icon-delete");
         var iconUpdate = createHtmlElement('img', "icon-update");
         
@@ -65,13 +65,13 @@ var welcome = document.querySelector(".welcome-msg");
 if(welcome){
     welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
 }
+
 function loadHome(){
     var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
     renderLessons(studentLessons, ".lessons-container");
 }
 
 function loadNew(){
-
    newLesson(loggedInUser.id, ".new-lessons-container");
 }
 
@@ -117,9 +117,3 @@ function populateSelectStudents(selector){
     select.appendChild(option);
    });
 }
-
-
-
- 
- 
-

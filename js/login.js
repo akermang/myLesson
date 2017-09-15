@@ -12,7 +12,6 @@ function checkStudentLogId(){
     }
 }
 
-
 //input enter-key event will click the login-button,onlly if exist
 var input = document.getElementById("input-student-id");
 
