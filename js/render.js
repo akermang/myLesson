@@ -21,23 +21,32 @@ function renderLessons(lessons, selector){
         subject.innerText = lesson.subject;
         iconDelete.src = './assets/icon-delete-red.png';
         iconUpdate.src = './assets/icon_update.png';
-        iconUpdate.addEventListener("click", updateLesson.bind(this, i));
+        iconUpdate.addEventListener("click", updateLesson.bind(this, i,lessonContainer));
         iconDelete.addEventListener("click",deleteLesson.bind(this, i));
         
-        date.appendChild(subject);
+        date.appendChild(wrapEditedElement(subject, "textArea",lesson.subject));
         date.appendChild(iconDelete);
         date.appendChild(iconUpdate);
         lessonContainer.appendChild(date);
-        bottom.appendChild(musicSheet);
-        bottom.appendChild(tutorial);
-        bottom.appendChild(video);
-        bottom.appendChild(info);
+        bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url));
+        bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url));
+        bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url));
+        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info));
 
         
         lessonContainer.appendChild(bottom);
         container.appendChild(lessonContainer);
     });
 
+}
+
+function wrapEditedElement(domElement, editingElementTagName, value){
+    var wrapper = createHtmlElement("div", "editing-element-wrapper")
+    var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
+    wrapper.appendChild(domElement);
+    editingElement.value = value;
+    wrapper.appendChild(editingElement);    
+    return wrapper;
 }
 
 function createHtmlElement(tagName, className){
@@ -109,34 +118,6 @@ function populateSelectStudents(selector){
    });
 }
 
-function createUpdateAreaForLesson(selector, lesson){
-    var container = document.querySelector(selector);
-    if(!container) return;
-    var subject = createHtmlElement("input", "new-subject");
-    var bottom = createHtmlElement("div", "new-bottom");
-    var musicSheet = createHtmlElement("input",  "new-music-sheet");
-    var tutorial = createHtmlElement("input", "new-tutorial");
-    var video = createHtmlElement("input", "new-video");
-    var info = createHtmlElement("textarea", "new-info");
-    var button = createHtmlElement("button", "new-button");
- 
-    subject.value = lesson.subject;
-    info.innerText = lesson.info;
-    musicSheet.value =lesson.music_sheet_url;
-    tutorial.value = lesson.tutorial_url;
-    video.value = lesson.video_url;
-    button.innerText = "save lesson";
- 
-    button.addEventListener('click', onAddLesson)
- 
-    bottom.appendChild(subject);
-    bottom.appendChild(musicSheet);
-    bottom.appendChild(tutorial);
-    bottom.appendChild(video);
-    bottom.appendChild(info);
-    bottom.appendChild(button);
-    container.appendChild(bottom);
-}
 
 
  

@@ -41,9 +41,12 @@ function deleteLesson(index){
     loadHome();
 }
 
-function updateLesson(index){
-    lessons = getLessons();
-    lesson = lessons[index];
-    createUpdateAreaForLesson(".lesson-container" + index,lesson);
+function updateLesson(index,lessonContainer){
+    var hasClass = lessonContainer.classList.contains("editing");
+    if(hasClass){
+        lessonContainer.classList.remove("editing");
+    }else{
+        lessonContainer.classList.add("editing"); 
+    }
 }
 

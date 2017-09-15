@@ -93,6 +93,19 @@ body{
   background: rgba(58, 58, 58, 0.73);
 }
 
+.lessons-container > div.editing{
+  
+}
+
+.editing-element{
+  display: none;
+}
+
+.lessons-container > div.editing .editing-element{
+  display: block;
+}
+
+
 .date{
   margin: 0 auto;
   color: white;
@@ -135,7 +148,7 @@ body{
   
 }
 
-.bottom > * {
+.bottom > .editing-element-wrapper  {
   flex: 1;
   margin: 0 20px;
   border-radius: 8px;
