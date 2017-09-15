@@ -46,3 +46,4 @@ function updateLesson(index){
     lesson = lessons[index];
     createUpdateAreaForLesson(".lesson-container" + index,lesson);
 }
+

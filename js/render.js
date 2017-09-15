@@ -137,6 +137,8 @@ function createUpdateAreaForLesson(selector, lesson){
     bottom.appendChild(button);
     container.appendChild(bottom);
 }
+
+
  
  
 
