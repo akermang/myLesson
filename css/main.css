@@ -104,17 +104,38 @@ body{
 .editing-element{
   display: none;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 150px;
-  height: 40px;
-  border-radius: 7px;
+  border: none;
+  right: 63px;
+  bottom: 4px;
+  width: 65%;
+  height: 30px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
-.lessons-container > div.editing .editing-element{
+.editing-element-button{
+  display: none;
+  background-color: rgb(23, 44, 219);
+  border: 0.08em solid rgb(120, 126, 155);
+  background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
+  margin-right: 3%;
+  border-left: 0;
+  border-radius: 0 .5em .5em 0;
+  line-height: 1.25;
+  height:  2.375em;;
+  color: #fff;
+  font-size: .7em;
+  position: absolute;
+  bottom: 4px;
+  right: -5px;
+}
+
+.editing-element-button:focus{
+  outline: none;
+}
+
+.lessons-container > div.editing .editing-element, 
+.lessons-container > div.editing button.editing-element-button{
   display: block;
 }
 
@@ -244,7 +265,12 @@ body{
 }
 
 .new-button{
+  font-size: 0.75em;
+  color: white;
   margin-left: 100px;
+  background-color: rgb(23, 44, 219);
+  border: 0.08em solid rgb(120, 126, 155);
+  background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
 }
 
 .new-bottom textarea{

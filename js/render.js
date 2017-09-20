@@ -43,9 +43,12 @@ function renderLessons(lessons, selector){
 function wrapEditedElement(domElement, editingElementTagName, value){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
     var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
+    var previewButton = createHtmlElement("button", "editing-element-button");
     wrapper.appendChild(domElement);
     editingElement.value = value;
-    wrapper.appendChild(editingElement);    
+    previewButton.innerText = "Preview";
+    wrapper.appendChild(editingElement); 
+    wrapper.appendChild(previewButton);   
     return wrapper;
 }
 
@@ -92,7 +95,7 @@ function newLesson(studentId, selector){
    musicSheet.placeholder = "MusicSheet url";
    tutorial.placeholder = "Tutorial url";
    video.placeholder = "Video url";
-   button.innerText = "save lesson";
+   button.innerText = "Save  lesson";
 
    button.addEventListener('click', onAddLesson)
 

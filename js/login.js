@@ -1,7 +1,7 @@
 function checkStudentLogId(){
     var logId = document.getElementById("input-student-id").value;
 
-    // returns student object or null
+    // returns student as object or null
     var auth = getStudentById(logId);    
 
     if(auth) {       
