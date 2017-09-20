@@ -69,6 +69,10 @@ table {
   border-spacing: 0;
 }
 
+textarea{
+  padding: 1px;
+}
+
 body{
   background: rgb(63, 63, 105);
   color:#200101;
@@ -94,6 +98,7 @@ body{
 }
 
 .lessons-container > div.editing .content{
+  transition: opacity 900ms;
   opacity: 0.5;
 }
 
@@ -102,20 +107,25 @@ body{
 }
 
 .editing-element{
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 900ms, visibility 900ms;
+ /* display: none;*/
   position: absolute;
   border: none;
   right: 63px;
   bottom: 0px;
   width: 65%;
-  height: 30px;
+  height: 20px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: rgb(252, 242, 149);
 }
 
 .editing-element-button{
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 900ms, visibility 900ms;
   background-color: rgb(23, 44, 219);
   border: 0.08em solid rgb(120, 126, 155);
   background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
@@ -123,11 +133,11 @@ body{
   border-left: 0;
   border-radius: 0 .5em .5em 0;
   line-height: 1.25;
-  height:  2.475em;;
+  height:  24px;
   color: #f6f226;
   font-size: .7em;
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   right: -5px;
   letter-spacing: 1px;
 }
@@ -139,6 +149,8 @@ body{
 .lessons-container > div.editing .editing-element, 
 .lessons-container > div.editing button.editing-element-button{
   display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 
@@ -184,14 +196,13 @@ body{
   margin-top: 20px;
   display: flex;
   margin-bottom: 30px;
-
-  
 }
 
 .bottom > .editing-element-wrapper  {
   flex: 1;
   margin: 0 20px;
   border-radius: 8px;
+  transition: opacity 900ms;
 }
 
 .music-sheet{
