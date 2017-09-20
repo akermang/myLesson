@@ -106,11 +106,12 @@ body{
   position: absolute;
   border: none;
   right: 63px;
-  bottom: 4px;
+  bottom: 0px;
   width: 65%;
   height: 30px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
+  background-color: rgb(252, 242, 149);
 }
 
 .editing-element-button{
@@ -122,12 +123,13 @@ body{
   border-left: 0;
   border-radius: 0 .5em .5em 0;
   line-height: 1.25;
-  height:  2.375em;;
-  color: #fff;
+  height:  2.475em;;
+  color: #f6f226;
   font-size: .7em;
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
   right: -5px;
+  letter-spacing: 1px;
 }
 
 .editing-element-button:focus{
@@ -141,9 +143,11 @@ body{
 
 
 .date{
+  display: flex;
+  position: relative;
   margin: 0 auto;
   color: white;
-  width: 98%;
+  width: 70%;
   border-top-left-radius: 42px;
   border-top-right-radius:42px;
   padding:  1.1em 0;
@@ -157,16 +161,18 @@ body{
 }
 
 .date .icon-delete{
-  margin-right: 2em;
-  float: right;
-  width: 2em;
+  position: absolute;
+  right: 0em;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 3px;
 }
 
 .date .icon-update{
-  margin-right: 1em;
-  float: right;
-  width: 2em;
+  position: absolute;
+  right: 3em;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 3px;
 }
 
@@ -299,9 +305,7 @@ body{
   }
 
   .date{
-    width: inherit;
     height: 2em;
-    margin: 10px;
     padding: 1.5em;
   }
 
