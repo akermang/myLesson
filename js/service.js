@@ -34,8 +34,9 @@ function emptyElement(element){
 }
 
 function editingPreview(previewElement, ContentToPreview, value){
-    console.log(previewElement.innerHTML);
+    console.log(previewElement);
     console.log(ContentToPreview.value);
     console.log(value);
+    previewElement.src = ContentToPreview.value;
     previewElement.innerHTML = ContentToPreview.value;
 }

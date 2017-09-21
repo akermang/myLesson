@@ -46,6 +46,10 @@ function wrapEditedElement(domElement, editingElementTagName, value){
     var previewButton = createHtmlElement("button", "editing-element-button");
     wrapper.appendChild(domElement);
     editingElement.value = value;
+    editingElement.addEventListener('keyup', function(event){
+        event.preventDefault();
+        if(event.keyCode == 13){previewButton.click();}
+    });
     previewButton.innerText = "Preview";
     previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
     wrapper.appendChild(editingElement); 
