@@ -47,6 +47,7 @@ function wrapEditedElement(domElement, editingElementTagName, value){
     wrapper.appendChild(domElement);
     editingElement.value = value;
     previewButton.innerText = "Preview";
+    previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
     wrapper.appendChild(editingElement); 
     wrapper.appendChild(previewButton);   
     return wrapper;

@@ -32,3 +32,10 @@ function emptyElement(element){
          element.removeChild(element.lastChild) 
     }         
 }
+
+function editingPreview(previewElement, ContentToPreview, value){
+    console.log(previewElement.innerHTML);
+    console.log(ContentToPreview.value);
+    console.log(value);
+    previewElement.innerHTML = ContentToPreview.value;
+}
