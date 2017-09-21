@@ -125,11 +125,13 @@ body{
 
 .date textarea.editing-element{
   left: 180px;
+  bottom: -20px;
   width: 100px;
 }
 
 .date button.editing-element-button{
   left: 278px;
+  bottom: -20px;
 }
 
 .editing-element-button{
@@ -180,6 +182,12 @@ body{
   margin: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.date .subject, .bottom .content{
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 900ms, visibility 900ms;
 }
 
 .date .icon-delete{
@@ -305,7 +313,7 @@ body{
   display: block;
 }
 
-@media (max-width : 1050px){
+@media (max-width : 1250px){
   .welcome-msg{
     text-align: center;
     border-top-right-radius: 26px;
@@ -326,12 +334,12 @@ body{
   }
 
   .date{
-    height: 2em;
+    height: 3em;
     padding: 1.5em;
   }
 
   .info{
-    height: inherit;
+    height: auto;
   }
 
   .login-area{
