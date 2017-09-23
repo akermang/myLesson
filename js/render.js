@@ -24,7 +24,7 @@ function renderLessons(lessons, selector){
         iconUpdate.addEventListener("click", updateLesson.bind(this, i,lessonContainer));
         iconDelete.addEventListener("click",deleteLesson.bind(this, i));
         
-        date.appendChild(wrapEditedElement(subject, "textArea",lesson.subject));
+        date.appendChild(wrapEditedElement(subject, "input",lesson.subject));
         date.appendChild(iconDelete);
         date.appendChild(iconUpdate);
         lessonContainer.appendChild(date);
@@ -53,7 +53,8 @@ function wrapEditedElement(domElement, editingElementTagName, value){
     previewButton.innerText = "Preview";
     previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
     wrapper.appendChild(editingElement); 
-    wrapper.appendChild(previewButton);   
+    if(!domElement.classList.contains("subject")){
+        wrapper.appendChild(previewButton)};   
     return wrapper;
 }
 

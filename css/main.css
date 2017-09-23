@@ -1,3 +1,4 @@
+@import "base/queries.css";
 /* line 1, ../scss/base/_base.scss */
 main {
   height: 100%;
@@ -123,15 +124,13 @@ body{
   background-color: rgb(252, 242, 149);
 }
 
-.date textarea.editing-element{
-  left: 180px;
-  bottom: -20px;
-  width: 100px;
-}
-
-.date button.editing-element-button{
-  left: 278px;
-  bottom: -20px;
+.date input.editing-element{
+  left: 19px;
+  bottom: 0px;
+  width: 200px;
+  text-indent: 10%;
+  border-radius: 7px;
+  text-transform: uppercase;
 }
 
 .editing-element-button{
@@ -188,6 +187,7 @@ body{
   opacity: 1;
   visibility: visible;
   transition: opacity 900ms, visibility 900ms;
+  width: 87%;
 }
 
 .date .icon-delete{
@@ -326,11 +326,20 @@ body{
 
   .bottom {
     flex-direction: column;
-  }  
+  } 
+  
+  .bottom .tutorial, .video{
+    height: 320px;
+    height: 28em;
+  }
+
+  .date .subject, .bottom .content{
+    width: 100%;
+  }
 
   .bottom > * {
     margin: 10px;
-    height: 22em;
+    height: 100%;
   }
 
   .date{
@@ -338,8 +347,13 @@ body{
     padding: 1.5em;
   }
 
-  .info{
-    height: auto;
+  .music-sheet{
+    height: 100%;
+  }
+
+  .bottom .info{
+    height: 100%;
+    width: auto;
   }
 
   .login-area{
