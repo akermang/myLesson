@@ -41,7 +41,7 @@ function deleteLesson(index){
     loadHome();
 }
 
-function updateLesson(index,lessonContainer){   
+function onUpdateLesson(index,lessonContainer){   
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
         lessonContainer.classList.remove("editing");
@@ -50,5 +50,8 @@ function updateLesson(index,lessonContainer){
         lessonContainer.classList.add("editing");
         addEditingButtons(index,lessonContainer);  
     }
+    var firstChild = lessonContainer.firstElementChild;
+    removeElementLastChild(firstChild);
+    removeElementLastChild(firstChild);     
 }
 
