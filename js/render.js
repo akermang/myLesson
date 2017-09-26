@@ -43,21 +43,26 @@ function renderLessons(lessons, selector){
 function wrapEditedElement(domElement, editingElementTagName, value){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
     var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
-    var previewButton = createHtmlElement("button", "editing-element-button");
     wrapper.appendChild(domElement);
     editingElement.value = value;
-    editingElement.addEventListener('keyup', function(event){
-        event.preventDefault();
-        if(event.keyCode == 13){previewButton.click();}
-    });
-    previewButton.innerText = "Preview";
-    previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
     wrapper.appendChild(editingElement); 
+    
     if(!domElement.classList.contains("subject") &&
      !domElement.classList.contains("info")){
-        wrapper.appendChild(previewButton)};   
+        var previewButton = createHtmlElement("button", "editing-element-button");
+        editingElement.addEventListener('keyup', function(event){
+            event.preventDefault();
+            if(event.keyCode == 13){
+            previewButton.click();
+            }
+        });
+        previewButton.innerText = "Preview";
+        previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
+        wrapper.appendChild(previewButton)
+    };
     return wrapper;
 }
+
 
 function createHtmlElement(tagName, className){
     var element = document.createElement(tagName);
