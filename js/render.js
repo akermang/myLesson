@@ -43,19 +43,20 @@ function renderLessons(lessons, selector){
 function wrapEditedElement(domElement, editingElementTagName, value){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
     var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
+   
     wrapper.appendChild(domElement);
     editingElement.value = value;
     wrapper.appendChild(editingElement); 
     
     if(!domElement.classList.contains("subject") &&
-     !domElement.classList.contains("info")){
-        var previewButton = createHtmlElement("button", "editing-element-button");
-        editingElement.addEventListener('keyup', function(event){
-            event.preventDefault();
-            if(event.keyCode == 13){
-            previewButton.click();
-            }
-        });
+        !domElement.classList.contains("info")){
+            var previewButton = createHtmlElement("button", "editing-element-button");
+            editingElement.addEventListener('keyup', function(event){
+                event.preventDefault();
+                if(event.keyCode == 13){
+                previewButton.click();
+                }
+            });
         previewButton.innerText = "Preview";
         previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
         wrapper.appendChild(previewButton)
@@ -131,4 +132,15 @@ function populateSelectStudents(selector){
     option.studentId = student.id;
     select.appendChild(option);
    });
+}
+
+function addEditingButtons(index,lessonContainer){
+    var buttonsContainer =  createHtmlElement("div", "editing-buttons-container");
+    var cancelButton = createHtmlElement("button", "editing-cancel-button");
+    var saveButton = createHtmlElement("button","editing-save-button");
+    cancelButton.innerText = "cancel";
+    saveButton.innerText = "save";
+    buttonsContainer.appendChild(saveButton);
+    buttonsContainer.appendChild(cancelButton);
+    lessonContainer.appendChild(buttonsContainer);
 }

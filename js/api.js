@@ -41,12 +41,14 @@ function deleteLesson(index){
     loadHome();
 }
 
-function updateLesson(index,lessonContainer){
+function updateLesson(index,lessonContainer){   
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
         lessonContainer.classList.remove("editing");
+        removeElementLastChild(lessonContainer);
     }else{
-        lessonContainer.classList.add("editing"); 
+        lessonContainer.classList.add("editing");
+        addEditingButtons(index,lessonContainer);  
     }
 }
 

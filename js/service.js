@@ -27,6 +27,11 @@ function getStudentById(id) {
     }
 }
 
+function removeElementLastChild(element){
+    element.removeChild(element.lastChild);
+}
+
+
 function emptyElement(element){
     while (element.hasChildNodes()){
          element.removeChild(element.lastChild) 
