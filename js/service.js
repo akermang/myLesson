@@ -31,11 +31,21 @@ function removeElementLastChild(element){
     element.removeChild(element.lastChild);
 }
 
-
 function emptyElement(element){
     while (element.hasChildNodes()){
          element.removeChild(element.lastChild) 
     }         
+}
+
+function emptyChildElementByClassName(element, className){
+    var hasClass = element.classList.contains(className);
+    if(hasClass){
+        element.classList.remove(className);
+    }
+}
+
+function changeElementDisplayValue(element, displayValue){
+    element.style.display = displayValue;
 }
 
 function editingPreview(previewElement, ContentToPreview, value){
