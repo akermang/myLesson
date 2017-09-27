@@ -41,14 +41,15 @@ function deleteLesson(index){
     loadHome();
 }
 
-function onUpdateLesson(index,lessonContainer){   
+function onUpdateLesson(lesson ,lessonContainer){
+    BackupLessonBeforeUpdate(lessonContainer);  
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
         lessonContainer.classList.remove("editing");
         removeElementLastChild(lessonContainer);
     }else{
         lessonContainer.classList.add("editing");
-        addEditingButtons(index,lessonContainer);  
+        addEditingButtons(lesson, lessonContainer);  
     }
     var subjectDiv = lessonContainer.firstElementChild;
     var updateIcon = subjectDiv.lastChild;

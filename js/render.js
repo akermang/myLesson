@@ -21,7 +21,7 @@ function renderLessons(lessons, selector){
         subject.innerText = lesson.subject;
         iconDelete.src = './assets/icon-delete-red.png';
         iconUpdate.src = './assets/icon_update.png';
-        iconUpdate.addEventListener("click", onUpdateLesson.bind(this, i,lessonContainer));
+        iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
         iconDelete.addEventListener("click",deleteLesson.bind(this, i));
         
         date.appendChild(wrapEditedElement(subject, "input",lesson.subject));

@@ -54,3 +54,16 @@ function editingPreview(previewElement, ContentToPreview, value){
     console.log(value);
     previewElement.src = ContentToPreview.value;
 }
+
+function BackupLessonBeforeUpdate(lessonContainer){
+    var bottomDiv = lessonContainer.getElementsByTagName('div')[1];
+    var imgWrapper = bottomDiv.firstChild;
+    var img = imgWrapper.firstChild;
+    var tutorialWrapper = bottomDiv.children[1];
+    var tutorial = tutorialWrapper.firstChild;
+    var videoWrapper = bottomDiv.children[1];
+    var video = videoWrapper.firstChild;
+    console.log(img.src);
+//console.log(tutorial.src);
+  //  Console.log(video.src);
+}
