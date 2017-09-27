@@ -152,9 +152,14 @@ function addEditingButtons(index,lessonContainer){
 
 function onCancelEditing(lessonContainer){
     lessonContainer.classList.remove("editing");
-    var lessonsContainer = document.getElementById("lessons-container");
-    emptyElement(lessonsContainer);
-    loadHome();
+    var subjectDiv = lessonContainer.firstElementChild;
+    var updateIcon = subjectDiv.lastChild;
+    var deleteIcon = updateIcon.previousElementSibling;
+    changeElementDisplayValue(updateIcon, "block");
+    changeElementDisplayValue(deleteIcon, "block");
+   var lessonsContainer = document.getElementById("lessons-container");
+   removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
+ //   loadHome();
 }
 
 function onSaveEditing(lessonContainer){

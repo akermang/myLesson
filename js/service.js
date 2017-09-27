@@ -53,5 +53,4 @@ function editingPreview(previewElement, ContentToPreview, value){
     console.log(ContentToPreview.value);
     console.log(value);
     previewElement.src = ContentToPreview.value;
-    previewElement.innerHTML = ContentToPreview.value;
 }

@@ -50,8 +50,10 @@ function onUpdateLesson(index,lessonContainer){
         lessonContainer.classList.add("editing");
         addEditingButtons(index,lessonContainer);  
     }
-    var firstChild = lessonContainer.firstElementChild;
-    removeElementLastChild(firstChild);
-    removeElementLastChild(firstChild);     
+    var subjectDiv = lessonContainer.firstElementChild;
+    var updateIcon = subjectDiv.lastChild;
+    var deleteIcon = updateIcon.previousElementSibling;
+    changeElementDisplayValue(updateIcon, "none");
+    changeElementDisplayValue(deleteIcon, "none");     
 }
 
