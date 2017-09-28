@@ -160,7 +160,11 @@ function onCancelEditing(lessonContainer, lesson){
     removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
     var musicSheet = lessonContainer.getElementsByClassName("music-sheet");
     musicSheet[0].src = lesson.music_sheet_url;
-    console.log(musicSheet);
+    var tutorial = lessonContainer.getElementsByClassName("tutorial");
+    tutorial[0].src = lesson.tutorial_url;
+    var video = lessonContainer.getElementsByClassName("video");
+    video[0].src = lesson.video_url;
+    
 }
 
 function onSaveEditing(lessonContainer){
