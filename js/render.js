@@ -134,7 +134,7 @@ function populateSelectStudents(selector){
    });
 }
 
-function addEditingButtons(index,lessonContainer){
+function addEditingButtons(lesson,lessonContainer){
     var buttonsContainer =  createHtmlElement("div", "editing-buttons-container");
     var cancelButton = createHtmlElement("button", "editing-cancel-button");
     var saveButton = createHtmlElement("button","editing-save-button");
@@ -142,7 +142,7 @@ function addEditingButtons(index,lessonContainer){
     cancelButton.innerText = "cancel";
     saveButton.innerText = "save";
    
-    cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer));
+    cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer, lesson));
     saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer));
    
     buttonsContainer.appendChild(saveButton);
@@ -150,16 +150,17 @@ function addEditingButtons(index,lessonContainer){
     lessonContainer.appendChild(buttonsContainer);
 }
 
-function onCancelEditing(lessonContainer){
+function onCancelEditing(lessonContainer, lesson){
     lessonContainer.classList.remove("editing");
     var subjectDiv = lessonContainer.firstElementChild;
     var updateIcon = subjectDiv.lastChild;
     var deleteIcon = updateIcon.previousElementSibling;
     changeElementDisplayValue(updateIcon, "block");
     changeElementDisplayValue(deleteIcon, "block");
-   var lessonsContainer = document.getElementById("lessons-container");
-   removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
- //   loadHome();
+    removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
+    var musicSheet = lessonContainer.getElementsByClassName("music-sheet");
+    musicSheet[0].src = lesson.music_sheet_url;
+    console.log(musicSheet);
 }
 
 function onSaveEditing(lessonContainer){

@@ -29,6 +29,12 @@ function getStudentById(id) {
 
 function removeElementLastChild(element){
     element.removeChild(element.lastChild);
+    // $(element.lastChild).remove();
+}
+
+
+function removeChild(parent, child){
+    parent.removeChild(child);
 }
 
 function emptyElement(element){

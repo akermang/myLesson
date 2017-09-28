@@ -42,7 +42,6 @@ function deleteLesson(index){
 }
 
 function onUpdateLesson(lesson ,lessonContainer){
-    BackupLessonBeforeUpdate(lessonContainer);  
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
         lessonContainer.classList.remove("editing");
