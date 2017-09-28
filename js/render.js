@@ -152,18 +152,21 @@ function addEditingButtons(lesson,lessonContainer){
 
 function onCancelEditing(lessonContainer, lesson){
     lessonContainer.classList.remove("editing");
-    var subjectDiv = lessonContainer.firstElementChild;
-    var updateIcon = subjectDiv.lastChild;
-    var deleteIcon = updateIcon.previousElementSibling;
+    var lc = $(lessonContainer)
+    var deleteIcon = lc.find(".icon-delete")[0];
+    var updateIcon = lc.find(".icon-update")[0];
+    var editingButtonsContainer = lc.find(".editing-buttons-container")[0];
+    var musicSheet = lc.find(".music-sheet")[0];
+    var tutorial = lc.find(".tutorial")[0];
+    var video = lc.find(".video")[0];
+    
     changeElementDisplayValue(updateIcon, "block");
     changeElementDisplayValue(deleteIcon, "block");
-    removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
-    var musicSheet = lessonContainer.getElementsByClassName("music-sheet");
-    musicSheet[0].src = lesson.music_sheet_url;
-    var tutorial = lessonContainer.getElementsByClassName("tutorial");
-    tutorial[0].src = lesson.tutorial_url;
-    var video = lessonContainer.getElementsByClassName("video");
-    video[0].src = lesson.video_url;
+    removeChild(lessonContainer, editingButtonsContainer);
+
+    musicSheet.src = lesson.music_sheet_url;
+    tutorial.src = lesson.tutorial_url;
+    video.src = lesson.video_url;
     
 }
 
