@@ -24,14 +24,14 @@ function renderLessons(lessons, selector){
         iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
         iconDelete.addEventListener("click",deleteLesson.bind(this, i));
         
-        date.appendChild(wrapEditedElement(subject, "input",lesson.subject));
+        date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
         date.appendChild(iconDelete);
         date.appendChild(iconUpdate);
         lessonContainer.appendChild(date);
-        bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url));
-        bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url));
-        bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url));
-        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info));
+        bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url, "music-sheet-input"));
+        bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url, "tutorial-input"));
+        bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url, "video-input"));
+        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info,"info-input"));
 
         
         lessonContainer.appendChild(bottom);
@@ -40,9 +40,9 @@ function renderLessons(lessons, selector){
 
 }
 
-function wrapEditedElement(domElement, editingElementTagName, value){
+function wrapEditedElement(domElement, editingElementTagName, value, editingClass){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
-    var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
+    var editingElement = createHtmlElement(editingElementTagName, "editing-element" + " " + editingClass) //document.createElement(editingElementTagName);
    
     wrapper.appendChild(domElement);
     editingElement.value = value;
@@ -171,5 +171,6 @@ function onCancelEditing(lessonContainer, lesson){
 }
 
 function onSaveEditing(lessonContainer){
-    console.log(lessonContainer);
+    var inputsSelectors = [".subject-input", ".music-sheet-input", ".tutorial-input", ".video-input", ".info-input"];
+    getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
 }
