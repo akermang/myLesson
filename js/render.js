@@ -143,7 +143,7 @@ function addEditingButtons(lesson,lessonContainer){
     saveButton.innerText = "save";
    
     cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer, lesson));
-    saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer));
+    saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer,lesson));
    
     buttonsContainer.appendChild(saveButton);
     buttonsContainer.appendChild(cancelButton);
@@ -170,7 +170,8 @@ function onCancelEditing(lessonContainer, lesson){
     
 }
 
-function onSaveEditing(lessonContainer){
+function onSaveEditing(lessonContainer, lesson){
     var inputsSelectors = [".subject-input", ".music-sheet-input", ".tutorial-input", ".video-input", ".info-input"];
-    getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
+    var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
+    dataService.updateEditedContentToLesson(lesson, inputsContent);
 }

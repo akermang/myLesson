@@ -16,10 +16,11 @@ var getContent = {
         inputsSelectors.forEach(function(selector) {
             var value = domService.getContentFromDomElementBySelector(lessonContainer, selector);
             var name = selector.slice(1);
+            name = name.replace('-', '_');
+            name = name.replace('-','_');
             name.content = value;
-            inputsContent[name] = value; 
-             console.log(inputsContent);
-            
-        }, this);
+            inputsContent[name] = value;    
+        });
+        return inputsContent;
     }
 }
