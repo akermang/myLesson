@@ -6,5 +6,5 @@ $(document).ready(function(e) {
 
 function myAmazingCallBack(e) {
     var element = e.currentTarget;    
-    $(element).css('background', 'rgba(255, 235, 59, 0.29)').siblings().css('background', 'inherit');
+    $(element).css('background', 'rgba(114, 44, 44, 0.62)').siblings().css('background', 'inherit');
 }

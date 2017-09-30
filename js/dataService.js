@@ -18,7 +18,6 @@ var dataService = {
         lesson.tutorial_url = content.tutorial_input;
         lesson.video_url = content.video_input;
         lesson.info = content.info_input;
-        console.log(lesson)
         dataService.updateLessons(lesson);
     },
 
