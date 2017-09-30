@@ -164,9 +164,9 @@ function onCancelEditing(lessonContainer, lesson){
     changeElementDisplayValue(deleteIcon, "block");
     removeChild(lessonContainer, editingButtonsContainer);
 
-    musicSheet.src = lesson.music_sheet_url;
-    tutorial.src = lesson.tutorial_url;
-    video.src = lesson.video_url;
+    if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
+    if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
+    if(video.src !== lesson.video_url) video.src = lesson.video_url;
     
 }
 
@@ -194,9 +194,9 @@ function renderEditedLesson(lessonContainer, lesson){
     changeElementDisplayValue(deleteIcon, "block");
     removeChild(lessonContainer, editingButtonsContainer);
 
-    subject.innerText = lesson.subject;
-    musicSheet.src = lesson.music_sheet_url;
-    tutorial.src = lesson.tutorial_url;
-    video.src = lesson.video_url;
-    info.innerText = lesson.info;
+    if(subject.innerText !== lesson.subject) subject.innerText = lesson.subject;
+    if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
+    if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
+    if(video.src !== lesson.video_url) video.src = lesson.video_url;
+    if(info.innerText !== lesson.info) info.innerText = lesson.info;
 }
