@@ -15,14 +15,13 @@ function renderLessons(lessons, selector){
         var iconUpdate = createHtmlElement('img', "icon-update");
         
         
-        lessonContainer.id = "lesson-container" + i;
         info.innerText = lesson.info;
         date.innerText = formatDate(lesson.date_created);
         subject.innerText = lesson.subject;
         iconDelete.src = './assets/icon-delete-red.png';
         iconUpdate.src = './assets/icon_update.png';
         iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
-        iconDelete.addEventListener("click",deleteLesson.bind(this, i));
+        iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer,i));
         
         date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
         date.appendChild(iconDelete);
@@ -166,8 +165,7 @@ function onCancelEditing(lessonContainer, lesson){
 
     if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
     if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
-    if(video.src !== lesson.video_url) video.src = lesson.video_url;
-    
+    if(video.src !== lesson.video_url) video.src = lesson.video_url;    
 }
 
 function onSaveEditing(lessonContainer, lesson){
@@ -175,7 +173,6 @@ function onSaveEditing(lessonContainer, lesson){
     var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
     dataService.updateEditedContentToLesson(lesson, inputsContent);
     renderEditedLesson(lessonContainer, lesson);
-    
 }
 
 function renderEditedLesson(lessonContainer, lesson){
@@ -199,4 +196,15 @@ function renderEditedLesson(lessonContainer, lesson){
     if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
     if(video.src !== lesson.video_url) video.src = lesson.video_url;
     if(info.innerText !== lesson.info) info.innerText = lesson.info;
+}
+
+function deleteIconClicked(lesson,lessonContainer, i){
+    lessonContainer.style.background = "rgba(190, 190, 160, 0.76)";
+    $('#exampleModal').modal('show');
+    $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
+    $("#btn-delete-lesson").click(deleteLesson.bind(this, i, lesson));
+}
+
+function cenceleDelete(lessonContainer){
+    lessonContainer.style.background = "rgba(58, 58, 58, 0.73)";
 }

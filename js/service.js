@@ -55,9 +55,6 @@ function changeElementDisplayValue(element, displayValue){
 }
 
 function editingPreview(previewElement, ContentToPreview, value){
-    console.log(previewElement);
-    console.log(ContentToPreview.value);
-    console.log(value);
-    previewElement.src = ContentToPreview.value;
+        previewElement.src = ContentToPreview.value;
 }
 

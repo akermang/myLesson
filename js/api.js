@@ -32,7 +32,8 @@ function addLesson(lesson){
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
-function deleteLesson(index){
+function deleteLesson(index, lesson){
+    $('#exampleModal').modal('hide');
     var lessons = getLessons()
     lessons.splice(index, 1)
     storeInDb(lessons, ALL_LESSONS_KEY);
@@ -53,7 +54,8 @@ function onUpdateLesson(lesson ,lessonContainer){
     var subjectDiv = lessonContainer.firstElementChild;
     var updateIcon = subjectDiv.lastChild;
     var deleteIcon = updateIcon.previousElementSibling;
-    changeElementDisplayValue(updateIcon, "none");
-    changeElementDisplayValue(deleteIcon, "none");     
+   // changeElementDisplayValue(updateIcon, "none");
+   // changeElementDisplayValue(deleteIcon, "none");
+    domService.insertValueToEditingElement(lessonContainer, lesson);     
 }
 
