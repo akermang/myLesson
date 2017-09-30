@@ -19,8 +19,18 @@ var dataService = {
         lesson.video_url = content.video_input;
         lesson.info = content.info_input;
         console.log(lesson)
+        dataService.updateLessons(lesson);
+    },
+
+    updateLessons: function(lesson){
+        lessons.forEach(function(element, i) {
+            if(element.id == lesson.id) lessons[i] = lesson;
+        });
+       storeInDb(lessons, ALL_LESSONS_KEY);
     }
 }
+
+
 
 
 

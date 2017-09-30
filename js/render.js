@@ -174,4 +174,29 @@ function onSaveEditing(lessonContainer, lesson){
     var inputsSelectors = [".subject-input", ".music-sheet-input", ".tutorial-input", ".video-input", ".info-input"];
     var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
     dataService.updateEditedContentToLesson(lesson, inputsContent);
+    renderEditedLesson(lessonContainer, lesson);
+    
+}
+
+function renderEditedLesson(lessonContainer, lesson){
+    lessonContainer.classList.remove("editing");
+    var lc = $(lessonContainer)
+    var deleteIcon = lc.find(".icon-delete")[0];
+    var updateIcon = lc.find(".icon-update")[0];
+    var editingButtonsContainer = lc.find(".editing-buttons-container")[0];
+    var subject = lc.find(".subject")[0];
+    var musicSheet = lc.find(".music-sheet")[0];
+    var tutorial = lc.find(".tutorial")[0];
+    var video = lc.find(".video")[0];
+    var info = lc.find(".info")[0];
+    
+    changeElementDisplayValue(updateIcon, "block");
+    changeElementDisplayValue(deleteIcon, "block");
+    removeChild(lessonContainer, editingButtonsContainer);
+
+    subject.innerText = lesson.subject;
+    musicSheet.src = lesson.music_sheet_url;
+    tutorial.src = lesson.tutorial_url;
+    video.src = lesson.video_url;
+    info.innerText = lesson.info;
 }
