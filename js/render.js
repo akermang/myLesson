@@ -14,7 +14,8 @@ function renderLessons(lessons, selector){
         var iconDelete = createHtmlElement('img', "icon-delete");
         var iconUpdate = createHtmlElement('img', "icon-update");
         
-        
+        tutorial.setAttribute('allowFullScreen', '');
+        video.setAttribute('allowFullScreen', '')
         info.innerText = lesson.info;
         date.innerText = formatDate(lesson.date_created);
         subject.innerText = lesson.subject;
