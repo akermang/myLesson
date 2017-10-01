@@ -39,7 +39,6 @@ function deleteLesson(lesson){
 
     allLessons.forEach(function(element,i) {
         if(element.id == lesson.id){
-            console.log(element);
             lessons.splice(i, 1);
         }
     }); 
