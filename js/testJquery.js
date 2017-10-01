@@ -4,7 +4,7 @@ $(document).ready(function(e) {
 
     $("[class *= icon-update]").click(slideUp);
   
-    $("[class *= lesson-container]").click(slideDown);
+    $("[class *= icon-delete]").click(slideUp);
 });
 
 
@@ -15,7 +15,7 @@ function myAmazingCallBack(e) {
 
 function slideUp(e){
     var element = e.currentTarget;
-    $(element).slideUp().siblings().slideDown();
+    $(element).slideUp();
 }
 
 function slideDown(e){

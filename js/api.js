@@ -32,10 +32,18 @@ function addLesson(lesson){
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
-function deleteLesson(index, lesson){
+function deleteLesson(lesson){
     $('#exampleModal').modal('hide');
-    var lessons = getLessons()
-    lessons.splice(index, 1)
+    var lessons = getLessons();
+    console.log(lesson.id);
+
+    lessons.forEach(function(element,i) {
+        if(element.id == lesson.id){
+            console.log(element);
+            lessons.splice(i, 1);
+        }
+    }); 
+
     storeInDb(lessons, ALL_LESSONS_KEY);
     var lessonsContainer = document.getElementById("lessons-container");
     emptyElement(lessonsContainer);
@@ -45,17 +53,14 @@ function deleteLesson(index, lesson){
 function onUpdateLesson(lesson ,lessonContainer){
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
-        lessonContainer.classList.remove("editing");
-        removeElementLastChild(lessonContainer);
+       // lessonContainer.classList.remove("editing");
+        //removeElementLastChild(lessonContainer);
     }else{
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);  
     }
-    var subjectDiv = lessonContainer.firstElementChild;
-    var updateIcon = subjectDiv.lastChild;
-    var deleteIcon = updateIcon.previousElementSibling;
-   // changeElementDisplayValue(updateIcon, "none");
-   // changeElementDisplayValue(deleteIcon, "none");
+    var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
+    $(deleteIcon).slideUp();
     domService.insertValueToEditingElement(lessonContainer, lesson);     
 }
 

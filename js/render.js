@@ -21,7 +21,7 @@ function renderLessons(lessons, selector){
         iconDelete.src = './assets/icon-delete-red.png';
         iconUpdate.src = './assets/icon_update.png';
         iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
-        iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer,i));
+        iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer));
         
         date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
         date.appendChild(iconDelete);
@@ -159,8 +159,8 @@ function onCancelEditing(lessonContainer, lesson){
     var tutorial = lc.find(".tutorial")[0];
     var video = lc.find(".video")[0];
     
-    changeElementDisplayValue(updateIcon, "block");
-    changeElementDisplayValue(deleteIcon, "block");
+    $(deleteIcon).slideDown();//changeElementDisplayValue(updateIcon, "block");
+    $(updateIcon).slideDown();//changeElementDisplayValue(deleteIcon, "block");
     removeChild(lessonContainer, editingButtonsContainer);
 
     if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
@@ -187,8 +187,8 @@ function renderEditedLesson(lessonContainer, lesson){
     var video = lc.find(".video")[0];
     var info = lc.find(".info")[0];
     
-    changeElementDisplayValue(updateIcon, "block");
-    changeElementDisplayValue(deleteIcon, "block");
+    $(deleteIcon).slideDown();
+    $(updateIcon).slideDown();
     removeChild(lessonContainer, editingButtonsContainer);
 
     if(subject.innerText !== lesson.subject) subject.innerText = lesson.subject;
@@ -198,13 +198,18 @@ function renderEditedLesson(lessonContainer, lesson){
     if(info.innerText !== lesson.info) info.innerText = lesson.info;
 }
 
-function deleteIconClicked(lesson,lessonContainer, i){
+function deleteIconClicked(lesson,lessonContainer){
     lessonContainer.style.background = "rgba(190, 190, 160, 0.76)";
     $('#exampleModal').modal('show');
     $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
-    $("#btn-delete-lesson").click(deleteLesson.bind(this, i, lesson));
+    $("#btn-delete-lesson").click(deleteLesson.bind(this, lesson));
+    console.log(lesson.id);
+    $(".icon-delete").slideUp();
+    $(".icon-update").slideUp();
 }
 
 function cenceleDelete(lessonContainer){
+    $(".icon-delete").slideDown();
+    $(".icon-update").slideDown();
     lessonContainer.style.background = "rgba(58, 58, 58, 0.73)";
 }
