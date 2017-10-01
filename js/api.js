@@ -34,10 +34,10 @@ function addLesson(lesson){
 
 function deleteLesson(lesson){
     $('#exampleModal').modal('hide');
-    var lessons = getLessons();
+    var allLessons = getLessons();
     console.log(lesson.id);
 
-    lessons.forEach(function(element,i) {
+    allLessons.forEach(function(element,i) {
         if(element.id == lesson.id){
             console.log(element);
             lessons.splice(i, 1);
