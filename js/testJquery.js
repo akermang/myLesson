@@ -4,7 +4,7 @@ $(document).ready(function(e) {
 
     $("[class *= icon-update]").click(slideUp);
   
-    $("[class *= icon-delete]").click(slideUp);
+   // $("[class *= icon-delete]").click(slideUp);
 });
 
 

@@ -38,3 +38,35 @@ var getContent = {
         return content;
     }
 }
+
+
+function removeChild(parent, child){
+    parent.removeChild(child);
+}
+
+function emptyElement(element){
+    while (element.hasChildNodes()){
+         element.removeChild(element.lastChild) 
+    }         
+}
+
+function emptyChildElementByClassName(element, className){
+    var hasClass = element.classList.contains(className);
+    if(hasClass){
+        element.classList.remove(className);
+    }
+}
+
+function changeElementDisplayValue(element, displayValue){
+    element.style.display = displayValue;
+}
+
+function editingPreview(previewElement, ContentToPreview, value){
+        previewElement.src = ContentToPreview.value;
+}
+
+function onAddLesson(e) {
+    var lessonToStore = getAddLessonsValues();
+    addLesson(lessonToStore);
+    window.location = "home.html";
+  }

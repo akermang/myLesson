@@ -40,9 +40,10 @@ function deleteLesson(lesson){
         if(element.id == lesson.id){
             lessons.splice(i, 1);
         }
-    }); 
+    });
+    $("#btn-delete-lesson").unbind();
+    $("#btn-cencel-lesson").unbind(); 
     storeInDb(lessons, ALL_LESSONS_KEY);
-    $('#exampleModal').modal('hide');
     emptyElement(lessonsContainer);
     loadHome();
 }
