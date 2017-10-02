@@ -1,13 +1,13 @@
 var domService = {
 
-    getContentFromDomElementBySelector: function(container, domElementSelector) {
-        var lesson = $(container);
-        var domElement = lesson.find(domElementSelector)[0];
-        var content = domElement.value;
+    getContentFromChildElementBySelector: function(container, childSelector) {
+        var parent = $(container);
+        var child = parent.find(childSelector)[0];
+        var content = child.value;
         return content;    
     },
 
-    insertValueToEditingElement: function(container,lesson){
+    insertValuesToEditingElements: function(container,lesson){
         var con = $(container);
         var subjectInput =  con.find(".subject-input")[0];
         var musicSheetInput = con.find(".music-sheet-input")[0];
@@ -27,15 +27,14 @@ var domService = {
 var getContent = {
 
     getContentFromInputsBySelectors: function(container, inputsSelectors){
-        var inputsContent = {};
+        var content = {};
         inputsSelectors.forEach(function(selector) {
-            var value = domService.getContentFromDomElementBySelector(container, selector);
-            var name = selector.slice(1);
-            name = name.replace('-', '_');
-            name = name.replace('-','_');
-            name.content = value;
-            inputsContent[name] = value;    
+            var value = domService.getContentFromChildElementBySelector(container, selector);
+            var Key = selector.slice(1);
+            Key = Key.replace('-', '_');
+            Key = Key.replace('-','_');
+            content[Key] = value;    
         });
-        return inputsContent;
+        return content;
     }
 }

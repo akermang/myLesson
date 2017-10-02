@@ -32,19 +32,17 @@ function addLesson(lesson){
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
-function deleteLesson(lesson){
-    $('#exampleModal').modal('hide');
+function deleteLesson(lesson){    
     var allLessons = getLessons();
-    console.log(lesson.id);
+    var lessonsContainer = $("#lessons-container")[0];
 
     allLessons.forEach(function(element,i) {
         if(element.id == lesson.id){
             lessons.splice(i, 1);
         }
     }); 
-
     storeInDb(lessons, ALL_LESSONS_KEY);
-    var lessonsContainer = document.getElementById("lessons-container");
+    $('#exampleModal').modal('hide');
     emptyElement(lessonsContainer);
     loadHome();
 }
@@ -53,13 +51,12 @@ function onUpdateLesson(lesson ,lessonContainer){
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
        // lessonContainer.classList.remove("editing");
-        //removeElementLastChild(lessonContainer);
     }else{
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);  
     }
     var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
     $(deleteIcon).slideUp();
-    domService.insertValueToEditingElement(lessonContainer, lesson);     
+    domService.insertValuesToEditingElements(lessonContainer, lesson);     
 }
 
