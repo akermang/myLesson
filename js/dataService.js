@@ -1,7 +1,5 @@
 var students = getStudends();
 var lessons = getLessons();
-var loggedInUser = localStorage.getItem("loggedInUser");
-loggedInUser = JSON.parse(loggedInUser);
 
 function getLessonsByStudentId(lessons, studentId){
     var studentLessons = [];
@@ -26,7 +24,6 @@ function getStudentById(id) {
         return null;
     }
 }
-
 
 var dataService = {
 
@@ -58,22 +55,3 @@ var dataService = {
        storeInDb(lessons, ALL_LESSONS_KEY);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

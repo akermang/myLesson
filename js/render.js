@@ -2,8 +2,14 @@ function renderLessons(lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
 
+    if(state.isTeacher) {
+        $("#addLessonLink").show();               
+    }else{
+        $("#addLessonLink").hide();
+    }
+
     lessons.forEach(function(lesson, i) {
-        var lessonContainer = createHtmlElement("div","lesson-container"+i)
+        var lessonContainer = createHtmlElement("div","lesson-container-" + lesson.id)
         var date = createHtmlElement("div", "date");
         var subject = createHtmlElement("span","subject content");
         var bottom = createHtmlElement("div", "bottom");
@@ -11,29 +17,32 @@ function renderLessons(lessons, selector){
         var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial content");
         var video = createSrcElement("iframe", lesson.video_url, "video content");
         var info = createHtmlElement("div", "info content");
-        var iconDelete = createHtmlElement('img', "icon-delete");
-        var iconUpdate = createHtmlElement('img', "icon-update");
-        
+
         tutorial.setAttribute('allowFullScreen', '');
         video.setAttribute('allowFullScreen', '')
         info.innerText = lesson.info;
         date.innerText = formatDate(lesson.date_created);
         subject.innerText = lesson.subject;
-        iconDelete.src = './assets/icon-delete-red.png';
-        iconUpdate.src = './assets/icon_update.png';
-        iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
-        iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer));
+
+        if(state.isTeacher) {
+            var iconDelete = createHtmlElement('img', "icon-delete " + lesson.id);
+            var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);                            
+            iconDelete.src = './assets/icon-delete-red.png';
+            iconUpdate.src = './assets/icon_update.png';
+            iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
+            iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer));    
+            date.appendChild(iconDelete);
+            date.appendChild(iconUpdate);    
+        }
         
         date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
-        date.appendChild(iconDelete);
-        date.appendChild(iconUpdate);
         lessonContainer.appendChild(date);
+            
         bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url, "music-sheet-input"));
         bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url, "tutorial-input"));
         bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url, "video-input"));
-        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info,"info-input"));
+        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info,"info-input"));    
 
-        
         lessonContainer.appendChild(bottom);
         container.appendChild(lessonContainer);
     });
@@ -64,7 +73,6 @@ function wrapEditedElement(domElement, editingElementTagName, value, editingClas
     return wrapper;
 }
 
-
 function createHtmlElement(tagName, className){
     var element = document.createElement(tagName);
     element.setAttribute("class", className);
@@ -82,10 +90,6 @@ if(welcome){
     welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
 }
 
-function loadHome(){
-    var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
-    renderLessons(studentLessons, ".lessons-container");
-}
 
 function loadNew(){
    newLesson(loggedInUser.id, ".new-lessons-container");
@@ -200,12 +204,13 @@ function renderEditedLesson(lessonContainer, lesson){
 }
 
 function deleteIconClicked(lesson,lessonContainer){
+    setSelectedLesson(lesson);
     lessonContainer.style.background = "rgba(190, 190, 160, 0.76)";
     $('#exampleModal').modal('show');
     $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
-    $("#btn-delete-lesson").click(deleteLesson.bind(this, lesson));
-    $(".icon-delete").slideUp();
-    $(".icon-update").slideUp();
+    $("#btn-delete-lesson").click(deleteLesson);
+    $(".icon-delete." + lesson.id).slideUp();
+    $(".icon-update." + lesson.id).slideUp();    
 }
 
 function cenceleDelete(lessonContainer){
@@ -214,4 +219,5 @@ function cenceleDelete(lessonContainer){
     lessonContainer.style.background = "rgba(58, 58, 58, 0.73)";
     $("#btn-delete-lesson").unbind();
     $("#btn-cencel-lesson").unbind();
+   // resetSelectedLesson();
 }

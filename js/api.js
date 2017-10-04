@@ -1,6 +1,3 @@
-const ALL_LESSONS_KEY = "lessons_data";
-const ALL_STUDENTS_KEY = "students_data";
-
 function getLessons(){
     var storedLessons = getItem(ALL_LESSONS_KEY);
     return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
@@ -8,7 +5,7 @@ function getLessons(){
 
 function getStudends(){
     var storedStudents = getItem(ALL_STUDENTS_KEY);
-    return storeIfNull(storedStudents, studentsMockData, ALL_STUDENTS_KEY);
+    return storeIfNull(storedStudents, users, ALL_STUDENTS_KEY);
 };
 
 function getItem(key) {
@@ -27,25 +24,33 @@ function storeIfNull(storedData, mockData, key) {
     return storedData;
 }
 
+function onAddLesson(e) {
+  var lessonToStore = getAddLessonsValues();
+  addLesson(lessonToStore);
+  window.location = "home.html";
+}
+
 function addLesson(lesson){
+  lesson.id = uuidv1();
   lessons.unshift(lesson);
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
-function deleteLesson(lesson){    
+function deleteLesson(){    
     var allLessons = getLessons();
     var lessonsContainer = $("#lessons-container")[0];
+    var selectedLesson = getSelectedLesson();
 
     allLessons.forEach(function(element,i) {
-        if(element.id == lesson.id){
+        if(element.id == selectedLesson.id){
+            console.log(element.id)            
             lessons.splice(i, 1);
         }
     });
-    $("#btn-delete-lesson").unbind();
-    $("#btn-cencel-lesson").unbind(); 
     storeInDb(lessons, ALL_LESSONS_KEY);
     emptyElement(lessonsContainer);
-    loadHome();
+    resetSelectedLesson();
+    loadHome();    
 }
 
 function onUpdateLesson(lesson ,lessonContainer){
@@ -58,6 +63,8 @@ function onUpdateLesson(lesson ,lessonContainer){
     }
     var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
     $(deleteIcon).slideUp();
-    domService.insertValuesToEditingElements(lessonContainer, lesson);     
+   // $(".update-icon."+ lesson.id).slideUp();
+    domService.insertValuesToEditingElements(lessonContainer, lesson);    
+    setSelectedLesson(lesson); 
 }
 
