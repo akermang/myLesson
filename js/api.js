@@ -1,6 +1,3 @@
-const ALL_LESSONS_KEY = "lessons_data";
-const ALL_STUDENTS_KEY = "students_data";
-
 function getLessons(){
     var storedLessons = getItem(ALL_LESSONS_KEY);
     return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
@@ -8,7 +5,7 @@ function getLessons(){
 
 function getStudends(){
     var storedStudents = getItem(ALL_STUDENTS_KEY);
-    return storeIfNull(storedStudents, studentsMockData, ALL_STUDENTS_KEY);
+    return storeIfNull(storedStudents, users, ALL_STUDENTS_KEY);
 };
 
 function getItem(key) {
@@ -27,34 +24,47 @@ function storeIfNull(storedData, mockData, key) {
     return storedData;
 }
 
+function onAddLesson(e) {
+  var lessonToStore = getAddLessonsValues();
+  addLesson(lessonToStore);
+  window.location = "home.html";
+}
+
 function addLesson(lesson){
+  lesson.id = uuidv1();
   lessons.unshift(lesson);
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
-function deleteLesson(index){
-    var lessons = getLessons()
-    lessons.splice(index, 1)
+function deleteLesson(){    
+    var allLessons = getLessons();
+    var lessonsContainer = $("#lessons-container")[0];
+    var selectedLesson = getSelectedLesson();
+
+    allLessons.forEach(function(element,i) {
+        if(element.id == selectedLesson.id){
+            console.log(element.id)            
+            lessons.splice(i, 1);
+        }
+    });
     storeInDb(lessons, ALL_LESSONS_KEY);
-    var lessonsContainer = document.getElementById("lessons-container");
     emptyElement(lessonsContainer);
-    loadHome();
+    resetSelectedLesson();
+    loadHome();    
 }
 
 function onUpdateLesson(lesson ,lessonContainer){
-    BackupLessonBeforeUpdate(lessonContainer);  
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
-        lessonContainer.classList.remove("editing");
-        removeElementLastChild(lessonContainer);
+       // lessonContainer.classList.remove("editing");
     }else{
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);  
     }
-    var subjectDiv = lessonContainer.firstElementChild;
-    var updateIcon = subjectDiv.lastChild;
-    var deleteIcon = updateIcon.previousElementSibling;
-    changeElementDisplayValue(updateIcon, "none");
-    changeElementDisplayValue(deleteIcon, "none");     
+    var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
+   // $(".icon-delete").slideUp();
+    $(".icon-update." + lesson.id).slideUp();
+    domService.insertValuesToEditingElements(lessonContainer, lesson);    
+    setSelectedLesson(lesson); 
 }
 

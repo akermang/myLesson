@@ -2,8 +2,14 @@ function renderLessons(lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
 
+    if(state.isTeacher) {
+        $("#addLessonLink").show();               
+    }else{
+        $("#addLessonLink").hide();
+    }
+
     lessons.forEach(function(lesson, i) {
-        var lessonContainer = createHtmlElement("div","lesson-container"+i)
+        var lessonContainer = createHtmlElement("div","lesson-container-" + lesson.id)
         var date = createHtmlElement("div", "date");
         var subject = createHtmlElement("span","subject content");
         var bottom = createHtmlElement("div", "bottom");
@@ -11,38 +17,41 @@ function renderLessons(lessons, selector){
         var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial content");
         var video = createSrcElement("iframe", lesson.video_url, "video content");
         var info = createHtmlElement("div", "info content");
-        var iconDelete = createHtmlElement('img', "icon-delete");
-        var iconUpdate = createHtmlElement('img', "icon-update");
-        
-        
-        lessonContainer.id = "lesson-container" + i;
+
+        tutorial.setAttribute('allowFullScreen', '');
+        video.setAttribute('allowFullScreen', '')
         info.innerText = lesson.info;
         date.innerText = formatDate(lesson.date_created);
         subject.innerText = lesson.subject;
-        iconDelete.src = './assets/icon-delete-red.png';
-        iconUpdate.src = './assets/icon_update.png';
-        iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
-        iconDelete.addEventListener("click",deleteLesson.bind(this, i));
-        
-        date.appendChild(wrapEditedElement(subject, "input",lesson.subject));
-        date.appendChild(iconDelete);
-        date.appendChild(iconUpdate);
-        lessonContainer.appendChild(date);
-        bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url));
-        bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url));
-        bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url));
-        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info));
 
+        if(state.isTeacher) {
+            var iconDelete = createHtmlElement('img', "icon-delete " + lesson.id);
+            var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);                            
+            iconDelete.src = './assets/icon-delete-red.png';
+            iconUpdate.src = './assets/icon_update.png';
+            iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
+            iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer));    
+            date.appendChild(iconDelete);
+            date.appendChild(iconUpdate);    
+        }
         
+        date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
+        lessonContainer.appendChild(date);
+            
+        bottom.appendChild(wrapEditedElement(musicSheet, "input", lesson.music_sheet_url, "music-sheet-input"));
+        bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url, "tutorial-input"));
+        bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url, "video-input"));
+        bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info,"info-input"));    
+
         lessonContainer.appendChild(bottom);
         container.appendChild(lessonContainer);
     });
 
 }
 
-function wrapEditedElement(domElement, editingElementTagName, value){
+function wrapEditedElement(domElement, editingElementTagName, value, editingClass){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
-    var editingElement = createHtmlElement(editingElementTagName, "editing-element") //document.createElement(editingElementTagName);
+    var editingElement = createHtmlElement(editingElementTagName, "editing-element" + " " + editingClass) //document.createElement(editingElementTagName);
    
     wrapper.appendChild(domElement);
     editingElement.value = value;
@@ -64,7 +73,6 @@ function wrapEditedElement(domElement, editingElementTagName, value){
     return wrapper;
 }
 
-
 function createHtmlElement(tagName, className){
     var element = document.createElement(tagName);
     element.setAttribute("class", className);
@@ -82,10 +90,6 @@ if(welcome){
     welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
 }
 
-function loadHome(){
-    var studentLessons = getLessonsByStudentId(getLessons(), loggedInUser.id);
-    renderLessons(studentLessons, ".lessons-container");
-}
 
 function loadNew(){
    newLesson(loggedInUser.id, ".new-lessons-container");
@@ -134,7 +138,7 @@ function populateSelectStudents(selector){
    });
 }
 
-function addEditingButtons(index,lessonContainer){
+function addEditingButtons(lesson,lessonContainer){
     var buttonsContainer =  createHtmlElement("div", "editing-buttons-container");
     var cancelButton = createHtmlElement("button", "editing-cancel-button");
     var saveButton = createHtmlElement("button","editing-save-button");
@@ -142,26 +146,77 @@ function addEditingButtons(index,lessonContainer){
     cancelButton.innerText = "cancel";
     saveButton.innerText = "save";
    
-    cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer));
-    saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer));
+    cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer, lesson));
+    saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer,lesson));
    
     buttonsContainer.appendChild(saveButton);
     buttonsContainer.appendChild(cancelButton);
     lessonContainer.appendChild(buttonsContainer);
 }
 
-function onCancelEditing(lessonContainer){
+function onCancelEditing(lessonContainer, lesson){
     lessonContainer.classList.remove("editing");
-    var subjectDiv = lessonContainer.firstElementChild;
-    var updateIcon = subjectDiv.lastChild;
-    var deleteIcon = updateIcon.previousElementSibling;
-    changeElementDisplayValue(updateIcon, "block");
-    changeElementDisplayValue(deleteIcon, "block");
-   var lessonsContainer = document.getElementById("lessons-container");
-   removeElementLastChild(lessonContainer);// removing save and cancel editing buttons//
- //   loadHome();
+    var lc = $(lessonContainer)
+    var deleteIcon = lc.find(".icon-delete")[0];
+    var updateIcon = lc.find(".icon-update")[0];
+    var editingButtonsContainer = lc.find(".editing-buttons-container")[0];
+    var musicSheet = lc.find(".music-sheet")[0];
+    var tutorial = lc.find(".tutorial")[0];
+    var video = lc.find(".video")[0];
+    
+    $(deleteIcon).slideDown();//changeElementDisplayValue(updateIcon, "block");
+    $(updateIcon).slideDown();//changeElementDisplayValue(deleteIcon, "block");
+    removeChild(lessonContainer, editingButtonsContainer);
+
+    if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
+    if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
+    if(video.src !== lesson.video_url) video.src = lesson.video_url;    
 }
 
-function onSaveEditing(lessonContainer){
-    console.log(lessonContainer);
+function onSaveEditing(lessonContainer, lesson){
+    var inputsSelectors = [".subject-input", ".music-sheet-input", ".tutorial-input", ".video-input", ".info-input"];
+    var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
+    dataService.updateEditedContentToLesson(lesson, inputsContent);
+    renderEditedLesson(lessonContainer, lesson);
+}
+
+function renderEditedLesson(lessonContainer, lesson){
+    lessonContainer.classList.remove("editing");
+    var lc = $(lessonContainer)
+    var deleteIcon = lc.find(".icon-delete")[0];
+    var updateIcon = lc.find(".icon-update")[0];
+    var editingButtonsContainer = lc.find(".editing-buttons-container")[0];
+    var subject = lc.find(".subject")[0];
+    var musicSheet = lc.find(".music-sheet")[0];
+    var tutorial = lc.find(".tutorial")[0];
+    var video = lc.find(".video")[0];
+    var info = lc.find(".info")[0];
+    
+    $(deleteIcon).slideDown();
+    $(updateIcon).slideDown();
+    removeChild(lessonContainer, editingButtonsContainer);
+
+    if(subject.innerText !== lesson.subject) subject.innerText = lesson.subject;
+    if(musicSheet.src !== lesson.music_sheet_url) musicSheet.src = lesson.music_sheet_url;
+    if(tutorial.src !== lesson.tutorial_url) tutorial.src = lesson.tutorial_url;
+    if(video.src !== lesson.video_url) video.src = lesson.video_url;
+    if(info.innerText !== lesson.info) info.innerText = lesson.info;
+}
+
+function deleteIconClicked(lesson,lessonContainer){
+    setSelectedLesson(lesson);
+    lessonContainer.style.background = "rgba(190, 190, 160, 0.76)";
+    $('#exampleModal').modal('show');
+    $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
+    $("#btn-delete-lesson").click(deleteLesson);
+  //  $(".icon-delete." + lesson.id).slideUp();
+   // $(".icon-update." + lesson.id).slideUp();    
+}
+
+function cenceleDelete(lessonContainer){
+   // $(".icon-delete").slideDown();
+   // $(".icon-update").slideDown();
+    $("#btn-delete-lesson").unbind();
+    $("#btn-cencel-lesson").unbind();
+   // resetSelectedLesson();
 }
