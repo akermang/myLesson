@@ -209,14 +209,13 @@ function deleteIconClicked(lesson,lessonContainer){
     $('#exampleModal').modal('show');
     $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
     $("#btn-delete-lesson").click(deleteLesson);
-    $(".icon-delete." + lesson.id).slideUp();
-    $(".icon-update." + lesson.id).slideUp();    
+  //  $(".icon-delete." + lesson.id).slideUp();
+   // $(".icon-update." + lesson.id).slideUp();    
 }
 
 function cenceleDelete(lessonContainer){
-    $(".icon-delete").slideDown();
-    $(".icon-update").slideDown();
-    lessonContainer.style.background = "rgba(58, 58, 58, 0.73)";
+   // $(".icon-delete").slideDown();
+   // $(".icon-update").slideDown();
     $("#btn-delete-lesson").unbind();
     $("#btn-cencel-lesson").unbind();
    // resetSelectedLesson();

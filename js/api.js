@@ -62,8 +62,8 @@ function onUpdateLesson(lesson ,lessonContainer){
         addEditingButtons(lesson, lessonContainer);  
     }
     var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
-    $(deleteIcon).slideUp();
-   // $(".update-icon."+ lesson.id).slideUp();
+   // $(".icon-delete").slideUp();
+    $(".icon-update." + lesson.id).slideUp();
     domService.insertValuesToEditingElements(lessonContainer, lesson);    
     setSelectedLesson(lesson); 
 }
