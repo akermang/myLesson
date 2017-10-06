@@ -452,6 +452,10 @@ main.container{
   .login-area{
     max-width: 90%;
   }
+
+  .login-area input{
+    width: 20%;
+  }
 }
 
 @media( max-width: 300px){
