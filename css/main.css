@@ -446,7 +446,7 @@ main.container{
 
 @media( max-width: 400px){
   .editing-buttons-container{
-    left: 20%;
+    left: 30%;
   }
 
   .login-area{
