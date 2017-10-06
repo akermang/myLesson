@@ -161,9 +161,10 @@ body{
 }
 
 .editing-buttons-container{
+  width: 200px;
   position: relative;
   bottom: 10px;
-  left: 60%;
+  left: 50%;
 }
 
 .editing-buttons-container > button{
@@ -391,6 +392,12 @@ body{
   .login-area{
     margin: 100px auto;
     height: 2.3em;
+  }
+}
+
+@media(max-width: 765px){
+  .date input.editing-element{
+    max-width: 130px; 
   }
 }
 
