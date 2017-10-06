@@ -78,6 +78,7 @@ textarea{
 body{
   background: rgb(63, 63, 105);
   color:#200101;
+  width: 100%;
 }
 
 .welcome-msg{
