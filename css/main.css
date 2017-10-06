@@ -349,6 +349,7 @@ body{
 }
 
 @media (max-width : 1250px){
+  
   .welcome-msg{
     text-align: center;
     border-top-right-radius: 26px;
@@ -375,11 +376,6 @@ body{
   .bottom > * {
     margin: 10px;
     height: 100%;
-  }
-
-  .date{
-    height: 3em;
-    padding: 1.5em;
   }
 
   .music-sheet{
