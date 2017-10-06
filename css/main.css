@@ -80,6 +80,10 @@ body{
   color:#200101;
 }
 
+main.container{
+  width: 100%;
+}
+
 .welcome-msg{
   margin: 10px;
   background-color: rgba(58, 58, 58, 0.73);
@@ -160,9 +164,10 @@ body{
 }
 
 .editing-buttons-container{
+  width: 200px;
   position: relative;
   bottom: 10px;
-  left: 60%;
+  left: 50%;
 }
 
 .editing-buttons-container > button{
@@ -192,6 +197,10 @@ body{
   display: block;
   visibility: visible;
   opacity: 1;
+}
+
+.bottom textarea.editing-element{
+  padding: 0.5em;
 }
 
 
@@ -349,6 +358,7 @@ body{
 }
 
 @media (max-width : 1250px){
+  
   .welcome-msg{
     text-align: center;
     border-top-right-radius: 26px;
@@ -377,11 +387,6 @@ body{
     height: 100%;
   }
 
-  .date{
-    height: 3em;
-    padding: 1.5em;
-  }
-
   .music-sheet{
     height: 100%;
   }
@@ -394,6 +399,18 @@ body{
   .login-area{
     margin: 100px auto;
     height: 2.3em;
+  }
+}
+
+.bottom textarea.editing-element{
+  right: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media(max-width: 765px){
+  .date input.editing-element{
+    max-width: 130px; 
   }
 }
 
