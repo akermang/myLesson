@@ -394,6 +394,8 @@ main.container{
   .bottom .info{
     height: 100%;
     width: auto;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
   }
 
   .login-area{
@@ -414,12 +416,38 @@ main.container{
   }
 }
 
+@media(max-width: 500px){
+  .date input.editing-element{
+    max-width: 100px; 
+  }
+
+  .editing-buttons-container{
+    left: 30%;
+  }
+}
+
 @media (max-width: 460px){
   #select-students{
     margin-bottom: 1em;
   }
 
+  .editing-buttons-container{
+    left: 25%;
+  }
+
   .date .icon-delete, .date .icon-update{
     width: 1.3em;
+  }
+}
+
+@media( max-width: 400px){
+  .editing-buttons-container{
+    left: 20%;
+  }
+}
+
+@media( max-width: 300px){
+  .editing-buttons-container{
+    left: 15%;
   }
 }
