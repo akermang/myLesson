@@ -78,6 +78,9 @@ textarea{
 body{
   background: rgb(63, 63, 105);
   color:#200101;
+}
+
+main.container{
   width: 100%;
 }
 
@@ -194,6 +197,10 @@ body{
   display: block;
   visibility: visible;
   opacity: 1;
+}
+
+.bottom textarea.editing-element{
+  padding: 0.5em;
 }
 
 
@@ -393,6 +400,12 @@ body{
     margin: 100px auto;
     height: 2.3em;
   }
+}
+
+.bottom textarea.editing-element{
+  right: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 @media(max-width: 765px){
