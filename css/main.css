@@ -421,6 +421,10 @@ main.container{
     max-width: 100px; 
   }
 
+  .login-area{
+    max-width: 300px;
+  }
+
   .editing-buttons-container{
     left: 30%;
   }
@@ -443,6 +447,14 @@ main.container{
 @media( max-width: 400px){
   .editing-buttons-container{
     left: 20%;
+  }
+
+  .login-area{
+    max-width: 90%;
+  }
+
+  .login-area input{
+    width: 20%;
   }
 }
 
