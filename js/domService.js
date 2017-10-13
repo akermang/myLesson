@@ -101,3 +101,27 @@ function getStudentsFromSelect(options) {
     }
     return optionsSelected;
 }
+
+function onAddUser(e) {
+    var userToStore = getAdduserValues();
+    addUser(userToStore);
+    window.location = "home.html";
+}
+
+function getAdduserValues() {
+    var firstName = document.getElementsByClassName("input-first-name")[0];
+    var lastName = document.getElementsByClassName("input-last-name")[0];
+    var type = document.getElementsByClassName("input-type")[0];
+
+    return {
+        first_name: firstName.value,
+        last_name: lastName.value,
+        username: type.value 
+    }
+}
+
+function onDeleteUser(){
+    var studentsSelect = document.getElementById("delete-select-students");
+    var selectedStudents = getStudentsFromSelect(studentsSelect.options);
+    deleteUser(selectedStudents);
+}

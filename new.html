@@ -13,6 +13,20 @@
 <div class="welcome-msg"></div>
 <div class="new-lessons-container">
     <select id="select-students" class="select-students" multiple></select>
+    <span>ADD NEW LESSON: </span>
+</div>
+<div class= 'new-user-container'>
+    <span>ADD NEW USER: </span> 
+    <input class= 'input-first-name' type="text"  placeholder= 'First name'>
+    <input class= 'input-last-name' type="text"  placeholder= 'Last name'>
+    <input class= 'input-type' type="text"  placeholder= 'Type'>
+    <button class= 'new-user-button' onclick= onAddUser() >Save user</button>
+</div>
+<div class= 'delete-user-container'>
+    <span>DELETE USER</span>
+    <select id="delete-select-students" class="select-students" multiple></select>
+    <button class="delete-user-button" onclick= onDeleteUser()>Delete user</button>
+
 </div>
 
 </main>

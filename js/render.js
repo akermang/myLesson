@@ -129,6 +129,7 @@ function newLesson(studentId, selector){
    container.appendChild(bottom);
 
    populateSelectStudents("select-students");
+   populateSelectStudents("delete-select-students");
 }
 
 function populateSelectStudents(selector){
