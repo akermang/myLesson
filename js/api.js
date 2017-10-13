@@ -36,14 +36,30 @@ function addLesson(lesson){
   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
+function addUser(user){
+    user.id = uuidv1();
+    students.unshift(user);
+    storeInDb(students, ALL_STUDENTS_KEY);
+  }
+
+function deleteUser(id){
+    allUsers= getStudends();
+    
+    allUsers.forEach(function(element, i){
+        if(element.id == id){
+            students.splice(i, 1);
+        }
+    });
+    storeInDb(students, ALL_STUDENTS_KEY);
+}
+
 function deleteLesson(){    
     var allLessons = getLessons();
     var lessonsContainer = $("#lessons-container")[0];
     var selectedLesson = getSelectedLesson();
 
     allLessons.forEach(function(element,i) {
-        if(element.id == selectedLesson.id){
-            console.log(element.id)            
+        if(element.id == selectedLesson.id){         
             lessons.splice(i, 1);
         }
     });

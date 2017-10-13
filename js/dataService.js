@@ -25,6 +25,17 @@ function getStudentById(id) {
     }
 }
 
+function getStudentByUserName(userName) {
+    var student = students.filter(function(_student){
+        return _student.username === userName;
+    });
+    if(student.length > 0) {
+        return student[0]
+    }else{
+        return null;
+    }
+}
+
 var dataService = {
 
     getStudentById: function(id) {

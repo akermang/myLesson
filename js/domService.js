@@ -101,3 +101,39 @@ function getStudentsFromSelect(options) {
     }
     return optionsSelected;
 }
+
+function onAddUser(e) {
+    var userToStore = getAdduserValues();
+    var elementToEmpty = document.getElementById("select-students");
+    var anotherElementToEmpty = document.getElementById("delete-select-students");
+    addUser(userToStore);
+    emptyElement(elementToEmpty)
+    emptyElement(anotherElementToEmpty)
+    populateSelectStudents("select-students");
+    populateSelectStudents("delete-select-students");
+}
+
+function getAdduserValues() {
+    var firstName = document.getElementsByClassName("input-first-name")[0];
+    var lastName = document.getElementsByClassName("input-last-name")[0];
+    var type = document.getElementsByClassName("input-type")[0];
+    var userName = document.getElementsByClassName("input-user-name")[0];
+
+    return {
+        first_name: firstName.value,
+        last_name: lastName.value,
+        type: type.value,
+        username: userName.value 
+    }
+}
+
+function onDeleteUser(){
+    var studentsSelect = document.getElementById("delete-select-students");
+    var selectedStudents = getStudentsFromSelect(studentsSelect.options);
+    var elementToEmpty = document.getElementById("select-students");
+    deleteUser(selectedStudents);
+    emptyElement(studentsSelect);    
+    emptyElement(elementToEmpty); 
+    populateSelectStudents("select-students");
+    populateSelectStudents("delete-select-students");
+}
