@@ -30,14 +30,19 @@ function renderLessons(lessons, selector){
         if(state.isTeacher) {
             var iconsContainer = createHtmlElement('div','icons-container' + lesson.id);
             var iconDelete = createHtmlElement('img', "icon-delete " + lesson.id);
-            var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);                            
+            var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);
+            var selectStudents = createHtmlElement('select', "select-sudents-for-lesson");
+            
+            selectStudents.setAttribute("id", "select-sudents-for-lesson"+ lesson.id);
+            selectStudents.setAttribute("multiple", (this.checked) ? "multiple" : "");                            
             iconDelete.src = './assets/icon-delete-red.png';
             iconUpdate.src = './assets/icon_update.png';
             iconUpdate.addEventListener("click", onUpdateLesson.bind(this, lesson ,lessonContainer));
             iconDelete.addEventListener("click",deleteIconClicked.bind(this, lesson, lessonContainer));   
             iconsContainer.appendChild(iconUpdate);
             iconsContainer.appendChild(iconDelete);
-            date.appendChild(iconsContainer);
+            date.appendChild(iconsContainer); 
+            bottom.appendChild(selectStudents);           
         }
         
         
@@ -46,9 +51,10 @@ function renderLessons(lessons, selector){
         bottom.appendChild(wrapEditedElement(tutorial, "input", lesson.tutorial_url, "tutorial-input"));
         bottom.appendChild(wrapEditedElement(video, "input",lesson.video_url, "video-input"));
         bottom.appendChild(wrapEditedElement(info, "textArea", lesson.info,"info-input"));    
-
+        
         lessonContainer.appendChild(bottom);
         container.appendChild(lessonContainer);
+        populateSelectStudents("select-sudents-for-lesson"+ lesson.id);
     });
 
 }
@@ -180,9 +186,22 @@ function onCancelEditing(lessonContainer, lesson){
 
 function onSaveEditing(lessonContainer, lesson){
     var inputsSelectors = [".subject-input", ".music-sheet-input", ".tutorial-input", ".video-input", ".info-input"];
+    var studentsSelect = document.getElementById("select-sudents-for-lesson" + lesson.id);
+    var selectedStudents = getStudentsFromSelect(studentsSelect.options);
     var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
+    updateLessonSelectedStudentsId(selectedStudents, lesson);
     dataService.updateEditedContentToLesson(lesson, inputsContent);
     renderEditedLesson(lessonContainer, lesson);
+}
+
+function updateLessonSelectedStudentsId(selectedStudents, lesson){
+    selectedStudents.forEach(function(id){
+        var check = null;
+        lesson.student_ids.forEach(function(_id){
+            if(_id == id) check= 1;
+        })
+        if(check == null) lesson.student_ids.unshift(id)
+    })
 }
 
 function renderEditedLesson(lessonContainer, lesson){

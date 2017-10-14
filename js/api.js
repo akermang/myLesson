@@ -43,7 +43,6 @@ function addUser(user){
   }
 
 function deleteUser(id){
-    console.log(id)
     allUsers= getStudends();
     
     allUsers.forEach(function(element, i){
