@@ -485,7 +485,7 @@ a#addLessonLink:hover{
 @media(max-width: 767px){
 
   iframe.content{
-    height: 12rem;
+    height: 14rem;
   }
 
 .new-lessons-container{
@@ -500,7 +500,7 @@ a#addLessonLink:hover{
 @media(max-width: 530px){
 
   iframe.content{
-    height: 10rem;
+    height: 13rem;
   }
 
   .date input.editing-element{
@@ -519,7 +519,7 @@ a#addLessonLink:hover{
 @media (max-width: 500px){
 
   iframe.content{
-    height: 9rem;
+    height: 11rem;
   }
 
   #select-students{
@@ -538,7 +538,7 @@ a#addLessonLink:hover{
 @media( max-width: 430px){
 
   iframe.content{
-    height: 8rem;
+    height: 10rem;
   }
 
   .editing-buttons-container{
@@ -556,14 +556,14 @@ a#addLessonLink:hover{
 @media(max-width: 360px){
 
   iframe.content{
-    height: 7rem;
+    height: 9rem;
   }
 }
 
 @media( max-width: 300px){
 
   iframe.content{
-    height: 6rem;
+    height: 8rem;
   }
 
   .editing-buttons-container{
