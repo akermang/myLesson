@@ -385,10 +385,13 @@ a#addLessonLink:hover{
 .select-students{
   margin: 1em auto;
   display: block;
+  padding: 0.5em;
 }
 
 
-.new-user-container > * , .new-bottom > * ,.delete-user-container > *{
+.new-user-container > * ,
+ .new-bottom > * ,
+ .delete-user-container > *{
   border: 1px solid  #0A6122;
   border-radius: 4px;
   padding: 1em;
@@ -410,6 +413,10 @@ a#addLessonLink:hover{
 }
 
 @media (max-width : 1250px){
+
+  option.option-student{
+    margin: 5px;
+  }
 
   iframe.content{
     height: 26rem;
