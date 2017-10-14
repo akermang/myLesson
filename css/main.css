@@ -102,7 +102,7 @@ a#addLessonLink:hover{
 }
 
 .welcome-msg{
-  margin: 10px;
+  margin: 10px auto;
   background-color: rgba(58, 58, 58, 0.73);
   color: white;
   border: 2px solid #b6acda;
@@ -410,11 +410,16 @@ a#addLessonLink:hover{
 }
 
 @media (max-width : 1250px){
+
+  iframe.content{
+    height: 26rem;
+  }
   
   .welcome-msg{
+    width: 80%;
     text-align: center;
     border-top-right-radius: 26px;
-    border-bottom-left-radius: 24px;
+    border-bottom-left-radius: 26px;
   }
 
   .date .icon-delete{
@@ -457,7 +462,24 @@ a#addLessonLink:hover{
   width: 100%;
 }
 
-@media(max-width: 765px){
+@media(max-width: 1200px){
+  iframe.content{
+    height: 22rem;
+  }
+}
+
+@media(max-width: 991px){
+  iframe.content{
+    height: 17rem;
+  }
+}
+
+
+@media(max-width: 767px){
+
+  iframe.content{
+    height: 12rem;
+  }
 
 .new-lessons-container{
   display: block;
@@ -468,7 +490,12 @@ a#addLessonLink:hover{
   }
 }
 
-@media(max-width: 500px){
+@media(max-width: 530px){
+
+  iframe.content{
+    height: 10rem;
+  }
+
   .date input.editing-element{
     max-width: 100px; 
   }
@@ -482,7 +509,12 @@ a#addLessonLink:hover{
   }
 }
 
-@media (max-width: 460px){
+@media (max-width: 500px){
+
+  iframe.content{
+    height: 9rem;
+  }
+
   #select-students{
     margin-bottom: 1em;
   }
@@ -496,7 +528,12 @@ a#addLessonLink:hover{
   }
 }
 
-@media( max-width: 400px){
+@media( max-width: 430px){
+
+  iframe.content{
+    height: 8rem;
+  }
+
   .editing-buttons-container{
     left: 30%;
   }
@@ -509,8 +546,19 @@ a#addLessonLink:hover{
     width: 20%;
   }
 }
+@media(max-width: 360px){
+
+  iframe.content{
+    height: 7rem;
+  }
+}
 
 @media( max-width: 300px){
+
+  iframe.content{
+    height: 6rem;
+  }
+
   .editing-buttons-container{
     left: 15%;
   }
