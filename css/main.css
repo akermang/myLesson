@@ -424,11 +424,6 @@ a#addLessonLink:hover{
   .bottom {
     flex-direction: column;
   } 
-  
-  .bottom .tutorial, .video{
-    height: 320px;
-    height: 30em;
-  }
 
   .date .subject, .bottom .content{
     width: 100%;
