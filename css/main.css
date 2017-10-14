@@ -84,6 +84,23 @@ main.container{
   width: 100%;
 }
 
+a#addLessonLink{
+  color: white;
+  border: 2px solid #b6acda;
+  border-radius: 40px;
+  background-color: rgba(44, 93, 24, 0.79);
+  padding: 1em;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+  width: 50%;
+}
+
+a#addLessonLink:hover{
+  text-decoration: none;
+  background: rgba(57, 150, 18, 0.79);
+}
+
 .welcome-msg{
   margin: 10px;
   background-color: rgba(58, 58, 58, 0.73);
