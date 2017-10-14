@@ -67,6 +67,8 @@ function editingPreview(previewElement, ContentToPreview, value){
 
 function onAddLesson(e) {
     var lessonToStore = getAddLessonsValues();
+    var teacherId = [loggedInUser.id]
+    updateLessonSelectedStudentsId(teacherId, lessonToStore)
     addLesson(lessonToStore);
     window.location = "home.html";
 }
