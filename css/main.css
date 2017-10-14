@@ -94,6 +94,7 @@ a#addLessonLink{
   display: block;
   text-align: center;
   width: 50%;
+  transition: 0.2s;
 }
 
 a#addLessonLink:hover{
@@ -399,12 +400,22 @@ a#addLessonLink:hover{
   display: block;
 }
 
-.new-button, .new-user-button, .delete-user-button{
+ .new-button,
+ .new-user-button, 
+ .delete-user-button{
   font-size: 0.75em;
   color: white;
   background-color: rgb(23, 44, 219);
   border: 0.08em solid rgb(120, 126, 155);
   background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
+  transition: 0.3s;
+}
+
+ button:hover,
+.new-user-button:hover, 
+.delete-user-button:hover{
+  border-color: rgb(53, 51, 126);
+  letter-spacing: 2px;
 }
 
 .new-bottom textarea{
