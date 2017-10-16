@@ -84,6 +84,11 @@ main.container{
   width: 100%;
 }
 
+.new-container{
+  width: 80%;
+  margin: 0 auto;
+}
+
 a#addLessonLink{
   color: white;
   border: 2px solid #b6acda;
@@ -358,11 +363,6 @@ a#addLessonLink:hover{
   color: white;
   display: block;
   padding: 8px;
-  width: 70%;
-}
-
-.delete-user-container {
-  width: 70%;
 }
 
 .new-user-container span,
@@ -434,10 +434,7 @@ a#addLessonLink:hover{
   }
   
   .welcome-msg{
-    width: 80%;
     text-align: center;
-    border-top-right-radius: 26px;
-    border-bottom-left-radius: 26px;
   }
 
   .date .icon-delete{
