@@ -28,7 +28,7 @@ function renderLessons(lessons, selector){
         lessonContainer.appendChild(date);
 
         if(state.isTeacher) {
-            var iconsContainer = createHtmlElement('div','icons-container' + lesson.id);
+            var iconsContainer = createHtmlElement('div','icons-container icons-container' + lesson.id);
             var iconDelete = createHtmlElement('img', "icon-delete " + lesson.id);
             var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);
             var selectStudents = createHtmlElement('select', "select-sudents-for-lesson");
