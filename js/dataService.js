@@ -66,3 +66,14 @@ var dataService = {
        storeInDb(lessons, ALL_LESSONS_KEY);
     }
 }
+
+function populateSelectStudents(selector){
+    var select = document.getElementById(selector);
+    if(!select) return;
+    students.forEach(function(student) {
+     var option = createHtmlElement("option", "option-student");
+     option.innerText = `${student.first_name} ${student.last_name}`;
+     option.studentId = student.id;
+     select.appendChild(option);
+    });
+ }

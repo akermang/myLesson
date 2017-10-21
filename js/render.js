@@ -138,17 +138,6 @@ function newLesson(studentId, selector){
    populateSelectStudents("delete-select-students");
 }
 
-function populateSelectStudents(selector){
-   var select = document.getElementById(selector);
-   if(!select) return;
-   students.forEach(function(student) {
-    var option = createHtmlElement("option", "option-student");
-    option.innerText = `${student.first_name} ${student.last_name}`;
-    option.studentId = student.id;
-    select.appendChild(option);
-   });
-}
-
 function addEditingButtons(lesson,lessonContainer){
     var buttonsContainer =  createHtmlElement("div", "editing-buttons-container");
     var cancelButton = createHtmlElement("button", "editing-cancel-button");
@@ -189,12 +178,12 @@ function onSaveEditing(lessonContainer, lesson){
     var studentsSelect = document.getElementById("select-sudents-for-lesson" + lesson.id);
     var selectedStudents = getStudentsFromSelect(studentsSelect.options);
     var inputsContent = getContent.getContentFromInputsBySelectors(lessonContainer, inputsSelectors);
-    updateLessonSelectedStudentsId(selectedStudents, lesson);
+    updateLessonToSelectedStudentsById(selectedStudents, lesson);
     dataService.updateEditedContentToLesson(lesson, inputsContent);
     renderEditedLesson(lessonContainer, lesson);
 }
 
-function updateLessonSelectedStudentsId(selectedStudents, lesson){
+function updateLessonToSelectedStudentsById(selectedStudents, lesson){
     selectedStudents.forEach(function(id){
         var check = null;
         lesson.student_ids.forEach(function(_id){
