@@ -1,17 +1,3 @@
-function checkStudentLogId(){
-    var logId = document.getElementById("input-student-id").value;
-
-    // returns student as object or null
-    var auth = getStudentById(logId);    
-
-    if(auth) {       
-        localStorage.setItem("loggedInUser", JSON.stringify(auth)); 
-        window.location = "home.html";    
-    }else{
-        alert('Student does not exists !')
-    }
-}
-
 function checkStudentLogUserName(){
     var logUserName = document.getElementById("input-student-id").value;
 
@@ -22,7 +8,7 @@ function checkStudentLogUserName(){
         localStorage.setItem("loggedInUser", JSON.stringify(auth)); 
         window.location = "home.html";    
     }else{
-        alert('Student does not exists !')
+         $('#exampleModal').modal('show');
     }
 }    
 
