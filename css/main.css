@@ -106,22 +106,15 @@ iframe{
 }
 
 a#addLessonLink{
-  color: white;
-  border: 2px solid #b6acda;
-  border-radius: 40px;
-  background-color: rgba(44, 93, 24, 0.79);
-  padding: 1em;
-  margin: 10px auto;
-  display: block;
-  text-align: center;
   width: 50%;
-  transition: 0.2s;
+  margin: 0  auto;
 }
 
 a#addLessonLink:hover{
-  text-decoration: none;
-  background: rgba(57, 150, 18, 0.79);
+  letter-spacing: 2px;
+  background:  #0062cc;
 }
+
 
 .welcome-msg{
   margin: 10px auto;
@@ -469,6 +462,10 @@ a#addLessonLink:hover{
 
 
 @media(max-width: 767px){
+
+  a#addLessonLink{
+    width: 100%;
+  }
 
   iframe.content{
     height: 14rem;
