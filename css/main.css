@@ -105,11 +105,6 @@ iframe{
   margin: 0 auto;
 }
 
-a#addLessonLink{
-  width: 50%;
-  margin: 0  auto;
-}
-
 a#addLessonLink:hover{
   letter-spacing: 2px;
   background:  #0062cc;
@@ -380,16 +375,16 @@ a#addLessonLink:hover{
  .delete-user-button{
   font-size: 0.75em;
   color: white;
-  background-color: rgb(23, 44, 219);
-  border: 0.08em solid rgb(120, 126, 155);
-  background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
+  border: 0.08em solid #007bff;
+  background: linear-gradient(to bottom,#007bff 0,#0062cc);
   transition: 0.3s;
 }
 
  button:hover,
 .new-user-button:hover, 
 .delete-user-button:hover{
-  border-color: rgb(53, 51, 126);
+  background: linear-gradient(to bottom,#007bff 0,#0062cc 0);
+  border-color: #094e99;
   letter-spacing: 2px;
 }
 
