@@ -139,3 +139,12 @@ function onDeleteUser(){
     populateSelectStudents("select-students");
     populateSelectStudents("delete-select-students");
 }
+
+function scrollToAdd() {
+    window.scroll({ top: 700, left: 0, behavior: 'smooth' });
+}
+
+function scrollToDeleteUser() {
+    window.scroll({ top: 1800, left: 0, behavior: 'smooth' });
+
+}

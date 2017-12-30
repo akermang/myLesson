@@ -40,8 +40,7 @@ function addUser(user){
     user.id = uuidv1();
     students.unshift(user);
     storeInDb(students, ALL_STUDENTS_KEY);
-    window.location = "home.html";
-  }
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });  }
 
 function deleteUser(id){
     allUsers= getStudends();
@@ -52,7 +51,7 @@ function deleteUser(id){
         }
     });
     storeInDb(students, ALL_STUDENTS_KEY);
-    window.location = "home.html";
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 }
 
 function deleteLesson(){    
