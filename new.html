@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC>
 
 <html lang="en">
 <head>
@@ -11,11 +10,13 @@
 
 <main class="new-container">
 <div class="welcome-msg"></div>
+<a class="btn btn-primary" id="sign-out" href="index.html"> Sign Out</a>
+<a class="btn btn-primary" id="home-btn" href="home.html">Lessons</a>
 <div class="new-lessons-container">
     <span>ADD NEW LESSON </span>   
     <select id="select-students" class="select-students" multiple></select>
 </div>
-<div class= 'new-user-container'>
+<div class= 'new-user-container' id= "new-user">
     <span>ADD NEW USER </span> 
     <input class= 'input-first-name' type="text"  placeholder= 'First name'>
     <input class= 'input-last-name' type="text"  placeholder= 'Last name'>
@@ -23,7 +24,7 @@
     <input class= 'input-user-name' type="text"  placeholder= 'User name'>
     <button class= 'new-user-button' onclick= onAddUser() >Save user</button>
 </div>
-<div class= 'delete-user-container'>
+<div class= 'delete-user-container' id="delete-user">
     <span>DELETE USER</span>
     <select id="delete-select-students" class="select-students" multiple></select>
     <button class="delete-user-button" onclick= onDeleteUser()>Delete user</button>
