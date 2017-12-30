@@ -1,4 +1,6 @@
-.btn.myBtn{background: #000}
+.btn.myBtn {
+  background: #000;
+}
 @import "base/queries.css";
 /* line 1, ../scss/base/_base.scss */
 main {
@@ -33,13 +35,23 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 /* line 28, ../scss/base/_reset.scss */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* line 31, ../scss/base/_reset.scss */
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -49,19 +61,23 @@ body {
 }
 
 /* line 37, ../scss/base/_reset.scss */
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
 /* line 40, ../scss/base/_reset.scss */
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
 /* line 44, ../scss/base/_reset.scss */
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -71,13 +87,13 @@ table {
   border-spacing: 0;
 }
 
-textarea{
+textarea {
   padding: 1px;
 }
 
-body{
+body {
   background: rgb(63, 63, 105);
-  color:#200101;
+  color: #200101;
 }
 
 .login-area {
@@ -88,30 +104,32 @@ body{
   padding-top: 40px;
 }
 
-.login-area button.btn  {
+.login-area button.btn {
   margin-top: 30px;
 }
 
-main.container{
+main.container {
   width: 100%;
 }
+a:hover {
+  text-decoration: none!important;
+}
 
-iframe{
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+iframe {
   border: none;
 }
 
-.new-container{
+.new-container {
   width: 80%;
   margin: 0 auto;
 }
 
-a#addLessonLink:hover{
-  letter-spacing: 2px;
-  background:  #0062cc;
-}
-
-
-.welcome-msg{
+.welcome-msg {
   margin: 10px auto;
   background-color: rgba(58, 58, 58, 0.73);
   color: white;
@@ -119,7 +137,7 @@ a#addLessonLink:hover{
   border-radius: 2px;
   padding: 1em;
   border-top-right-radius: 61px;
-  border-bottom-left-radius: 53px;  
+  border-bottom-left-radius: 53px;
   text-align: center;
 }
 
@@ -130,20 +148,20 @@ a#addLessonLink:hover{
   background: rgba(58, 58, 58, 0.73);
 }
 
-.lessons-container > div.editing .content{
+.lessons-container > div.editing .content {
   transition: opacity 900ms;
   opacity: 0.5;
 }
 
-.editing-element-wrapper{
+.editing-element-wrapper {
   position: relative;
 }
 
-.editing-element{
+.editing-element {
   opacity: 0;
   visibility: hidden;
   transition: opacity 900ms, visibility 900ms;
- /* display: none;*/
+  /* display: none;*/
   position: absolute;
   border: none;
   right: 55px;
@@ -156,13 +174,13 @@ a#addLessonLink:hover{
   background-color: rgb(252, 242, 149);
 }
 
-.bottom .select-sudents-for-lesson{ 
+.bottom .select-sudents-for-lesson {
   margin-left: 1em;
   padding-left: 0.5em;
   display: none;
 }
 
-.date input.editing-element{
+.date input.editing-element {
   left: 19px;
   bottom: 0px;
   width: 200px;
@@ -172,38 +190,38 @@ a#addLessonLink:hover{
   color: black;
 }
 
-.editing-element-button{
+.editing-element-button {
   opacity: 0;
   visibility: hidden;
   transition: opacity 900ms, visibility 900ms;
   background-color: rgb(23, 44, 219);
   border: 0.08em solid rgb(120, 126, 155);
-  background: linear-gradient(to bottom,#124eb8 0,rgb(45, 4, 55) 100%);
+  background: linear-gradient(to bottom, #124eb8 0, rgb(45, 4, 55) 100%);
   margin-right: 3%;
   border-left: 0;
-  border-radius: 0 .5em .5em 0;
+  border-radius: 0 0.5em 0.5em 0;
   line-height: 1.25;
-  height:  34px;
+  height: 34px;
   color: #f6f226;
-  font-size: .7em;
+  font-size: 0.7em;
   position: absolute;
   bottom: 7px;
   right: 11px;
   letter-spacing: 1px;
 }
 
-.editing-element-button:focus{
+.editing-element-button:focus {
   outline: none;
 }
 
-.editing-buttons-container{
+.editing-buttons-container {
   width: 200px;
   position: relative;
   bottom: 10px;
   left: calc((100% - 170px)/2);
 }
 
-.editing-buttons-container > button{
+.editing-buttons-container > button {
   color: white;
   margin-right: 1em;
   padding: 0.7em;
@@ -211,64 +229,60 @@ a#addLessonLink:hover{
   font-size: 0.8em;
   letter-spacing: 1px;
   outline: none;
-  
-  
 }
-.editing-save-button{
+.editing-save-button {
   width: 78px;
-  background: linear-gradient(to bottom,#F51036 0,rgb(80, 39, 39) 100%);
-  border: 2px solid  rgb(83, 65, 65);
+  background: linear-gradient(to bottom, #f51036 0, rgb(80, 39, 39) 100%);
+  border: 2px solid rgb(83, 65, 65);
 }
 
-.editing-cancel-button{
-  background: linear-gradient(to bottom,#1864E9 0,rgb(15, 22, 143) 100%);
-  border: 2px solid  rgb(33, 58, 155);
+.editing-cancel-button {
+  background: linear-gradient(to bottom, #1864e9 0, rgb(15, 22, 143) 100%);
+  border: 2px solid rgb(33, 58, 155);
 }
 
-.lessons-container > div.editing .editing-element, 
-.lessons-container > div.editing button.editing-element-button{
+.lessons-container > div.editing .editing-element,
+.lessons-container > div.editing button.editing-element-button {
   display: block;
   visibility: visible;
   opacity: 1;
 }
 
-.lessons-container > div.editing .select-sudents-for-lesson{ 
+.lessons-container > div.editing .select-sudents-for-lesson {
   display: block;
 }
 
-.bottom textarea.editing-element{
+.bottom textarea.editing-element {
   padding: 0.5em;
 }
 
-
-
-
-.date{
+.date {
   display: flex;
   position: relative;
   margin: 0 auto;
   color: white;
   width: 70%;
   border-top-left-radius: 42px;
-  border-top-right-radius:42px;
-  padding:  1.1em 0;
+  border-top-right-radius: 42px;
+  padding: 1.1em 0;
   text-align: center;
 }
 
-.date .subject{
+.date .subject {
   margin: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.date .subject, .bottom .content{
+.date .subject,
+.bottom .content {
   opacity: 1;
   visibility: visible;
   transition: opacity 900ms, visibility 900ms;
   width: 87%;
 }
 
-.date .icon-delete{
+.date .icon-delete {
   position: absolute;
   right: 0em;
   width: 1.5em;
@@ -276,7 +290,7 @@ a#addLessonLink:hover{
   border-radius: 3px;
 }
 
-.date .icon-update{
+.date .icon-update {
   position: absolute;
   right: 3em;
   width: 1.5em;
@@ -284,37 +298,36 @@ a#addLessonLink:hover{
   border-radius: 3px;
 }
 
-.date .icon-update:hover, .icon-delete:hover{
-  background: #B49EF1;
+.date .icon-update:hover,
+.icon-delete:hover {
+  background: #b49ef1;
 }
 
-  
-.bottom{
+.bottom {
   margin-top: 20px;
   display: flex;
   margin-bottom: 30px;
 }
 
-.bottom > .editing-element-wrapper  {
+.bottom > .editing-element-wrapper {
   flex: 1;
   margin: 0 20px;
   border-radius: 8px;
 }
 
-
-.bottom textarea.editing-element{
+.bottom textarea.editing-element {
   height: 93%;
 }
 
-.music-sheet{
-  height:151px;
+.music-sheet {
+  height: 151px;
 }
 
-.tutorial{
+.tutorial {
   display: inline-block;
 }
 
-.content.info{
+.content.info {
   background: #fff;
   padding: 20px;
   height: 71%;
@@ -323,8 +336,8 @@ a#addLessonLink:hover{
 }
 
 .new-lessons-container,
- .new-user-container,
-  .delete-user-container{
+.new-user-container,
+.delete-user-container {
   border-radius: 4px;
   border: 4px solid #b6acda;
   border-radius: 44px;
@@ -337,85 +350,105 @@ a#addLessonLink:hover{
 
 .new-user-container span,
 .delete-user-container span,
-.new-lessons-container span{
+.new-lessons-container span {
   border: none;
   display: block;
   margin: 5px auto;
   text-align: center;
 }
 
-.new-lessons-container span{
+.new-lessons-container span {
   padding: 15px;
 }
 
-.new-user-container > * , .new-lessons-container > * input {
-  padding: 1em;
-  border: 1px solid  #DFEAE2;
+#sign-out, #home-btn {
+  display: inline-block;
+  text-decoration: none;
+  justify-content: center;
+  padding: 0.5em;
+  color: white;
+  border-radius: 12px;
+  border: 0.08em solid #007bff;
+  background: linear-gradient(to bottom, #007bff 0, #0062cc);
+  transition: 0.3s;
+  max-width: 35%;
 }
 
-.select-students{
+#sign-out:hover,
+#home-btn:hover {
+  letter-spacing: 1px;
+  background: #0062cc;
+  border-color: #0062cc;
+}
+
+.new-user-container > *,
+.new-lessons-container > * input {
+  padding: 1em;
+  border: 1px solid #dfeae2;
+}
+
+.select-students {
   margin: 1em auto;
   display: block;
   padding: 0.5em;
 }
 
-
-.new-user-container > * ,
- .new-bottom > * ,
- .delete-user-container > *{
-  border: 1px solid  #0A6122;
+.new-user-container > *,
+.new-bottom > *,
+.delete-user-container > * {
+  border: 1px solid #0a6122;
   border-radius: 4px;
   padding: 1em;
   margin: 10px auto;
   display: block;
 }
 
- .new-button,
- .new-user-button, 
- .delete-user-button{
+.new-button,
+.new-user-button,
+.delete-user-button {
   font-size: 0.75em;
   color: white;
   border: 0.08em solid #007bff;
-  background: linear-gradient(to bottom,#007bff 0,#0062cc);
+  background: linear-gradient(to bottom, #007bff 0, #0062cc);
   transition: 0.3s;
 }
 
- button:hover,
-.new-user-button:hover, 
-.delete-user-button:hover{
-  background: linear-gradient(to bottom,#007bff 0,#0062cc 0);
+button:hover,
+.new-user-button:hover,
+.delete-user-button:hover {
+  background: linear-gradient(to bottom, #007bff 0, #0062cc 0);
   border-color: #094e99;
   letter-spacing: 2px;
 }
 
-.new-bottom textarea{
+.new-bottom textarea {
   margin-bottom: 2px;
   display: block;
 }
 
-@media (max-width : 1250px){
-
-  option.option-student{
+@media (max-width: 1250px) {
+  option.option-student {
     margin: 5px;
   }
 
-  iframe.content{
+  iframe.content {
     height: 26rem;
   }
-  
-  .welcome-msg{
+
+  .welcome-msg {
     text-align: center;
   }
 
-  .date .icon-delete{
+  .date .icon-delete {
     margin-right: 0;
   }
 
   .bottom {
     flex-direction: column;
-  } 
+  }
 
-  .date .subject, .bottom .content{
+  .date .subject,
+  .bottom .content {
     width: 100%;
   }
 
@@ -424,121 +457,113 @@ a#addLessonLink:hover{
     height: 100%;
   }
 
-  .music-sheet{
+  .music-sheet {
     height: 100%;
   }
 
-  .bottom .info{
+  .bottom .info {
     height: 100%;
     width: auto;
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
   }
-
 }
 
-.bottom textarea.editing-element{
+.bottom textarea.editing-element {
   right: 0;
   max-width: 100%;
   width: 100%;
 }
 
-@media(max-width: 1200px){
-  iframe.content{
+@media (max-width: 1200px) {
+  iframe.content {
     height: 22rem;
   }
 }
 
-@media(max-width: 991px){
-  iframe.content{
+@media (max-width: 991px) {
+  iframe.content {
     height: 17rem;
   }
 }
 
-
-@media(max-width: 767px){
-
-  a#addLessonLink{
+@media (max-width: 767px) {
+  a#addLessonLink {
     width: 100%;
   }
 
-  iframe.content{
+  iframe.content {
     height: 14rem;
   }
 
-.new-lessons-container{
-  display: block;
-}
+  .new-lessons-container {
+    display: block;
+  }
 
-  .date input.editing-element{
-    max-width: 130px; 
+  .date input.editing-element {
+    max-width: 130px;
   }
 }
 
-@media(max-width: 530px){
-
-  div.icons-container{
+@media (max-width: 530px) {
+  div.icons-container {
     margin-top: 1em;
     position: relative;
     right: calc((100% - 100px)/2);
   }
 
   .date img.icon-delete,
-  .date img.icon-update{
+  .date img.icon-update {
     position: absolute;
   }
 
-  .date{
+  .date {
     padding: 2.7em;
     display: block;
   }
 
-  .date input.editing-element{
-    left:  calc((100% - 100px)/2);
+  .date input.editing-element {
+    left: calc((100% - 100px)/2);
     top: 0;
   }
 
-  .date .subject{
+  .date .subject {
     margin: 0 auto;
   }
 
-  iframe.content{
+  iframe.content {
     height: 13rem;
   }
 
-  .date input.editing-element{
-    max-width: 100px; 
+  .date input.editing-element {
+    max-width: 100px;
   }
 }
 
-@media (max-width: 500px){
-
-  iframe.content{
+@media (max-width: 500px) {
+  iframe.content {
     height: 11rem;
   }
 
-  #select-students{
+  #select-students {
     margin-bottom: 1em;
   }
 }
 
-@media( max-width: 430px){
-
-  iframe.content{
+@media (max-width: 430px) {
+  iframe.content {
     height: 10rem;
   }
 }
 
-@media(max-width: 360px){
-
-  iframe.content{
+@media (max-width: 360px) {
+  iframe.content {
     height: 9rem;
   }
 }
 
-@media( max-width: 300px){
-
-  iframe.content{
+@media (max-width: 300px) {
+  iframe.content {
     height: 8rem;
   }
 }
