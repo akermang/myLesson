@@ -418,7 +418,7 @@ iframe {
 button:hover,
 .new-user-button:hover,
 .delete-user-button:hover {
-  background: linear-gradient(to bottom, #026ada 0, #0062cc 0);
+  background: linear-gradient(to bottom, inherit 0, #0062cc 0);
   border-color: #094e99;
   letter-spacing: 2px;
 }
