@@ -412,13 +412,13 @@ iframe {
   color: white;
   border: 0.08em solid #007bff;
   background: linear-gradient(to bottom, #007bff 0, #0062cc);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 button:hover,
 .new-user-button:hover,
 .delete-user-button:hover {
-  background: linear-gradient(to bottom, #007bff 0, #0062cc 0);
+  background: linear-gradient(to bottom, #026ada 0, #0062cc 0);
   border-color: #094e99;
   letter-spacing: 2px;
 }
