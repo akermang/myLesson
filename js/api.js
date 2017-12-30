@@ -40,6 +40,7 @@ function addUser(user){
     user.id = uuidv1();
     students.unshift(user);
     storeInDb(students, ALL_STUDENTS_KEY);
+    window.location = "home.html";
   }
 
 function deleteUser(id){
@@ -51,6 +52,7 @@ function deleteUser(id){
         }
     });
     storeInDb(students, ALL_STUDENTS_KEY);
+    window.location = "home.html";
 }
 
 function deleteLesson(){    

@@ -3,9 +3,11 @@ function renderLessons(lessons, selector){
     if(!container) return;
 
     if(state.isTeacher) {
-        $("#addLessonLink").show();               
+        $(".nav-container").show();
+        $(".signOut-link").hide();               
     }else{
-        $("#addLessonLink").hide();
+        $(".nav-container").hide();
+        $(".signOut-link").show(); 
     }
 
     lessons.forEach(function(lesson, i) {

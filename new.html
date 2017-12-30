@@ -12,8 +12,11 @@
 
     <main class="new-container">
         <div class="welcome-msg"></div>
-        <a class="btn btn-primary" id="sign-out" href="index.html"> Sign Out</a>
-        <a class="btn btn-primary" id="home-btn" href="home.html">Lessons</a>
+        <div class="new nav-section">
+            <a class="btn btn-primary" id="sign-out" href="index.html"> Sign Out</a>
+            <a class="btn btn-primary" id="home-btn" href="home.html">Lessons</a>
+        </div>
+      
         <div class="new-lessons-container">
             <span>ADD NEW LESSON </span>
             <select id="select-students" class="select-students" multiple></select>
@@ -24,15 +27,13 @@
             <input class='input-last-name' type="text" placeholder='Last name'>
             <input class='input-type' type="text" placeholder='Type'>
             <input class='input-user-name' type="text" placeholder='User name'>
-            <button class='new-user-button' onclick=o nAddUser()>Save user</button>
+            <button class='new-user-button' onclick=onAddUser()>Save user</button>
         </div>
         <div class='delete-user-container' id="delete-user">
             <span>DELETE USER</span>
             <select id="delete-select-students" class="select-students" multiple></select>
-            <button class="delete-user-button" onclick=o nDeleteUser()>Delete user</button>
-
+            <button class="delete-user-button" onclick=onDeleteUser()>Delete user</button>
         </div>
-
     </main>
 
     <script src="vendors/uuid.js"></script>
