@@ -1,50 +1,52 @@
 <!DOCTYPE html PUBLIC>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-<title>My Lesson</title>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Lesson</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body onload="loadNew()">
 
-<main class="new-container">
-<div class="welcome-msg"></div>
-<a class="btn btn-primary" id="sign-out" href="index.html"> Sign Out</a>
-<a class="btn btn-primary" id="home-btn" href="home.html">Lessons</a>
-<div class="new-lessons-container">
-    <span>ADD NEW LESSON </span>   
-    <select id="select-students" class="select-students" multiple></select>
-</div>
-<div class= 'new-user-container' id= "new-user">
-    <span>ADD NEW USER </span> 
-    <input class= 'input-first-name' type="text"  placeholder= 'First name'>
-    <input class= 'input-last-name' type="text"  placeholder= 'Last name'>
-    <input class= 'input-type' type="text"  placeholder= 'Type'>
-    <input class= 'input-user-name' type="text"  placeholder= 'User name'>
-    <button class= 'new-user-button' onclick= onAddUser() >Save user</button>
-</div>
-<div class= 'delete-user-container' id="delete-user">
-    <span>DELETE USER</span>
-    <select id="delete-select-students" class="select-students" multiple></select>
-    <button class="delete-user-button" onclick= onDeleteUser()>Delete user</button>
+    <main class="new-container">
+        <div class="welcome-msg"></div>
+        <a class="btn btn-primary" id="sign-out" href="index.html"> Sign Out</a>
+        <a class="btn btn-primary" id="home-btn" href="home.html">Lessons</a>
+        <div class="new-lessons-container">
+            <span>ADD NEW LESSON </span>
+            <select id="select-students" class="select-students" multiple></select>
+        </div>
+        <div class='new-user-container' id="new-user">
+            <span>ADD NEW USER </span>
+            <input class='input-first-name' type="text" placeholder='First name'>
+            <input class='input-last-name' type="text" placeholder='Last name'>
+            <input class='input-type' type="text" placeholder='Type'>
+            <input class='input-user-name' type="text" placeholder='User name'>
+            <button class='new-user-button' onclick=o nAddUser()>Save user</button>
+        </div>
+        <div class='delete-user-container' id="delete-user">
+            <span>DELETE USER</span>
+            <select id="delete-select-students" class="select-students" multiple></select>
+            <button class="delete-user-button" onclick=o nDeleteUser()>Delete user</button>
 
-</div>
+        </div>
 
-</main>
+    </main>
 
-<script src="vendors/uuid.js"></script>
-<script src="js/constants.js"></script>
-<script src="js/state.js"></script>
-<script src="js/mock/users.js"></script>
-<script src="js/mock/lessons.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/api.js"></script>
-<script src="js/domService.js"></script>
-<script src="js/dataService.js"></script>
-<script src="js/render.js"></script>
-<script src="js/script.js"></script>
-<script src="js/login.js"></script>
+    <script src="vendors/uuid.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/mock/users.js"></script>
+    <script src="js/mock/lessons.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/domService.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

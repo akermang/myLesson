@@ -112,7 +112,7 @@ main.container {
   width: 100%;
 }
 a:hover {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .nav-container {
@@ -361,7 +361,8 @@ iframe {
   padding: 15px;
 }
 
-#sign-out, #home-btn {
+#sign-out,
+#home-btn {
   display: inline-block;
   text-decoration: none;
   justify-content: center;
