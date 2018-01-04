@@ -361,7 +361,8 @@ iframe {
 .new-lessons-container span {
   padding: 15px;
 }
-
+#add-user-btn,
+#delete-user-btn,
 #sign-out,
 #home-btn {
   display: inline-block;
@@ -374,13 +375,6 @@ iframe {
   background: linear-gradient(to bottom, #007bff 0, #0062cc);
   transition: 0.3s;
   max-width: 35%;
-}
-
-#sign-out:hover,
-#home-btn:hover {
-  letter-spacing: 1px;
-  background: #0062cc;
-  border-color: #0062cc;
 }
 
 .new-user-container > *,
@@ -412,13 +406,15 @@ iframe {
   color: white;
   border: 0.08em solid #007bff;
   background: linear-gradient(to bottom, #007bff 0, #0062cc);
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
+#sign-out:hover,
+#home-btn:hover,
 button:hover,
 .new-user-button:hover,
 .delete-user-button:hover {
-  background: linear-gradient(to bottom, inherit 0, #0062cc 0);
+  background: linear-gradient(to bottom, inherit 0, #024083 0);
   border-color: #094e99;
   letter-spacing: 2px;
 }
