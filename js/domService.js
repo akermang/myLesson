@@ -145,6 +145,6 @@ function scrollToAdd() {
 }
 
 function scrollToDeleteUser() {
-    window.scroll({ top: 1800, left: 0, behavior: 'smooth' });
+    window.scroll({ top: 1200, left: 0, behavior: 'smooth' });
 
 }

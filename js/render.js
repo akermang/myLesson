@@ -19,7 +19,8 @@ function renderLessons(lessons, selector){
         var tutorial = createSrcElement("iframe", lesson.tutorial_url, "tutorial content");
         var video = createSrcElement("iframe", lesson.video_url, "video content");
         var info = createHtmlElement("div", "info content");
-
+        
+        musicSheet.addEventListener('click', musicSheetCliced.bind(this))
         tutorial.setAttribute('allowFullScreen', '');
         video.setAttribute('allowFullScreen', '')
         info.innerText = lesson.info;
@@ -63,11 +64,15 @@ function renderLessons(lessons, selector){
 
 function wrapEditedElement(domElement, editingElementTagName, value, editingClass){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
-    var editingElement = createHtmlElement(editingElementTagName, "editing-element" + " " + editingClass) //document.createElement(editingElementTagName);
-   
+    var editingElement = createHtmlElement(editingElementTagName, "editing-element" + " " + editingClass) 
+    var label = createHtmlElement("label", "text-info" );
+
+    label.innerText = domElement.classList[0];
+    !domElement.classList.contains("subject") ? wrapper.appendChild(label) : null;
+
     wrapper.appendChild(domElement);
     editingElement.value = value;
-    wrapper.appendChild(editingElement); 
+    wrapper.appendChild(editingElement);
     
     if(!domElement.classList.contains("subject") &&
         !domElement.classList.contains("info")){
@@ -80,7 +85,7 @@ function wrapEditedElement(domElement, editingElementTagName, value, editingClas
             });
         previewButton.innerText = "Preview";
         previewButton.addEventListener("click",editingPreview.bind(this,domElement, editingElement, value));
-        wrapper.appendChild(previewButton)
+        wrapper.appendChild(previewButton);
     };
     return wrapper;
 }
@@ -97,6 +102,11 @@ function createSrcElement(tagName, src, className){
     return iframe;
 }
 
+function musicSheetCliced(e, img) {
+    e.target.classList.toggle("resize")
+    console.log(e.target.classList)
+}
+
 var welcome = document.querySelector(".welcome-msg");
 if(welcome){
     welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
@@ -111,13 +121,13 @@ function loadNew(){
 function newLesson(studentId, selector){
    var container = document.querySelector(selector);
    if(!container) return;
-   var subject = createHtmlElement("input", "new-subject");
-   var bottom = createHtmlElement("div", "new-bottom");
-   var musicSheet = createHtmlElement("input",  "new-music-sheet");
-   var tutorial = createHtmlElement("input", "new-tutorial");
-   var video = createHtmlElement("input", "new-video");
-   var info = createHtmlElement("textarea", "new-info");
-   var button = createHtmlElement("button", "new-button");
+   var subject = createHtmlElement("input", "new-subject form-control");
+   var bottom = createHtmlElement("div", "new-bottom form-group");
+   var musicSheet = createHtmlElement("input",  "new-music-sheet form-control");
+   var tutorial = createHtmlElement("input", "new-tutorial form-control");
+   var video = createHtmlElement("input", "new-video form-control");
+   var info = createHtmlElement("textarea", "new-info form-control");
+   var button = createHtmlElement("button", "new-button form-control btn-info");
 
    subject.placeholder = "Subject";
    info.placeholder = "info";
