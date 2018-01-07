@@ -11,7 +11,7 @@
         crossorigin="anonymous">
 </head>
 
-<body onload="loadNew()">
+<body id="new" onload="loadNew()">
 
     <main class="new-container">
         
@@ -39,6 +39,7 @@
                 <span>DELETE USER</span>
                 <select id="delete-select-students" class="select-students form-control" multiple></select>
                 <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>Delete User</button>
+                <li><a class="" href="#new">top</a></li>
             </div>
         </div>
        
