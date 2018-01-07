@@ -141,10 +141,10 @@ function onDeleteUser(){
 }
 
 function scrollToAdd() {
-    window.scroll({ top: 550, left: 0, behavior: 'smooth' });
+    window.scroll({ top: 585, left: 0, behavior: 'smooth' });
 }
 
 function scrollToDeleteUser() {
-    window.scroll({ top: 850, left: 0, behavior: 'smooth' });
+    window.scroll({ top: 870, left: 0, behavior: 'smooth' });
 
 }
