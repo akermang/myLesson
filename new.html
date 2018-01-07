@@ -14,12 +14,12 @@
 <body id="new" onload="loadNew()">
 
     <main class="new-container">
-        
+
         <div class="new nav-section">
             <a class="btn btn-info btn-sm" id="sign-out" href="index.html"> Sign Out</a>
             <a class="btn btn-info btn-sm" id="home-btn" href="home.html">Lessons</a>
             <button class="btn btn-info btn-sm" id="add-user-btn" onclick=scrollToAdd()>Users</button>
-            
+
         </div>
 
         <div class="new-lessons-container form-group bg-info">
@@ -33,18 +33,23 @@
                 <input class='input-last-name form-control' type="text" placeholder='Last name'>
                 <input class='input-type form-control' type="text" placeholder='Type'>
                 <input class='input-user-name form-control' type="text" placeholder='User name'>
-                <button class='new-user-button form-control btn-info' onclick=onAddUser()>Save User</button>
+                <a class="" href="#new">
+                        <button class='new-user-button form-control btn-info' onclick=onAddUser()>Save User</button>
+                </a>
+                
             </div>
             <div class='delete-user-container d-flex bg-info' id="delete-user">
-                <span>DELETE USER</span>
                 <select id="delete-select-students" class="select-students form-control" multiple></select>
-                <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>Delete User</button>
-                <li><a class="" href="#new">top</a></li>
+                <a class="" href="#new">
+                    <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>DELETE SELECTED USER</button>
+                    <button class="btn btn-info btn-block">BACK TO TOP</button>
+                </a>
             </div>
+            <a class="btn btn-info btn-block" id="home-btn" href="home.html">Go To Lessons</a>
         </div>
-       
+
     </main>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>

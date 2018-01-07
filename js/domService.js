@@ -144,11 +144,6 @@ function scrollToAdd() {
     window.scroll({ top: 585, left: 0, behavior: 'smooth' });
 }
 
-function scrollToDeleteUser() {
-    window.scroll({ top: 870, left: 0, behavior: 'smooth' });
-
-}
-
 $(function() {
     $('a[href*=\\#]:not([href=\\#])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -158,7 +153,7 @@ $(function() {
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top
-                }, 1000);
+                }, 400);
                 return false;
             }
         }

@@ -40,7 +40,7 @@ function addUser(user){
     user.id = uuidv1();
     students.unshift(user);
     storeInDb(students, ALL_STUDENTS_KEY);
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });  }
+}
 
 function deleteUser(id){
     allUsers= getStudends();
@@ -51,7 +51,6 @@ function deleteUser(id){
         }
     });
     storeInDb(students, ALL_STUDENTS_KEY);
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 }
 
 function deleteLesson(){    
@@ -73,13 +72,11 @@ function deleteLesson(){
 function onUpdateLesson(lesson ,lessonContainer){
     var hasClass = lessonContainer.classList.contains("editing");
     if(hasClass){
-       // lessonContainer.classList.remove("editing");
     }else{
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);  
     }
     var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
-   // $(".icon-delete").slideUp();
     $(".icon-update." + lesson.id).slideUp();
     domService.insertValuesToEditingElements(lessonContainer, lesson);    
     setSelectedLesson(lesson); 
