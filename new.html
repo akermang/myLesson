@@ -26,19 +26,22 @@
             <span>ADD NEW LESSON </span>
             <select id="select-students" class="select-students form-control" multiple></select>
         </div>
-        <div class='new-user-container form-group bg-info' id="new-user">
-            <span>ADD NEW USER </span>
-            <input class='input-first-name form-control' type="text" placeholder='First name'>
-            <input class='input-last-name form-control' type="text" placeholder='Last name'>
-            <input class='input-type form-control' type="text" placeholder='Type'>
-            <input class='input-user-name form-control' type="text" placeholder='User name'>
-            <button class='new-user-button form-control btn-info' onclick=onAddUser()>Save User</button>
+        <div class="">
+            <div class='new-user-container form-group bg-info' id="new-user">
+                <span>ADD NEW USER </span>
+                <input class='input-first-name form-control' type="text" placeholder='First name'>
+                <input class='input-last-name form-control' type="text" placeholder='Last name'>
+                <input class='input-type form-control' type="text" placeholder='Type'>
+                <input class='input-user-name form-control' type="text" placeholder='User name'>
+                <button class='new-user-button form-control btn-info' onclick=onAddUser()>Save User</button>
+            </div>
+            <div class='delete-user-container d-flex bg-info' id="delete-user">
+                <span>DELETE USER</span>
+                <select id="delete-select-students" class="select-students form-control" multiple></select>
+                <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>Delete User</button>
+            </div>
         </div>
-        <div class='delete-user-container bg-info' id="delete-user">
-            <span>DELETE USER</span>
-            <select id="delete-select-students" class="select-students form-control" multiple></select>
-            <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>Delete User</button>
-        </div>
+       
     </main>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
