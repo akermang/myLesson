@@ -18,7 +18,7 @@
         <div class="new nav-section">
             <a class="btn btn-info btn-sm" id="sign-out" href="index.html"> Sign Out</a>
             <a class="btn btn-info btn-sm" id="home-btn" href="home.html">Lessons</a>
-            <button class="btn btn-info btn-sm" id="add-user-btn" onclick=scrollToAdd()>Users</button>
+            <a class="btn btn-info btn-sm" id="add-user-btn" href="#user-section">Users</a>
 
         </div>
 
@@ -26,7 +26,7 @@
             <span>ADD NEW LESSON </span>
             <select id="select-students" class="select-students form-control" multiple></select>
         </div>
-        <div class="">
+        <div id="user-section">
             <div class='new-user-container form-group bg-info' id="new-user">
                 <span>ADD NEW USER </span>
                 <input class='input-first-name form-control' type="text" placeholder='First name'>
@@ -41,7 +41,7 @@
             <div class='delete-user-container d-flex bg-info' id="delete-user">
                 <select id="delete-select-students" class="select-students form-control" multiple></select>
                 <a class="" href="#new">
-                    <button class="delete-user-button form-control btn-info" onclick=onDeleteUser()>DELETE SELECTED USER</button>
+                    <button class="delete-user-button form-control btn-info text-warning" onclick=onDeleteUser()>DELETE SELECTED USER</button>
                     <button class="btn btn-info btn-block">BACK TO TOP</button>
                 </a>
             </div>

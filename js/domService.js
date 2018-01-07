@@ -140,10 +140,7 @@ function onDeleteUser(){
     populateSelectStudents("delete-select-students");
 }
 
-function scrollToAdd() {
-    window.scroll({ top: 585, left: 0, behavior: 'smooth' });
-}
-
+// Scrolls to the selected menu item on the page
 $(function() {
     $('a[href*=\\#]:not([href=\\#])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -153,7 +150,7 @@ $(function() {
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top
-                }, 400);
+                }, 800);
                 return false;
             }
         }
