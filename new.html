@@ -23,7 +23,9 @@
         </div>
 
         <div class="new-lessons-container form-group bg-info">
-            <span>ADD NEW LESSON </span>
+            <span class="">ADD NEW LESSON </span>
+            <br>
+            <span>you can asign to users:</span>
             <select id="select-students" class="select-students form-control" multiple></select>
         </div>
         <div id="user-section">
@@ -34,18 +36,23 @@
                 <input class='input-type form-control' type="text" placeholder='Type'>
                 <input class='input-user-name form-control' type="text" placeholder='User name'>
                 <a class="" href="#new">
-                        <button class='new-user-button form-control btn-info' onclick=onAddUser()>Save User</button>
+                    <button class='btn btn-info btn-block' onclick=onAddUser()>Save User</button>
                 </a>
-                
+
             </div>
-            <div class='delete-user-container d-flex bg-info' id="delete-user">
-                <select id="delete-select-students" class="select-students form-control" multiple></select>
-                <a class="" href="#new">
-                    <button class="delete-user-button form-control btn-info text-warning" onclick=onDeleteUser()>DELETE SELECTED USER</button>
-                    <button class="btn btn-info btn-block">BACK TO TOP</button>
+            <div class='form-group delete-user-container bg-info' id="delete-user">
+                <span>DELETE USER </span>
+                <select id="delete-select-students" class="form-control" multiple></select>
+                <a href="#new">
+                    <button class="btn btn-info btn-block text-warning" onclick=onDeleteUser()>DELETE SELECTED USER
+                    </button>
                 </a>
             </div>
-            <a class="btn btn-info btn-block" id="home-btn" href="home.html">Go To Lessons</a>
+            <div>
+                <a class="btn btn-info btn-block" id="home-btn" href="home.html">Go To Lessons</a>
+                <a class="btn btn-info btn-block" href="#new">TOP</a>
+            </div>
+
         </div>
 
     </main>
