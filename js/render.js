@@ -231,7 +231,7 @@ function renderEditedLesson(lessonContainer, lesson){
 function deleteIconClicked(lesson,lessonContainer){
     setSelectedLesson(lesson);
     lessonContainer.style.background = "rgba(190, 190, 160, 0.76)";
-    $('.modal-title')[0].innerText = `Delete ${lesson.subject} lesson..?`;
+    $('#lessonName')[0].innerText = lesson.subject;
     $('.modal-body')[0].innerText = `Delete it will permanently delete ${lesson.subject} !`;
     $('#exampleModal').modal('show');   
     $("#btn-cencel-delete").click(cenceleDelete.bind(this, lessonContainer));
