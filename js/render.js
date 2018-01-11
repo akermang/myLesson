@@ -127,7 +127,7 @@ function newLesson(studentId, selector){
    var tutorial = createHtmlElement("input", "new-tutorial form-control");
    var video = createHtmlElement("input", "new-video form-control");
    var info = createHtmlElement("textarea", "new-info form-control");
-   var button = createHtmlElement("button", "new-button form-control btn-info");
+   var button = createHtmlElement("button", "new-button btn btn-block btn-info");
 
    subject.placeholder = "Subject";
    info.placeholder = "info";
