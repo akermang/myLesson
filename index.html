@@ -15,11 +15,11 @@
       <div class="container">
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">User name does not exist</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">User <span id="input-name" class="text-danger">name</span> does not exist</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -33,7 +33,7 @@
               </div>
             </div>
           </div>
-      <div class="login-area form-signin ">
+      <div class="login-area form-signin">
         <h2 class="form-signin-heading"> Please sign in</h2>
         <input class="form-control" type="text" id="input-student-id" placeholder= "enter your user name" autofocus>
         <button class="btn btn-lg btn-primary btn-block" onclick="checkStudentLogUserName()" id="login-button">login</button>

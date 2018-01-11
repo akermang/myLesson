@@ -1,9 +1,4 @@
-$(document).ready(function(e) {
-    
- // $("[class*=lesson-container]").click(myAmazingCallBack);
-
-   // $("[class *= icon-update]").click(slideUp);
-  
+$(document).ready(function(e) {  
     $("[class *= icon-delete]").click(slideUp);
 });
 

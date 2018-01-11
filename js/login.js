@@ -8,7 +8,8 @@ function checkStudentLogUserName(){
         localStorage.setItem("loggedInUser", JSON.stringify(auth)); 
         window.location = "home.html";    
     }else{
-         $('#exampleModal').modal('show');
+         $('#input-name').html(logUserName);
+         $('#loginModal').modal('show');
     }
 }    
 
