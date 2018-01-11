@@ -113,7 +113,7 @@ function onAddUser(e) {
     emptyElement(anotherElementToEmpty)
     populateSelectStudents("select-students");
     populateSelectStudents("delete-select-students");
-    $("input").val("")
+    $("input").val("");
 }
 
 function getAdduserValues() {
