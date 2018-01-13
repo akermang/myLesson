@@ -4,7 +4,7 @@ var users = [
         first_name: "Gal",
         last_name: "Ackerman",
         password: "1234",
-        username: "ggal",
+        username: "gal",
         type: "student"
     },
     {
@@ -12,7 +12,7 @@ var users = [
         first_name: "Meir",
         last_name: "Aharony",
         password: "1234",
-        username: "mmeir",
+        username: "meir",
         type: "student"
     },
     {
@@ -20,15 +20,15 @@ var users = [
         first_name: "Gil",
         last_name: "Yohanan",
         password: "1234",
-        username: "ggil",
+        username: "gil",
         type: "student"
     },
     {
         id: "04",
-        first_name: "Yosy",
+        first_name: "Yossy",
         last_name: "Avramov",
         password: "1234",
-        username: "yyosy",
+        username: "yossy",
         type: "teacher"
     }
 ]
