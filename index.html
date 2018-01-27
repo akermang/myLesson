@@ -1,60 +1,69 @@
 <!DOCTYPE html PUBLIC >
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Lesson</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">            
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
 
-    <main>
-      <div class="container">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Lesson</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
 
-        <!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">User <span id="input-name" class="text-danger">name</span> does not exist</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  ...Please try again 
-                </div>
-                <div class="modal-footer">
-                  <button id="btn-cencel-delete" type="button" class="btn btn-info" data-dismiss="modal">try again</button>
-                </div>
-              </div>
+<body>
+
+  <main>
+    <div class="container">
+
+      <!-- Modal -->
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">User
+                <span id="input-name" class="text-danger">name</span> does not exist</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...Please try again
+            </div>
+            <div class="modal-footer">
+              <button id="btn-cencel-delete" type="button" class="btn btn-info" data-dismiss="modal">try again</button>
             </div>
           </div>
+        </div>
+      </div>
       <div class="login-area form-signin">
-        <h2 class="form-signin-heading"> Please sign in</h2>
-        <input class="form-control" value="yossy" type="text" id="input-student-id" placeholder= "enter your user name" autofocus>
+        <input class="form-control" value="yossy" type="text" id="input-student-id" placeholder="enter your user name" autofocus>
         <button class="btn btn-lg btn-primary btn-block" onclick="checkStudentLogUserName()" id="login-button">login</button>
       </div>
+      <div class="title">
+        <h3>TEACH.it - 2018</h3>
+        <h1>MY LESSON</h1>
+        <h3>M U S I C <strong>E D U C A T I O N </strong></h3>
       </div>
-    </main>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="js/transportLayer.js"></script>
-    <script src="js/constants.js"></script>
-    <script src="js/state.js"></script>
-    <script src="js/mock/users.js"></script>
-    <script src="js/mock/lessons.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/dataService.js"></script>
-    <script src="js/domService.js"></script>
-    <script src="js/render.js"></script>
-    <script src="js/login.js"></script>
+    </div>
+  </main>
 
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="js/transportLayer.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/mock/users.js"></script>
+  <script src="js/mock/lessons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dataService.js"></script>
+  <script src="js/domService.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
 
 </html>

@@ -107,14 +107,59 @@ body {
   color: white;
   padding-top: 40px;
 }
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  width: 100%;
+}
+.title h1 {
+  position: relative;
+  color: #FFF;
+  font-weight: 100;
+  font-size: 90px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 0 10px #ff006c, 0 0 20px #ff006c,
+   0 0 30px #ff006c, 0 0 40px #ff417d, 0 0 70px #ff417d,
+    0 0 80px #ff417d, 0 0 100px #ff417d, 0 0 150px #ff417d;
+}
+.title h1 span {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: #FFFFFF;
+}
+.title h3 {
+  font-weight: 200;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
 
 .login-area button.btn {
   margin-top: 30px;
+  color: #fff;
+  background-color: #c900ff;
+  border-color: #ff00d000;
+}
+
+.login-area button.btn:hover {
+  background-color: #b53cd6;
 }
 
 main.container {
   width: 100%;
 }
+
 a:hover {
   text-decoration: none !important;
 }
@@ -473,6 +518,16 @@ input {
 }
 
 @media (max-width: 530px) {
+
+  .btn-top{
+    display: none;
+  }
+
+  .lessons-container{
+    height: 450px;
+    overflow: auto;
+  }
+
   div.icons-container {
     margin-top: 1em;
     position: relative;

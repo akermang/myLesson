@@ -65,7 +65,7 @@ function renderLessons(lessons, selector){
 function wrapEditedElement(domElement, editingElementTagName, value, editingClass){
     var wrapper = createHtmlElement("div", "editing-element-wrapper")
     var editingElement = createHtmlElement(editingElementTagName, "editing-element" + " " + editingClass) 
-    var label = createHtmlElement("label", "text-info" );
+    var label = createHtmlElement("label", "text-info h6 text-capitalize" );
 
     label.innerText = domElement.classList[0];
     !domElement.classList.contains("subject") ? wrapper.appendChild(label) : null;
