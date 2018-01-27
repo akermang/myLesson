@@ -153,11 +153,11 @@ function newLesson(studentId, selector){
 
 function addEditingButtons(lesson,lessonContainer){
     var buttonsContainer =  createHtmlElement("div", "editing-buttons-container");
-    var cancelButton = createHtmlElement("button", "editing-cancel-button");
-    var saveButton = createHtmlElement("button","editing-save-button");
+    var cancelButton = createHtmlElement("button", "editing-cancel-button btn btn-info btn-md");
+    var saveButton = createHtmlElement("button","editing-save-button btn btn-danger btn-md");
     
-    cancelButton.innerText = "cancel";
-    saveButton.innerText = "save";
+    cancelButton.innerText = "Cancel";
+    saveButton.innerText = "Save";
    
     cancelButton.addEventListener("click",onCancelEditing.bind(this,lessonContainer, lesson));
     saveButton.addEventListener("click",onSaveEditing.bind(this,lessonContainer,lesson));

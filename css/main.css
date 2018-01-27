@@ -283,30 +283,12 @@ iframe {
 }
 
 .editing-buttons-container {
+  display: flex;
+  justify-content: space-around;
   width: 200px;
   position: relative;
   bottom: 10px;
-  left: calc((100% - 170px)/2);
-}
-
-.editing-buttons-container > button {
-  color: white;
-  margin-right: 1em;
-  padding: 0.7em;
-  border-radius: 12px;
-  font-size: 0.8em;
-  letter-spacing: 1px;
-  outline: none;
-}
-.editing-save-button {
-  width: 78px;
-  background: linear-gradient(to bottom, #f51036 0, rgb(80, 39, 39) 100%);
-  border: 2px solid rgb(83, 65, 65);
-}
-
-.editing-cancel-button {
-  background: linear-gradient(to bottom, #1864e9 0, rgb(15, 22, 143) 100%);
-  border: 2px solid rgb(33, 58, 155);
+  left: calc((100% - 200px)/2);
 }
 
 .lessons-container > div.editing .editing-element,
