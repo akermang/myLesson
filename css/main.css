@@ -353,22 +353,26 @@ iframe {
 .date .icon-delete {
   position: absolute;
   right: 0em;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.6em;
+  height: 1.6em;
   border-radius: 3px;
+  transition: .3s;
 }
 
 .date .icon-update {
   position: absolute;
   right: 3em;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.6em;
+  height: 1.6em;
   border-radius: 3px;
+  transition: .3s;
 }
 
 .date .icon-update:hover,
 .icon-delete:hover {
-  background: #b49ef1;
+  background: #17a2b8;
+  width: 2em;
+  height: 2em;
 }
 
 .bottom {
