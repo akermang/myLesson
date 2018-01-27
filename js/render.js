@@ -29,6 +29,7 @@ function renderLessons(lessons, selector){
 
         date.appendChild(wrapEditedElement(subject, "input",lesson.subject, "subject-input"));
         lessonContainer.appendChild(date);
+        lessonContainer.id = "lesson-container-" +  lesson.id;
 
         if(state.isTeacher) {
             var iconsContainer = createHtmlElement('div','icons-container icons-container' + lesson.id);
