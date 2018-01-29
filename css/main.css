@@ -201,7 +201,6 @@ iframe {
 .welcome-msg {
   box-shadow: 2px 2px hsl(188, 78%, 41%);
   margin: 10px auto;
-  color: rgb(41, 3, 3);
   border: 2px solid #17a2b838;
   border-radius: 2px;
   padding: 1em;
@@ -310,10 +309,7 @@ iframe {
   display: flex;
   position: relative;
   margin: 0 auto;
-  color: rgb(37, 4, 4);
   width: 70%;
-  border-top-left-radius: 42px;
-  border-top-right-radius: 42px;
   padding: 1.1em 0;
   text-align: center;
 }
@@ -338,7 +334,6 @@ iframe {
   width: 1.6em;
   height: 1.6em;
   border-radius: 3px;
-  transition: .3s;
 }
 
 .date .icon-update {
@@ -347,7 +342,6 @@ iframe {
   width: 1.6em;
   height: 1.6em;
   border-radius: 3px;
-  transition: .3s;
 }
 
 .date .icon-update:hover,
