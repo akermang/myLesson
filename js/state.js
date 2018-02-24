@@ -13,19 +13,17 @@ initApp = function () {
         firebase.database().ref('users').child(loggedInUser.id)
         .once('value', function(snapshot) {
             loggedInUser = snapshot.val()
-            
+
             firebase.database().ref('lessons')
             .once('value')
             .then(snapshot=>{
                 let lessons_data = snapshot.val()
+                user.getIdToken().then(function (accessToken) {
+                    if(window.location.hash === "#home") {
+                        loadHome(lessons_data)
+                    }
                  return lessons_data
              })
-            user.getIdToken().then(function (accessToken) {
-                if(window.location.hash === "#home") {
-                    console.log("loadHome:", lessons_data)
-                    loadHome(lessons_data)
-                }
-                
                 function loadHome(lessons_data) {
                     var welcome = document.querySelector(".welcome-msg");
                     if(welcome){
