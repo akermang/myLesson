@@ -92,7 +92,7 @@ table {
 }
 
 body.index-login{
-  background: #153062;
+  background: #0e254d;
 }
 
 textarea {
@@ -113,7 +113,7 @@ body {
 }
 .title {
   z-index: 10;
-  margin: 80px auto;
+  margin: 30px auto;
   font-family: "Montserrat";
   text-align: center;
   width: 100%;

@@ -30,5 +30,21 @@ var users = [
         password: "1234",
         username: "yossy",
         type: "teacher"
+    },
+    {
+        id: "orQGwoNtB9dF8QKg6XTG9WCHQ603",
+        first_name: "Gal",
+        last_name: "Akermang",
+        password: "1234",
+        username: "Akermang Gal",
+        type: "teacher"
+    },
+    {
+        id: "YA2amcdeJtenCgYI0RUDtk5Iwwh2",
+        first_name: "Yossy",
+        last_name: "Teach",
+        password: "1234",
+        username: "Yossy Teach",
+        type: "teacher"
     }
 ]

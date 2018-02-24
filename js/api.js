@@ -1,6 +1,12 @@
 function getLessons(){
-    var storedLessons = getItem(ALL_LESSONS_KEY);
-    return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
+    firebase.database().ref('lessons')
+            .once('value', function(snapshot) {
+                lessons_data = snapshot.val()
+                console.log("lessons:", lessons_data)
+                return lessons_data
+            }) 
+    // var storedLessons = getItem(ALL_LESSONS_KEY);
+    // return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
 };
 
 function getStudends(){
