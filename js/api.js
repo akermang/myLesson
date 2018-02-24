@@ -1,3 +1,21 @@
+let users_data = []
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) initiatData()
+})
+    
+initiatData = ()=>{
+    firebase.database().ref('users')
+    .once('value')
+    .then(snapshot=>{
+        snapshot.forEach(function(childSnapshot) {
+            users_data.push( childSnapshot.val())
+        })
+        console.log(users_data)
+        populateSelectStudents("select-students");
+        populateSelectStudents("delete-select-students");
+    })
+}
+
 function getLessons(){
     var storedLessons = getItem(ALL_LESSONS_KEY);
     return storeIfNull(storedLessons, lessonsMockData, ALL_LESSONS_KEY);
@@ -5,7 +23,7 @@ function getLessons(){
 
 function getStudends(){
     var storedStudents = getItem(ALL_STUDENTS_KEY);
-    return storeIfNull(storedStudents, users, ALL_STUDENTS_KEY);
+    return users_data
 };
 
 function getItem(key) {
@@ -26,14 +44,19 @@ function storeIfNull(storedData, mockData, key) {
 
 function onAddLesson(e) {
   var lessonToStore = getAddLessonsValues();
+  console.log(lessonToStore)
   addLesson(lessonToStore);
   window.location = "home.html";
 }
 
 function addLesson(lesson){
   lesson.id = uuidv1();
-  lessons.unshift(lesson);
-  storeInDb(lessons, ALL_LESSONS_KEY);
+//   lessons.unshift(lesson);
+  console.log(lesson)
+  let lessonsRef = firebase.database().ref("lessons");
+  lessonsRef.push(lesson)
+  
+//   storeInDb(lessons, ALL_LESSONS_KEY);
 }
 
 function addUser(user){

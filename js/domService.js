@@ -67,7 +67,8 @@ function editingPreview(previewElement, ContentToPreview, value){
 
 function onAddLesson(e) {
     var lessonToStore = getAddLessonsValues();
-    var teacherId = [loggedInUser.id]
+    var teacherId = [loggedInUser.uid]
+    console.log("teacherId:", teacherId )
     updateLessonToSelectedStudentsById(teacherId, lessonToStore)
     addLesson(lessonToStore);
     window.location = "home.html";
@@ -94,7 +95,7 @@ function getAddLessonsValues() {
 }
   
 function getStudentsFromSelect(options) {
-    var optionsSelected = [];
+       var optionsSelected = [];
     for(var i = 0; i < options.length; i++) {
         var option = options[i];
         if(option.selected) {

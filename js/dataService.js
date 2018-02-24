@@ -72,8 +72,8 @@ function populateSelectStudents(selector){
     if(!select) return;
     students.forEach(function(student) {
      var option = createHtmlElement("option", "option-student text-success");
-     option.innerText = `${student.first_name} ${student.last_name}`;
-     option.studentId = student.id;
+     option.innerText = `${student.displayName}`;
+     option.studentId = student.uid;
      select.appendChild(option);
     });
  }

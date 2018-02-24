@@ -17,7 +17,11 @@ initApp = function () {
             firebase.database().ref('lessons')
             .once('value')
             .then(snapshot=>{
-                let lessons_data = snapshot.val()
+                let lessons_data = []
+                snapshot.forEach(function(childSnapshot) {
+                    lessons_data.push( childSnapshot.val())
+                })
+                
                 user.getIdToken().then(function (accessToken) {
                     if(window.location.hash === "#home") {
                         loadHome(lessons_data)

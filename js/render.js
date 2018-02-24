@@ -140,9 +140,6 @@ function newLesson(studentId, selector){
    bottom.appendChild(info);
    bottom.appendChild(button);
    container.appendChild(bottom);
-
-   populateSelectStudents("select-students");
-   populateSelectStudents("delete-select-students");
 }
 
 function addEditingButtons(lesson,lessonContainer){
