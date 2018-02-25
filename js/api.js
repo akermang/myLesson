@@ -31,7 +31,9 @@ function getItem(key) {
 }
 
 function storeInDb(data, key) {
-    localStorage.setItem(key, JSON.stringify(data));
+    let Ref = firebase.database().ref(key);
+    Ref.update(data)
+    // localStorage.setItem(key, JSON.stringify(data));
 }
 
 function storeIfNull(storedData, mockData, key) {
