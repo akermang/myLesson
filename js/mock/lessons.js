@@ -2,7 +2,7 @@ var lessonsMockData = [
     {
         id: "001",
         date_created: new Date().getTime(),
-        student_ids: ["01","02","03","04"],
+        student_ids: ["01","02","03","04","orQGwoNtB9dF8QKg6XTG9WCHQ603","YA2amcdeJtenCgYI0RUDtk5Iwwh2"],
         subject: "sonata",
         music_sheet_url: "http://www.piano-play-it.com/images/moonlight-sonata-pic.gif",
         video_url: 'https://www.youtube.com/embed/SiufFlbr7p8',  
@@ -12,7 +12,7 @@ var lessonsMockData = [
     {
         id: "002",
         date_created: new Date().getTime(),
-        student_ids: ["03","04"],
+        student_ids: ["03","04","orQGwoNtB9dF8QKg6XTG9WCHQ603"],
         subject: "song",
         music_sheet_url: "https://i.pinimg.com/originals/1f/b1/8f/1fb18f0c38c05732fa1aa239db903d00.jpg",
         video_url: 'https://www.youtube-nocookie.com/embed/4TDDtqBNIOY',  
@@ -22,7 +22,7 @@ var lessonsMockData = [
     {
         id: "003",
         date_created: new Date().getTime(),
-        student_ids: ["03","04"],
+        student_ids: ["03","04","orQGwoNtB9dF8QKg6XTG9WCHQ603","YA2amcdeJtenCgYI0RUDtk5Iwwh2"],
         subject: "live",
         music_sheet_url: "https://thumbs.dreamstime.com/z/music-sheet-18528073.jpg",
         video_url: 'https://www.youtube.com/embed/IQDk3XLZBGA?rel=0',  

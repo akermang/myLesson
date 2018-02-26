@@ -1,8 +1,8 @@
-function renderLessons(lessons, selector){
+function renderLessons(type, lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
 
-    if(state.isTeacher) {
+    if(type === TEACHER) {
         $(".nav-container").show();
         $(".signOut-link").hide();               
     }else{
@@ -31,7 +31,7 @@ function renderLessons(lessons, selector){
         lessonContainer.appendChild(date);
         lessonContainer.id = "lesson-container-" +  lesson.id;
 
-        if(state.isTeacher) {
+        if(type === TEACHER) {
             var iconsContainer = createHtmlElement('div','icons-container icons-container' + lesson.id);
             var iconDelete = createHtmlElement('img', "icon-delete " + lesson.id);
             var iconUpdate = createHtmlElement('img', "icon-update " + lesson.id);
@@ -108,12 +108,6 @@ function musicSheetCliced(e, img) {
     console.log(e.target.classList)
 }
 
-var welcome = document.querySelector(".welcome-msg");
-if(welcome){
-    welcome.innerHTML = `Hello..  ${loggedInUser.first_name} ${loggedInUser.last_name}`
-}
-
-
 function loadNew(){
    newLesson(loggedInUser.id, ".new-lessons-container");
 }
@@ -146,9 +140,6 @@ function newLesson(studentId, selector){
    bottom.appendChild(info);
    bottom.appendChild(button);
    container.appendChild(bottom);
-
-   populateSelectStudents("select-students");
-   populateSelectStudents("delete-select-students");
 }
 
 function addEditingButtons(lesson,lessonContainer){
