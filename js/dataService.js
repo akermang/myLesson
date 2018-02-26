@@ -1,5 +1,5 @@
 var students = getStudends();
-var lessons = getLessons();
+// var lessons = getLessons();
 
 function getLessonsByStudentId(lessons, studentId){
     var studentLessons = [];
@@ -60,10 +60,11 @@ var dataService = {
     },
 
     updateLessons: function(lesson){
-        lessons.forEach(function(element, i) {
-            if(element.id == lesson.id) lessons[i] = lesson;
-        });
-       storeInDb(lessons, ALL_LESSONS_KEY);
+        // lessons.forEach(function(element, i) {
+        //     if(element.id == lesson.id) lessons[i] = lesson;
+        // });
+        console.log("lesson to stor:", lesson)
+       storeInDb(lesson, ALL_LESSONS_KEY +"/" + lesson.id);
     }
 }
 
