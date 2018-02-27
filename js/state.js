@@ -6,8 +6,6 @@ var state = {
     selectedLessonDomElement: ".lesson-container-" + this.selectedLesson, 
     isModalRender: false
 }
-$(".signOut-link").hide();
-$(".btn-top").hide();
 
 initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
