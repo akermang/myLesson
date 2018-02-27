@@ -1,6 +1,3 @@
-$(".nav-container").hide();
-$(".signOut-link").hide();
-$(".btn-top").hide() 
 function renderLessons(type, lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
