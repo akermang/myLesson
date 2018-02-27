@@ -170,6 +170,11 @@ a:focus {
   box-shadow: none!important;
 }
 
+.btn-top,
+.signOut-link{
+  display: none;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-around;
