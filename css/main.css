@@ -175,6 +175,14 @@ a:focus {
   justify-content: space-around;
 }
 
+.nav-wrap{
+  display: none;
+}
+.no-lessons-message{
+  display: none;
+  margin-top: 1em;
+}
+
 img.music-sheet.content.resize {
   position: fixed;
   top: 2%;

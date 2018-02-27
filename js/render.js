@@ -1,9 +1,15 @@
 function renderLessons(type, lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
+    if(lessons.length == 0 ){
+        $(".no-lessons-message").show(); 
+        $(".signOut-link").show();
+        console.log("NO LESSONS:", lessons.length )
+        return
+    }
 
     if(type === TEACHER) {
-        $(".nav-container").show();
+        $(".nav-wrap").show();
         $(".signOut-link").hide();               
     }else{
         $(".nav-container").hide();
