@@ -112,7 +112,6 @@ function createSrcElement(tagName, src, className){
 
 function musicSheetCliced(e, img) {
     e.target.classList.toggle("resize")
-    console.log(e.target.classList)
 }
 
 function loadNew(){
