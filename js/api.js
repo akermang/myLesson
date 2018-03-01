@@ -2,20 +2,20 @@ let users_data = []
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) initiatData()
 })
-    
-initiatData = ()=>{
+
+initiatData = () => {
     firebase.database().ref('users')
-    .once('value')
-    .then(snapshot=>{
-        snapshot.forEach(function(childSnapshot) {
-            users_data.push( childSnapshot.val())
+        .once('value')
+        .then(snapshot => {
+            snapshot.forEach(function (childSnapshot) {
+                users_data.push(childSnapshot.val())
+            })
+            populateSelectStudents("select-students");
+            populateSelectStudents("delete-select-students");
         })
-        populateSelectStudents("select-students");
-        populateSelectStudents("delete-select-students");
-    })
 }
 
-function getStudends(){
+function getStudends() {
     var storedStudents = getItem(ALL_STUDENTS_KEY);
     return users_data
 };
@@ -29,53 +29,53 @@ function storeInDb(data, key) {
     Ref.update(data)
 }
 
-function addLesson(lesson){
-  let lessonsRef = firebase.database().ref("lessons").push();
-  lesson.id = lessonsRef.key
-  lessonsRef.set(lesson)
+function addLesson(lesson) {
+    let lessonsRef = firebase.database().ref("lessons").push();
+    lesson.id = lessonsRef.key
+    lessonsRef.set(lesson)
 }
 
-function addUser(user){
+function addUser(user) {
     user.id = uuidv1();
     students.unshift(user);
     // storeInDb(students, ALL_STUDENTS_KEY);
 }
 
-function deleteUser(id){
-    allUsers= getStudends();
-    
-    allUsers.forEach(function(element, i){
-        if(element.id == id){
+function deleteUser(id) {
+    allUsers = getStudends();
+
+    allUsers.forEach(function (element, i) {
+        if (element.id == id) {
             students.splice(i, 1);
         }
     });
     // storeInDb(students, ALL_STUDENTS_KEY);
 }
 
-function deleteLesson(){    
-   
+function deleteLesson() {
+
     var lessonsContainer = $("#lessons-container")[0];
     var selectedLesson = getSelectedLesson();
     selectedLesson.isDeleted = true;
     selectedLesson.student_ids = ["no isd"]
-    
-    
-    storeInDb(selectedLesson, ALL_LESSONS_KEY+"/"+selectedLesson.id);
+
+
+    storeInDb(selectedLesson, ALL_LESSONS_KEY + "/" + selectedLesson.id);
     emptyElement(lessonsContainer);
     resetSelectedLesson();
     initApp()
 }
 
-function onUpdateLesson(lesson ,lessonContainer){
+function onUpdateLesson(lesson, lessonContainer) {
     var hasClass = lessonContainer.classList.contains("editing");
-    if(hasClass){
-    }else{
+    if (hasClass) {
+    } else {
         lessonContainer.classList.add("editing");
-        addEditingButtons(lesson, lessonContainer);  
+        addEditingButtons(lesson, lessonContainer);
     }
     // var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
     $(".icon-update." + lesson.id).slideUp();
-    domService.insertValuesToEditingElements(lessonContainer, lesson);    
-    setSelectedLesson(lesson); 
+    domService.insertValuesToEditingElements(lessonContainer, lesson);
+    setSelectedLesson(lesson);
 }
 
