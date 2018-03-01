@@ -1,4 +1,4 @@
-
+var studentLessons = []
 var loggedInUser = {};
 var state = {
     selectedLesson: {},
@@ -10,10 +10,10 @@ var state = {
 initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        loggedInUser.id = user.uid;
-        firebase.database().ref('users').child(loggedInUser.id)
+        firebase.database().ref('users').child(user.uid)
         .once('value', function(snapshot) {
             loggedInUser = snapshot.val()
+            loggedInUser.id = snapshot.key
 
             firebase.database().ref('lessons')
             .once('value')
@@ -29,16 +29,18 @@ initApp = function () {
                     }
                  return lessons_data
              })
-                function loadHome(lessons_data) {
-                    var welcome = document.querySelector(".welcome-msg");
-                    if(welcome){
-                        welcome.innerHTML = `Hello..  ${user.displayName}`
-                    }
-                    var studentLessons = getLessonsByStudentId(lessons_data, user.uid);
-                    renderLessons(loggedInUser.type, studentLessons, ".lessons-container")
-                }
+                
               })
           })
+
+          function loadHome(lessons_data) {
+            var welcome = document.querySelector(".welcome-msg");
+            if(welcome){
+                welcome.innerHTML = `Hello..  ${loggedInUser.displayName}`
+            }
+            studentLessons = getLessonsByStudentId(lessons_data, loggedInUser.id);
+            renderLessons(loggedInUser.type, studentLessons, ".lessons-container")
+        }
           
         // User is signed in.
          let photoURL = user.photoURL || 
