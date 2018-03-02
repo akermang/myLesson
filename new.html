@@ -31,7 +31,7 @@
         <div id="user-section">
             <div class='new-user-container form-group bg-info' id="new-user">
                 <span>Add File </span>
-                <input class='input-file form-control' type="file" placeholder='file upload'>
+                <input onchange="fileHandler(event)" class='input-file form-control' type="file" placeholder='file upload'>
                 <a class="" href="#new">
                     <button class='btn btn-success btn-block' onclick=onAddFile()>Save File</button>
                 </a>

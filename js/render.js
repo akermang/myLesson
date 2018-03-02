@@ -5,7 +5,6 @@ function renderLessons(type, lessons, selector){
     if(lessons.length == 0 ){
         $(".no-lessons-message").show(); 
         $(".signOut-link").show();
-        console.log("NO LESSONS:", lessons.length )
         return
     }
 

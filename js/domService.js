@@ -73,6 +73,10 @@ function onAddLesson(e) {
     window.location = "home.html";
 }
 
+function fileHandler(e){
+    console.log(e)
+}
+
 function getAddLessonsValues() {
     var subject = document.getElementsByClassName("new-subject")[0];
     var musicSheet = document.getElementsByClassName("new-music-sheet")[0];
