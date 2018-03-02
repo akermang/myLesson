@@ -1,6 +1,7 @@
 function renderLessons(type, lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
+    emptyElement(container);
     if(lessons.length == 0 ){
         $(".no-lessons-message").show(); 
         $(".signOut-link").show();
