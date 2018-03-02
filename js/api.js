@@ -16,7 +16,6 @@ initiatData = () => {
 }
 
 function getStudends() {
-    var storedStudents = getItem(ALL_STUDENTS_KEY);
     return users_data
 };
 
@@ -35,30 +34,40 @@ function addLesson(lesson) {
     lessonsRef.set(lesson)
 }
 
-function addUser(user) {
-    user.id = uuidv1();
-    students.unshift(user);
-    // storeInDb(students, ALL_STUDENTS_KEY);
+function addFile(fileToStore) {
+    var storageRef = firebase.storage().ref();
+    var filesRef = storageRef.child("files/" + fileToStore.fileName);
+    var uploadFile = filesRef.put(fileToStore.file);
+    var downloadURL;
+    uploadFile.on(
+        "state_changed",
+        function (snapshot) { },
+        function (error) { },
+        function () {
+            downloadURL = uploadFile.snapshot.downloadURL;
+            insertFileUrlToNewLesson(downloadURL)
+            let updates = {};
+            let postData = {
+                url: downloadURL,
+                name: fileToStore.fileName,
+            };
+            firebase
+                .database()
+                .ref("files")
+                .push(postData);
+        }
+    );
 }
 
 function deleteUser(id) {
-    allUsers = getStudends();
-
-    allUsers.forEach(function (element, i) {
-        if (element.id == id) {
-            students.splice(i, 1);
-        }
-    });
     // storeInDb(students, ALL_STUDENTS_KEY);
 }
 
 function deleteLesson() {
-
     var lessonsContainer = $("#lessons-container")[0];
     var selectedLesson = getSelectedLesson();
     selectedLesson.isDeleted = true;
     selectedLesson.student_ids = ["no isd"]
-
 
     storeInDb(selectedLesson, ALL_LESSONS_KEY + "/" + selectedLesson.id);
     resetSelectedLesson();
@@ -72,7 +81,6 @@ function onUpdateLesson(lesson, lessonContainer) {
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);
     }
-    // var deleteIcon = $(lessonContainer).find(".icon-delete")[0];
     $(".icon-update." + lesson.id).slideUp();
     domService.insertValuesToEditingElements(lessonContainer, lesson);
     setSelectedLesson(lesson);
