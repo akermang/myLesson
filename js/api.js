@@ -61,7 +61,6 @@ function deleteLesson() {
 
 
     storeInDb(selectedLesson, ALL_LESSONS_KEY + "/" + selectedLesson.id);
-    emptyElement(lessonsContainer);
     resetSelectedLesson();
     initApp()
 }
