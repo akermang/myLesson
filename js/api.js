@@ -35,28 +35,23 @@ function addLesson(lesson) {
 }
 
 function addFile(fileToStore) {
-    var storageRef = firebase.storage().ref();
-    var filesRef = storageRef.child("files/" + fileToStore.fileName);
-    var uploadFile = filesRef.put(fileToStore.file);
-    var downloadURL;
-    uploadFile.on(
-        "state_changed",
-        function (snapshot) { },
-        function (error) { },
-        function () {
-            downloadURL = uploadFile.snapshot.downloadURL;
-            insertFileUrlToNewLesson(downloadURL)
-            let updates = {};
-            let postData = {
-                url: downloadURL,
-                name: fileToStore.fileName,
-            };
-            firebase
-                .database()
-                .ref("files")
-                .push(postData);
-        }
-    );
+    let storageRef = firebase.storage().ref();
+    let filesRef = storageRef.child("files/" + (+new Date()) + fileToStore.fileName);
+    let uploadFile = filesRef.put(fileToStore.file);
+    let downloadURL;
+    uploadFile.then((snapshot) => {
+        const url = snapshot.downloadURL;
+        insertFileUrlToNewLesson(url)
+        // document.querySelector('#someImageTagID').src = url;
+        let postData = {
+            url: url,
+            name: fileToStore.fileName,
+        };
+        firebase.database().ref("files").push(postData);
+    }
+    ).catch((error) => {
+        console.error(error);
+    });
 }
 
 function deleteUser(id) {
@@ -64,8 +59,8 @@ function deleteUser(id) {
 }
 
 function deleteLesson() {
-    var lessonsContainer = $("#lessons-container")[0];
-    var selectedLesson = getSelectedLesson();
+    let lessonsContainer = $("#lessons-container")[0];
+    let selectedLesson = getSelectedLesson();
     selectedLesson.isDeleted = true;
     selectedLesson.student_ids = ["no isd"]
 
@@ -75,7 +70,7 @@ function deleteLesson() {
 }
 
 function onUpdateLesson(lesson, lessonContainer) {
-    var hasClass = lessonContainer.classList.contains("editing");
+    let hasClass = lessonContainer.classList.contains("editing");
     if (hasClass) {
     } else {
         lessonContainer.classList.add("editing");
