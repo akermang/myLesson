@@ -20,7 +20,7 @@ initApp = function () {
                         .then(snapshot => {
                             let lessons_data = []
                             snapshot.forEach(function (childSnapshot) {
-                                lessons_data.push(childSnapshot.val())
+                                lessons_data.unshift(childSnapshot.val())
                             })
 
                             user.getIdToken().then(function (accessToken) {
