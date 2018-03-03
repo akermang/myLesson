@@ -29,11 +29,13 @@
         </div>
 
         <div id="user-section">
-            <div class='new-user-container form-group bg-info' id="new-user">
-                <span>Add File </span>
-                <input onchange="fileHandler(event)" class='input-file form-control' type="file" placeholder='file upload'>
+            <div class='new-user-container form-group ' id="new-user">
+                <p class="add-file-wrap">
+                    <input onchange="fileHandler(event)" class='input-file form-control bg-warning' type="file" >
+                    <label class="text-center" for="file">Upload file</label>
+                </p>
                 <a class="" href="#new">
-                    <button class='btn btn-success btn-block' onclick=onAddFile()>Save File</button>
+                    <button class='file-btn-save btn btn-danger btn-block' onclick=onAddFile()>Save File</button>
                 </a>
 
             </div>

@@ -74,7 +74,12 @@ function onAddLesson(e) {
 }
 
 function fileHandler(e){
-    console.log(e)
+    var fileToStore = getAddFileValues();
+    if (fileToStore.file){
+        insertFileUrlToNewLesson(fileToStore.fileName)
+        $(".file-btn-save").show();
+        $(".add-file-wrap label").html(fileToStore.fileName)
+    }
 }
 
 function getAddLessonsValues() {
@@ -112,7 +117,8 @@ function onAddFile(e) {
     var fileToStore = getAddFileValues();
     if (fileToStore.file) {
         addFile(fileToStore);
-        $("input").val("");
+        $(".add-file-wrap label").html("Upload file");
+        $(".file-btn-save").hide();
     }
     return
 }
@@ -124,6 +130,7 @@ function insertFileUrlToNewLesson(url) {
 
 function getAddFileValues() {
     let file = document.getElementsByClassName("input-file")[0];
+    console.log(file)
     if (file.files[0])
         var fileName = file.files[0].name;
     return {
