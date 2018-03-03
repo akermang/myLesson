@@ -211,6 +211,38 @@ iframe {
   position: relative;
 }
 
+p.add-file-wrap{
+  position: relative;
+}
+
+.add-file-wrap label {
+  width: 100%;
+  background: #39D2B4;
+  padding: 5px 20px;
+  color: #fff;
+  transition: all .4s;
+}
+
+input.input-file{
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  opacity: 0.01;
+  cursor: pointer;
+}
+
+input.input-file:hover + label,
+input.input-file:focus + label {
+  background: #34495E;
+  color: #39D2B4;
+}
+
+button.btn-block.btn.file-btn-save{
+  display: none;
+}
+
+
 .welcome-msg {
   box-shadow: 2px 2px hsl(188, 78%, 41%);
   margin: 10px auto;
