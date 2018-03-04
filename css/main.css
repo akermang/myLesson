@@ -217,6 +217,7 @@ p.add-file-wrap{
 
 .add-file-wrap label {
   width: 100%;
+  border-radius: 4px;
   background: #39D2B4;
   padding: 5px 20px;
   color: #fff;

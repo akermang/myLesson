@@ -13,7 +13,7 @@ initApp = function () {
             firebase.database().ref('users').child(user.uid)
                 .once('value', function (snapshot) {
                     loggedInUser = snapshot.val()
-                    loggedInUser.id = snapshot.key
+                    loggedInUser.id = user.uid
 
                     firebase.database().ref('lessons')
                         .once('value')
