@@ -146,6 +146,17 @@ body {
   letter-spacing: 2px;
 }
 
+.firebaseui-container.firebaseui-id-page-callback {
+  background: #0e254d!important;
+  box-shadow: none;
+  margin-top: 40px;
+  height: 84px;
+  min-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+
 .login-area button.btn {
   margin-top: 30px;
   color: #fff;

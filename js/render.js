@@ -2,7 +2,7 @@ function renderLessons(type, lessons, selector){
     var container = document.querySelector(selector);
     if(!container) return;
     emptyElement(container);
-    if(lessons.length == 0 ){
+    if(lessons.length == 0 && type != TEACHER){
         $(".no-lessons-message").show(); 
         $(".signOut-link").show();
         return
