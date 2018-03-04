@@ -288,10 +288,10 @@ button.btn-block.btn.file-btn-save{
   /* display: none;*/
   position: absolute;
   border: none;
-  right: 55px;
+  /* right: 55px; */
   bottom: 8px;
-  width: 70%;
-  max-width: 200px;
+  width: 88%;
+  /* max-width: 200px; */
   height: 30px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
@@ -330,7 +330,7 @@ button.btn-block.btn.file-btn-save{
   font-size: 0.7em;
   position: absolute;
   bottom: 7px;
-  right: 11px;
+  right: -7px;
   letter-spacing: 1px;
 }
 
