@@ -8,7 +8,9 @@ initiatData = () => {
         .once('value')
         .then(snapshot => {
             snapshot.forEach(function (childSnapshot) {
-                users_data.push(childSnapshot.val())
+                if(!childSnapshot.val().isDeleted){
+                    users_data.push(childSnapshot.val())
+                }
             })
             populateSelectStudents("select-students");
             populateSelectStudents("delete-select-students");
