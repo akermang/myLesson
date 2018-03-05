@@ -41,6 +41,7 @@ function addFile(fileToStore) {
     let filesRef = storageRef.child("files/" + (+new Date()) + fileToStore.fileName);
     let uploadFile = filesRef.put(fileToStore.file);
     let downloadURL;
+    
     uploadFile.then((snapshot) => {
         const url = snapshot.downloadURL;
         insertFileUrlToNewLesson(url)
@@ -50,8 +51,8 @@ function addFile(fileToStore) {
             name: fileToStore.fileName,
         };
         firebase.database().ref("files").push(postData);
-    }
-    ).catch((error) => {
+    })
+    .catch((error) => {
         console.error(error);
     });
 }
@@ -73,11 +74,10 @@ function deleteLesson() {
 
 function onUpdateLesson(lesson, lessonContainer) {
     let hasClass = lessonContainer.classList.contains("editing");
-    if (hasClass) {
-    } else {
+    if (!hasClass) {
         lessonContainer.classList.add("editing");
         addEditingButtons(lesson, lessonContainer);
-    }
+    } 
     $(".icon-update." + lesson.id).slideUp();
     domService.insertValuesToEditingElements(lessonContainer, lesson);
     setSelectedLesson(lesson);

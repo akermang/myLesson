@@ -285,13 +285,12 @@ button.btn-block.btn.file-btn-save{
   opacity: 0;
   visibility: hidden;
   transition: opacity 900ms, visibility 900ms;
-  /* display: none;*/
   position: absolute;
   border: none;
-  /* right: 55px; */
+  right: 55px;
   bottom: 8px;
-  width: 88%;
-  /* max-width: 200px; */
+  width: 70%;
+  max-width: 200px;
   height: 30px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
