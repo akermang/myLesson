@@ -201,10 +201,10 @@ a:focus {
 
 img.music-sheet.content.resize {
   position: fixed;
-  top: 2%;
+  top: 0;
   left: 28%;
   width: 44%;
-  height: 95%;
+  height: 100%;
   z-index: 1;
   border: 2px solid rgb(163, 161, 161);
   border-radius: 4px;
