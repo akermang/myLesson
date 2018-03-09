@@ -115,7 +115,12 @@ function musicSheetCliced(e, img) {
 }
 
 function loadNew(){
-   newLesson(loggedInUser.id, ".new-lessons-container");
+    if(loggedInUser.type === "teacher"){
+        $(".new-container").show()
+        newLesson(loggedInUser.id, ".new-lessons-container");
+    }else{
+        window.location.replace("home#home")
+    }   
 }
 
 

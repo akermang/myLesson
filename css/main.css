@@ -199,6 +199,8 @@ a:focus {
 .nav-wrap{
   display: none;
 }
+
+.problem-message,
 .no-lessons-message{
   display: none;
   margin-top: 1em;
@@ -468,6 +470,10 @@ input {
   margin: 1em auto;
   display: block;
   padding: 0.5em;
+}
+
+.new-container{
+  display: none;
 }
 
 
