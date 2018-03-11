@@ -35,7 +35,7 @@ initApp = function () {
                                 if (window.location.hash === "#home") {
                                     loadHome(lessons_data)
                                 }else{
-                                    if(window.location.pathname === "/new.html"){
+                                    if(window.location.pathname === "/myLesson/new.html"){
                                         loadNew()
                                         console.log("loadNew")
                                     }
