@@ -116,7 +116,7 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  animation: donut-spin 1.2s linear infinite;
+  animation: donut-spin 0.4s linear infinite;
   margin-top: calc(50vh - 15px);
   margin-left: calc(50% - 15px);
 }
