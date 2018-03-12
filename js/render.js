@@ -116,6 +116,8 @@ function musicSheetCliced(e, img) {
 
 function loadNew(){
     if(loggedInUser.type === "teacher"){
+        let loader = $(".loader-donut")
+        if(loader) loader.hide()
         $(".new-container").show()
         newLesson(loggedInUser.id, ".new-lessons-container");
     }else{

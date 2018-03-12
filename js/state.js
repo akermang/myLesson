@@ -13,13 +13,13 @@ initApp = function () {
             firebase.database().ref('users').child(user.uid)
                 .once('value')
                 .then(snapshot => {
-                    if(!snapshot.val()){
+                    if (!snapshot.val()) {
                         console.log("no user")
                         $(".problem-message").show();
                         $(".signOut-link").show()
                         return
                     }
-                    
+
                     loggedInUser = snapshot.val()
                     loggedInUser.id = user.uid
 
@@ -34,8 +34,8 @@ initApp = function () {
                             user.getIdToken().then(function (accessToken) {
                                 if (window.location.hash === "#home") {
                                     loadHome(lessons_data)
-                                }else{
-                                    if(window.location.pathname === "/myLesson/new.html"){
+                                } else {
+                                    if (window.location.pathname === "/myLesson/new.html" || "/new.html")  { //this to  work with github.io/MyLesson/..//
                                         loadNew()
                                         console.log("loadNew")
                                     }
@@ -44,9 +44,11 @@ initApp = function () {
                             })
 
                         })
-                } )  
+                })
 
             function loadHome(lessons_data) {
+                let loader = $(".loader-donut")
+                if(loader) loader.hide()
                 var welcome = document.querySelector(".welcome-msg");
                 if (welcome) {
                     welcome.innerHTML = `Hello..  ${loggedInUser.displayName}`
@@ -63,27 +65,26 @@ initApp = function () {
             window.location = "/index.html"
             // User is signed out.
         }
-    }, function (error) {
+    },
+
+    function (error) {
         console.log(error);
     });
 };
 
-document.onreadystatechange = function(e)
-{
-    if (document.readyState === 'complete')
-    {  
+document.onreadystatechange = function (e) {
+    if (document.readyState === 'complete') {
         initApp()
         //dom is ready, window.onload fires later
     }
 };
-window.onload = function(e)
-{
+window.onload = function (e) {
     //document.readyState will be complete, it's one of the requirements for the window.onload event to be fired
     //do stuff for when everything is loaded
 };
 
 window.addEventListener('load', function () {
-   
+
 });
 
 const signOut = () => firebase.auth().signOut().then(function () {
