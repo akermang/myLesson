@@ -50,7 +50,8 @@ section {
 }
 
 .fa{
-  color: #ff9800!important;
+  color: #9d9da8!important;
+  font-size: 50px!important;
 }
 
 /* line 31, ../scss/base/_reset.scss */
@@ -118,8 +119,8 @@ body {
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-left-color: #17a2b8;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   animation: donut-spin 0.6s linear infinite;
   margin-top: calc(50vh - 15px);
   margin-left: calc(50% - 15px);
