@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script>
     window.location.hash = "home";
@@ -18,9 +19,13 @@
 </head>
 
 <body>
-  <main class="container" id="home">
+  <main class="container-fluid" id="home">
     <div class="welcome-msg text-info">My Lesson loading..</div>
     <div class="loader-donut"></div>
+    <i class="fa fa-home"></i>
+    <i class="fa fa-search"></i>
+    <i class="fa fa-cloud"></i>
+    <i class="fa fa-trash"></i>
     <a onclick="return signOut()" class="btn btn-info btn-sm signOut-link" id="btn-sign-out" href="index.html"> Sign Out</a>
     <div class="no-lessons-message text-center text-danger">Wellcom, soon your teacher will add your lessons</div>
     <div class="problem-message text-center text-danger">Sorry! There was a problem</div>
