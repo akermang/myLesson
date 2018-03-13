@@ -49,6 +49,10 @@ section {
   display: block;
 }
 
+.fa{
+  color: #ff9800!important;
+}
+
 /* line 31, ../scss/base/_reset.scss */
 body,
 html {
@@ -558,13 +562,35 @@ input {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 999px) {
+
+  div.icons-container{
+    margin-top: 1em;
+    position: absolute;
+    right: calc((100% - 100px)/2);
+  }
+
+  .date img.icon-delete,
+  .date img.icon-update {
+    position: absolute;
+  }
+
+  .date {
+    padding: 2.7em;
+    display: block;
+  }
+  
   iframe.content {
     height: 17rem;
   }
 }
 
 @media (max-width: 767px) {
+
+  
+
+  
+
   a#addLessonLink {
     width: 100%;
   }
@@ -589,17 +615,6 @@ input {
 @media (max-width: 530px) {
   .container-login{
     padding-top: 30px;
-  }
-
-  div.icons-container {
-    margin-top: 1em;
-    position: relative;
-    right: calc((100% - 100px)/2);
-  }
-
-  .date img.icon-delete,
-  .date img.icon-update {
-    position: absolute;
   }
 
   .date {
