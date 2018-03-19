@@ -13,13 +13,19 @@ initApp = function () {
             firebase.database().ref('users').child(user.uid)
                 .once('value')
                 .then(snapshot => {
-                    if (!snapshot.val()) {
-                        console.log("no user")
-                        $(".problem-message").show();
-                        $(".signOut-link").show()
-                        return
+                    if (!snapshot.val()){
+                        console.log("erroe: no user snapshot 1")
+                        firebase.database().ref('users').child(user.uid)
+                        .once('value')
+                        .then(snapshot => {
+                            if (!snapshot.val()){
+                                console.log("error: no user snapshot 2")
+                            $(".problem-message").show();
+                            $(".signOut-link").show()
+                            return}
+                        })
                     }
-
+                    
                     loggedInUser = snapshot.val()
                     loggedInUser.id = user.uid
 
