@@ -28,7 +28,8 @@ initApp = function () {
                     }
                     
                     loggedInUser = snapshot.val()
-                    loggedInUser.id = user.uid
+                    loggedInUser.id = user.uid;
+                    loggedInUser.displayName = user.displayName;
 
                     firebase.database().ref('lessons')
                         .once('value')
