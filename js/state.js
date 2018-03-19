@@ -20,6 +20,7 @@ initApp = function () {
                         .then(snapshot => {
                             if (!snapshot.val()){
                                 console.log("error: no user snapshot 2")
+                                $(".loader-donut").hide();
                             $(".problem-message").show();
                             $(".signOut-link").show()
                             return}
