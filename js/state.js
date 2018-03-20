@@ -14,22 +14,23 @@ initApp = function () {
                 .once('value')
                 .then(snapshot => {
                     if (!snapshot.val()){
-                        console.log("erroe: no user snapshot 1")
+                        console.log("erroe: no user snapshot 1:",snapshot)
                         firebase.database().ref('users').child(user.uid)
                         .once('value')
                         .then(snapshot => {
                             if (!snapshot.val()){
-                                console.log("error: no user snapshot 2")
+                                console.log("error: no user snapshot 2:",snapshot)
                                 $(".loader-donut").hide();
-                            $(".problem-message").show();
                             $(".signOut-link").show()
                             return}
                         })
                     }
-                    
-                    loggedInUser = snapshot.val()
+                    console.log("loggedInUser = snapshot.val():",snapshot.val())
+                    console.log("user:",user)
+                    snapshot.val() ? loggedInUser = snapshot.val() : null;
                     loggedInUser.id = user.uid;
                     loggedInUser.displayName = user.displayName;
+
 
                     firebase.database().ref('lessons')
                         .once('value')
@@ -45,7 +46,6 @@ initApp = function () {
                                 } else {
                                     if (window.location.pathname === "/myLesson/new.html" || "/new.html")  { //this to  work with github.io/MyLesson/..//
                                         loadNew()
-                                        console.log("loadNew")
                                     }
                                 }
                                 return lessons_data
@@ -62,7 +62,8 @@ initApp = function () {
                     welcome.innerHTML = `Hello..  ${loggedInUser.displayName}`
                 }
                 studentLessons = getLessonsByStudentId(lessons_data, loggedInUser.id);
-                renderLessons(loggedInUser.type, studentLessons, ".lessons-container")
+                let type = loggedInUser.type || "student";
+                renderLessons(type, studentLessons, ".lessons-container")
             }
 
             // User is signed in.

@@ -466,6 +466,7 @@ button.btn-block.btn.file-btn-save{
   height: 71%;
   width: 75%;
   overflow: auto;
+  text-align: center;
 }
 
 .new-lessons-container,
